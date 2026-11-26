@@ -1618,7 +1618,7 @@
           "暗黑魔法",
           "法球"
         ],
-        "abstract": "",
+        "abstract": "辛德拉：被导师背叛、被修会封印的黑暗元首，浮空堡垒之主；按好感度五阶段描写与<user>的关系，含原版亲密设定",
         "enabled": true,
         "strategy": {
           "type": "selective",
@@ -3265,8 +3265,8 @@
       },
       "场景卡输出格式": {
         "path": "世界书/界面/场景卡输出.txt",
-        "abstract": "要求AI每轮末尾输出<scene_cover>场景结算",
         "keywords": [],
+        "abstract": "要求AI每轮末尾输出<scene_cover>场景结算",
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -3280,8 +3280,8 @@
       },
       "立绘输出格式": {
         "path": "世界书/界面/立绘输出.txt",
-        "abstract": "场景变化或重要角色登场时输出<SceneInfo>立绘信息",
         "keywords": [],
+        "abstract": "场景变化或重要角色登场时输出<SceneInfo>立绘信息",
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -3295,8 +3295,8 @@
       },
       "插图输出格式": {
         "path": "世界书/界面/插图输出.txt",
-        "abstract": "氛围合适时输出<cg>插图标签",
         "keywords": [],
+        "abstract": "氛围合适时输出<cg>插图标签",
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -3310,8 +3310,8 @@
       },
       "亲密插图输出格式": {
         "path": "世界书/界面/亲密插图输出.txt",
-        "abstract": "亲密场景输出<nsfw_cg>插图标签",
         "keywords": [],
+        "abstract": "亲密场景输出<nsfw_cg>插图标签",
         "enabled": true,
         "strategy": {
           "type": "constant"
@@ -3499,9 +3499,9 @@
         "面板锚点": {
           "type": "script",
           "script_file": "脚本/面板锚点.txt",
-          "enabled": false,
+          "enabled": true,
           "id": "af826f57-d8d1-4623-be8e-1fee3e4c9ed7",
-          "info": "为每条AI回复补上状态面板占位符，让面板不依赖AI是否输出<ztl>。"
+          "info": "为每条AI回复末尾补上占位符，显示「羁绊」好感条。"
         }
       },
       "variables": {}
@@ -3532,12 +3532,12 @@
     "状态栏界面": {
       "id": "ce6da13c-4e35-4057-8964-3192b7903acc",
       "findRegex": "<StatusPlaceHolderImpl/>",
-      "replace_file": "正则/状态栏界面.html",
+      "replace_file": "正则/好感条.html",
       "trimStrings": [],
       "placement": [
         2
       ],
-      "disabled": true,
+      "disabled": false,
       "markdownOnly": true,
       "promptOnly": false,
       "runOnEdit": true,

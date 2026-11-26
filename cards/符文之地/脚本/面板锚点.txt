@@ -1,4 +1,4 @@
-// 为每条新的 AI 回复末尾补上状态面板占位符 <StatusPlaceHolderImpl/>。
+// 为每条新的 AI 回复末尾补上占位符 <StatusPlaceHolderImpl/>，由正则替换为「羁绊」好感条。
 // 这样即使 AI 因预设的输出格式而没有写 <ztl>，状态面板也会照常显示。
 // 占位符本身由正则「对AI隐藏状态栏」从发给 AI 的内容中移除，不占用上下文。
 const PLACEHOLDER = '<StatusPlaceHolderImpl/>';
@@ -7,7 +7,7 @@ async function ensurePlaceholder(message_id) {
   try {
     const msg = getChatMessages(message_id)[0];
     if (!msg || msg.role !== 'assistant') return;
-    if (msg.message.includes(PLACEHOLDER) || msg.message.includes('<OpeningFormUI/>')) return;
+    if (msg.message.includes(PLACEHOLDER) || msg.message.includes('<OpeningFormUI/>') || msg.message.includes('<character_menu>')) return;
     await setChatMessages([{ message_id, message: msg.message.replace(/\s*$/, '') + '\n\n' + PLACEHOLDER }], { refresh: 'affected' });
   } catch (e) {
     console.warn('[符文之地] 补充状态面板占位符失败', e);
