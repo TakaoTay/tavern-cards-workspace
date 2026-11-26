@@ -99,6 +99,17 @@ export const Schema = z.object({
     )
     .prefault({}),
 
+  主线剧情: z
+    .record(
+      z.string().describe('主线名'),
+      z.object({
+        启用: z.enum(['是', '否']).prefault('否'),
+        当前章节: z.string().prefault('未开始'),
+        已完成章节: z.array(z.string()).prefault([]),
+      }),
+    )
+    .prefault({}),
+
   女性状态: z
     .record(
       z.string().describe('角色姓名'),

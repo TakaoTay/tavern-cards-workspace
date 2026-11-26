@@ -52,6 +52,13 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
 .chip { font-size: 11px; padding: 3px 8px; border-radius: 10px; border: 1px solid var(--c-border); background: var(--c-surface-raised);
   color: var(--c-text-muted); cursor: pointer; }
 .chip:hover { color: var(--c-text); border-color: var(--c-accent); }
+.ml-group { margin-bottom: 8px; }
+.ml-group-title { font-size: 11px; color: var(--c-text-muted); margin-bottom: 5px; }
+.ml-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ml-chip { padding: 5px 10px; border-radius: 6px; border: 1px solid var(--c-border); background: var(--c-surface-raised); color: var(--c-text-muted); cursor: pointer; font-size: 12px; line-height: 1.35; }
+.ml-chip small { display: block; font-size: 10px; opacity: .8; }
+.ml-chip.on { border-color: var(--c-accent); background: var(--c-accent-soft); color: var(--c-text); }
+.ml-chip.threat.on { border-color: var(--c-danger); background: rgba(208, 84, 91, 0.14); }
 .dream { display: flex; gap: 10px; align-items: flex-start; }
 .switch { position: relative; flex: 0 0 40px; height: 22px; border-radius: 11px; background: var(--c-border); cursor: pointer; margin-top: 2px; transition: background .2s; }
 .switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--c-text); transition: left .2s; }
@@ -115,6 +122,13 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
   </div>
 
   <div class="sec">
+    <div class="sec-title">主线剧情（可多选，之后可在羁绊栏随时开关）</div>
+    <div class="ml-group"><div class="ml-group-title">地区主线</div><div class="ml-chips" id="ml-region"></div></div>
+    <div class="ml-group"><div class="ml-group-title">全境威胁</div><div class="ml-chips" id="ml-threat"></div></div>
+    <div class="hint">不选则为自由冒险：世界照常运转，但不会主动推进这些大事件。</div>
+  </div>
+
+  <div class="sec">
     <div class="dream">
       <div class="switch" id="dream-switch"></div>
       <div class="dream-body">
@@ -159,6 +173,32 @@ const EVENT_PRESETS = [
   ['初来乍到', '我刚刚抵达这里，身上只剩一点盘缠，对这座城市一无所知。']
 ];
 
+const MAINLINES = [
+  ['双城之战', '皮尔特沃夫·祖安', 'region'], ['法师革命', '德玛西亚', 'region'], ['初生之土之战', '艾欧尼亚', 'region'],
+  ['崔法利之影', '诺克萨斯', 'region'], ['冰霜王座', '弗雷尔卓德', 'region'], ['太阳圆盘', '恕瑞玛', 'region'],
+  ['焚烧之潮', '比尔吉沃特', 'region'], ['星辰之巅', '巨神峰', 'region'], ['王国的觉醒', '以绪塔尔', 'region'],
+  ['约德尔奇谭', '班德尔城', 'region'],
+  ['虚空入侵', '虚空裂隙', 'threat'], ['铁之亡魂', '莫德凯撒', 'threat'], ['破败之咒', '佛耶戈·黑雾', 'threat'], ['暗裔复苏', '暗裔武器', 'threat']
+];
+const REGION_LINE = { 皮尔特沃夫: '双城之战', 祖安: '双城之战', 德玛西亚: '法师革命', 艾欧尼亚: '初生之土之战', 诺克萨斯: '崔法利之影',
+  弗雷尔卓德: '冰霜王座', 恕瑞玛: '太阳圆盘', 比尔吉沃特: '焚烧之潮', 巨神峰: '星辰之巅', 以绪塔尔: '王国的觉醒', 班德尔城: '约德尔奇谭', 暗影岛: '破败之咒' };
+const mlOn = new Set();
+let mlTouched = false;
+
+function renderMainlines() {
+  ['region', 'threat'].forEach(kind => {
+    document.getElementById(kind === 'region' ? 'ml-region' : 'ml-threat').innerHTML = MAINLINES.filter(m => m[2] === kind).map(([n, sub]) =>
+      '<span class="ml-chip' + (kind === 'threat' ? ' threat' : '') + (mlOn.has(n) ? ' on' : '') + '" data-ml="' + n + '">' + n + '<small>' + sub + '</small></span>').join('');
+  });
+}
+function suggestRegionLine() {
+  if (mlTouched) return;
+  mlOn.clear();
+  const line = REGION_LINE[document.getElementById('f-region').value];
+  if (line) mlOn.add(line);
+  renderMainlines();
+}
+
 let tier = 'T5凡人级';
 let dreamOn = false;
 
@@ -185,9 +225,13 @@ function init() {
   $id('f-region').innerHTML = REGIONS.map(r => '<option>' + r + '</option>').join('');
   $id('event-chips').innerHTML = EVENT_PRESETS.map(([k], i) => '<span class="chip" data-i="' + i + '">' + k + '</span>').join('');
   renderTiers();
+  document.getElementById('f-region').addEventListener('change', suggestRegionLine);
+  suggestRegionLine();
 }
 
 document.addEventListener('click', ev => {
+  const ml = ev.target.closest('.ml-chip');
+  if (ml) { mlTouched = true; const n = ml.dataset.ml; if (mlOn.has(n)) mlOn.delete(n); else mlOn.add(n); renderMainlines(); return; }
   const t = ev.target.closest('.tier');
   if (t) { tier = t.dataset.tier; renderTiers(); return; }
   if (ev.target.id === 'add-rel') { addRel(); return; }
@@ -221,6 +265,7 @@ function collect() {
     place: $id('f-place').value.trim(),
     rels,
     event: $id('f-event').value.trim(),
+    mainlines: MAINLINES.map(m => m[0]).filter(n => mlOn.has(n)),
     dream: dreamOn,
     dreamWho: $id('f-dream-who').value.trim()
   };
@@ -233,6 +278,10 @@ function applyToStat(stat, f) {
   _.set(stat, '主角.基础能级', f.tier);
   _.set(stat, '世界状态.大地点', f.region);
   _.set(stat, '世界状态.具体地点', f.place || '待定');
+  MAINLINES.forEach(([n]) => {
+    const old = _.get(stat, ['主线剧情', n], {});
+    _.set(stat, ['主线剧情', n], { 启用: f.mainlines.includes(n) ? '是' : '否', 当前章节: old.当前章节 || '未开始', 已完成章节: old.已完成章节 || [] });
+  });
   _.set(stat, '世界状态.梦境', { 是否处于梦境叙事中: f.dream ? '是' : '否', 核心参与者: f.dream ? f.dreamWho : '' });
   f.rels.forEach(r => {
     const v = STAGE_VALUE[r.stage];
@@ -252,6 +301,7 @@ function buildMessage(f) {
   if (f.bg) lines.push('背景：' + f.bg);
   if (f.rels.length) lines.push('人际关系：' + f.rels.map(r => r.name + '（' + r.stage + (r.desc ? '，' + r.desc : '') + '）').join('；'));
   lines.push('开场事件：' + (f.event || '由叙述者根据所在地区安排'));
+  lines.push('主线剧情：' + (f.mainlines.length ? f.mainlines.join('、') : '无（自由冒险）'));
   if (f.dream) lines.push('梦境模式：开启' + (f.dreamWho ? '，核心参与者：' + f.dreamWho : ''));
   lines.push('', '请根据以上设定，以<user>为主角写出故事的开场。');
   return lines.join('\n');

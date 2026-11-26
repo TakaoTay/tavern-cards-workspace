@@ -125,6 +125,24 @@ body { background: transparent; font-family: -apple-system, BlinkMacSystemFont, 
 .more:hover { color: var(--c-ink); border-color: var(--c-ink-faint); }
 .others { display: none; }
 .others.on { display: block; }
+.ml { margin: 4px 12px 12px; padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.82); border: 1px solid var(--c-line); }
+.ml-head { display: flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 800; letter-spacing: 2px; color: var(--c-ink-soft); }
+.ml-head button { margin-left: auto; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 2px 10px; border-radius: 999px; border: 1px dashed var(--c-line); background: #fff; color: var(--c-ink-soft); cursor: pointer; }
+.ml-active { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.ml-tag { font-size: 11px; padding: 3px 9px; border-radius: 8px; background: #f8fafc; border: 1px solid var(--c-line); }
+.ml-tag b { margin-right: 4px; }
+.ml-tag.threat b { color: var(--c-stage-hostile); }
+.ml-tag span { color: var(--c-ink-faint); }
+.ml-none { margin-top: 6px; font-size: 11px; color: var(--c-ink-faint); }
+.ml-all { display: none; margin-top: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.ml-all.on { display: grid; }
+.ml-sw { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 8px; border: 1px solid var(--c-line); background: #fff; cursor: pointer; font-size: 11px; }
+.ml-sw i { flex: 0 0 26px; height: 14px; border-radius: 7px; background: #e2e8f0; position: relative; transition: background .2s; }
+.ml-sw i::after { content: ''; position: absolute; top: 2px; left: 2px; width: 10px; height: 10px; border-radius: 50%; background: #fff; transition: left .2s; }
+.ml-sw.on i { background: var(--c-stage-devoted); }
+.ml-sw.on.threat i { background: var(--c-stage-hostile); }
+.ml-sw.on i::after { left: 14px; }
+.ml-note { grid-column: 1 / -1; font-size: 10px; color: var(--c-ink-faint); }
 .empty { padding: 4px 16px 14px; font-size: 12px; color: var(--c-ink-faint); }
 @media (max-width: 480px) { .bond-row { grid-template-columns: 38px 1fr; gap: 10px; } .avatar { width: 38px; height: 38px; font-size: 15px; } .tick span { display: none; } .note { margin-top: 4px; } }
 </style>
@@ -141,7 +159,9 @@ body { background: transparent; font-family: -apple-system, BlinkMacSystemFont, 
   var STAGE = { 戒备: '--c-stage-hostile', 陌生: '--c-stage-stranger', 熟悉: '--c-stage-familiar', 恋慕: '--c-stage-love', 不渝: '--c-stage-devoted' };
   var MIN = -100, MAX = 1000, TICKS = [[0, '陌生'], [350, '熟悉'], [700, '恋慕'], [900, '不渝']];
   var BASE = window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/art@main/';
-  var showOthers = false, lastKey = '';
+  var showOthers = false, showMl = false, lastKey = '';
+  var MAINLINES = [['双城之战', 0], ['法师革命', 0], ['初生之土之战', 0], ['崔法利之影', 0], ['冰霜王座', 0], ['太阳圆盘', 0], ['焚烧之潮', 0],
+    ['星辰之巅', 0], ['王国的觉醒', 0], ['约德尔奇谭', 0], ['虚空入侵', 1], ['铁之亡魂', 1], ['破败之咒', 1], ['暗裔复苏', 1]];
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function stageOf(v) { return v < 0 ? '戒备' : v < 350 ? '陌生' : v < 700 ? '熟悉' : v < 900 ? '恋慕' : '不渝'; }
@@ -152,12 +172,13 @@ body { background: transparent; font-family: -apple-system, BlinkMacSystemFont, 
     try { var v = getVariables({ type: 'message', message_id: id }); return (v && v.stat_data && v.stat_data.近期NPC) || null; } catch (e) { return null; }
   }
   function readNow() {
-    if (!canRead()) return window.__BOND_DEMO__ || { npcs: {}, prev: {}, scene: [] };
-    var id = getCurrentMessageId(), npcs = npcsAt(id) || {}, prev = {};
+    if (!canRead()) return window.__BOND_DEMO__ || { npcs: {}, prev: {}, scene: [], ml: {} };
+    var id = getCurrentMessageId(), npcs = npcsAt(id) || {}, prev = {}, ml = {};
+    try { ml = (getVariables({ type: 'message', message_id: id }).stat_data || {}).主线剧情 || {}; } catch (e) {}
     for (var i = id - 1; i >= 0; i--) { var p = npcsAt(i); if (p) { prev = p; break; } }
     var text = '';
     try { text = (getChatMessages(id)[0] || {}).message || ''; } catch (e) {}
-    return { npcs: npcs, prev: prev, scene: sceneNames(text) };
+    return { npcs: npcs, prev: prev, scene: sceneNames(text), ml: ml };
   }
   function sceneNames(text) {
     var names = [], m;
@@ -209,13 +230,50 @@ body { background: transparent; font-family: -apple-system, BlinkMacSystemFont, 
       }
       html += '</div>';
     }
+    html += mainlineHtml(d.ml || {});
     document.getElementById('bond').innerHTML = html;
     requestAnimationFrame(function () {
       document.querySelectorAll('.fill').forEach(function (f) { f.style.width = f.getAttribute('data-w') + '%'; });
     });
   }
 
+  function chapterLabel(c) { return !c || c === '未开始' ? '未开始' : c === '已完结' ? '已完结' : String(c).replace(/_/, ' '); }
+  function mainlineHtml(ml) {
+    var active = MAINLINES.filter(function (m) { return ml[m[0]] && ml[m[0]].启用 === '是'; });
+    var h = '<div class="ml"><div class="ml-head">主线<button class="ml-toggle">' + (showMl ? '收起' : '管理') + '</button></div>';
+    h += active.length ? '<div class="ml-active">' + active.map(function (m) {
+      return '<span class="ml-tag' + (m[1] ? ' threat' : '') + '"><b>' + esc(m[0]) + '</b><span>' + esc(chapterLabel(ml[m[0]].当前章节)) + '</span></span>';
+    }).join('') + '</div>' : '<div class="ml-none">未开启任何主线，自由冒险中。</div>';
+    h += '<div class="ml-all' + (showMl ? ' on' : '') + '">' + MAINLINES.map(function (m) {
+      var on = ml[m[0]] && ml[m[0]].启用 === '是';
+      return '<div class="ml-sw' + (on ? ' on' : '') + (m[1] ? ' threat' : '') + '" data-ml="' + esc(m[0]) + '"><i></i>' + esc(m[0]) + '</div>';
+    }).join('') + '<div class="ml-note">开关写入最新楼层，下一轮回复生效；进度会保留。</div></div></div>';
+    return h;
+  }
+  async function toggleMainline(name) {
+    var opt = { type: 'message', message_id: 'latest' };
+    function flip(stat) {
+      var cur = (stat.主线剧情 && stat.主线剧情[name]) || { 当前章节: '未开始', 已完成章节: [] };
+      stat.主线剧情 = stat.主线剧情 || {};
+      stat.主线剧情[name] = { 启用: cur.启用 === '是' ? '否' : '是', 当前章节: cur.当前章节 || '未开始', 已完成章节: cur.已完成章节 || [] };
+      return stat;
+    }
+    try {
+      if (typeof Mvu !== 'undefined' && Mvu && Mvu.getMvuData) {
+        var data = Mvu.getMvuData(opt) || {}; data.stat_data = flip(data.stat_data || {}); await Mvu.replaceMvuData(data, opt);
+      } else if (typeof updateVariablesWith === 'function') {
+        updateVariablesWith(function (v) { v.stat_data = flip(v.stat_data || {}); return v; }, opt);
+      } else if (window.__BOND_DEMO__) {
+        var dm = window.__BOND_DEMO__; dm.ml = flip({ 主线剧情: dm.ml || {} }).主线剧情;
+      }
+    } catch (e) { if (typeof toastr !== 'undefined') toastr.error('切换失败：' + (e && e.message ? e.message : e)); }
+    lastKey = ''; setTimeout(render, 300);
+  }
+
   document.addEventListener('click', function (e) {
+    if (e.target.closest('.ml-toggle')) { showMl = !showMl; lastKey = ''; render(); return; }
+    var sw = e.target.closest('.ml-sw');
+    if (sw) { toggleMainline(sw.getAttribute('data-ml')); return; }
     if (e.target.closest('.more')) { showOthers = !showOthers; lastKey = ''; render(); }
   });
 

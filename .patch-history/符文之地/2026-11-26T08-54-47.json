@@ -1,0 +1,4053 @@
+{
+  "projectName": "符文之地",
+  "worldbookName": "符文之地",
+  "form": "charactercard",
+  "mvu": true,
+  "entryManifest": {
+    "unknown": {
+      "世界观/总纲": {
+        "path": "世界书/世界观_总纲.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 1
+        },
+        "display_index": 0
+      },
+      "战力体系": {
+        "path": "世界书/战力体系.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 2
+        },
+        "display_index": 1
+      },
+      "战力因果与生死判定": {
+        "path": "世界书/战力因果与生死判定.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 3
+        },
+        "display_index": 2
+      },
+      "世界运转": {
+        "path": "世界书/世界运转.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 4
+        },
+        "display_index": 3
+      },
+      "权力生态": {
+        "path": "世界书/权力生态.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 5
+        },
+        "display_index": 4
+      },
+      "伤病与恢复": {
+        "path": "世界书/伤病与恢复.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 6
+        },
+        "display_index": 5
+      },
+      "经济体系": {
+        "path": "世界书/经济体系.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 7
+        },
+        "display_index": 6
+      },
+      "魔法代价": {
+        "path": "世界书/魔法代价.txt",
+        "keywords": [
+          "魔法",
+          "施法",
+          "法师",
+          "海克斯",
+          "水晶",
+          "元素",
+          "灵界",
+          "精神领域",
+          "血魔法",
+          "禁忌",
+          "星灵",
+          "透支",
+          "禁魔石",
+          "炼金"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "魔法",
+            "施法",
+            "法师",
+            "海克斯",
+            "水晶",
+            "元素",
+            "灵界",
+            "精神领域",
+            "血魔法",
+            "禁忌",
+            "星灵",
+            "透支",
+            "禁魔石",
+            "炼金"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 9
+        },
+        "display_index": 7
+      },
+      "精神攻击判定": {
+        "path": "世界书/精神攻击判定.txt",
+        "keywords": [
+          "精神攻击",
+          "精神",
+          "腐化",
+          "侵蚀",
+          "篡改",
+          "迷惑",
+          "魅惑"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "精神攻击",
+            "精神",
+            "腐化",
+            "侵蚀",
+            "篡改",
+            "迷惑",
+            "魅惑"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 10
+        },
+        "display_index": 8
+      },
+      "皮尔特沃夫与祖安": {
+        "path": "世界书/皮尔特沃夫与祖安.txt",
+        "keywords": [
+          "皮尔特沃夫",
+          "皮城",
+          "祖安",
+          "海闸",
+          "双城"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "皮尔特沃夫",
+            "皮城",
+            "祖安",
+            "海闸",
+            "双城"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 11
+        },
+        "display_index": 9
+      },
+      "势力详情：科学院": {
+        "path": "世界书/势力详情：科学院.txt",
+        "keywords": [
+          "杰斯",
+          "科学院"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "杰斯",
+            "科学院"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 12
+        },
+        "display_index": 10
+      },
+      "势力详情：费罗斯家族": {
+        "path": "世界书/势力详情：费罗斯家族.txt",
+        "keywords": [
+          "费罗斯",
+          "卡密尔",
+          "灰夫人",
+          "海克斯水晶垄断",
+          "首席密探",
+          "原初水晶"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "费罗斯",
+            "卡密尔",
+            "灰夫人",
+            "海克斯水晶垄断",
+            "首席密探",
+            "原初水晶"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 13
+        },
+        "display_index": 11,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "势力详情：执法官": {
+        "path": "世界书/势力详情：执法官.txt",
+        "keywords": [
+          "执法官",
+          "皮城守卫",
+          "马库斯",
+          "凯特琳",
+          "巡警",
+          "警长",
+          "静水监狱"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "执法官",
+            "皮城守卫",
+            "马库斯",
+            "凯特琳",
+            "巡警",
+            "警长",
+            "静水监狱"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 14
+        },
+        "display_index": 12
+      },
+      "势力详情：希尔科势力": {
+        "path": "世界书/势力详情：希尔科势力.txt",
+        "keywords": [
+          "希尔科",
+          "金克丝",
+          "塞维卡",
+          "微光",
+          "福根酒馆",
+          "祖安统治者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希尔科",
+            "金克丝",
+            "塞维卡",
+            "微光",
+            "福根酒馆",
+            "祖安统治者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 15
+        },
+        "display_index": 13
+      },
+      "势力详情：炼金男爵联盟": {
+        "path": "世界书/势力详情：炼金男爵联盟.txt",
+        "keywords": [
+          "炼金男爵",
+          "化学男爵",
+          "芬恩",
+          "微光工厂",
+          "黑帮",
+          "地头蛇"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "炼金男爵",
+            "化学男爵",
+            "芬恩",
+            "微光工厂",
+            "黑帮",
+            "地头蛇"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 16
+        },
+        "display_index": 14,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "势力详情：野火帮": {
+        "path": "世界书/势力详情：野火帮.txt",
+        "keywords": [
+          "野火帮",
+          "萤火虫帮",
+          "艾克",
+          "反抗组织",
+          "悬浮滑板",
+          "树树"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "野火帮",
+            "萤火虫帮",
+            "艾克",
+            "反抗组织",
+            "悬浮滑板",
+            "树树"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 17
+        },
+        "display_index": 15
+      },
+      "人物：金克丝": {
+        "path": "世界书/人物：金克丝.txt",
+        "keywords": [
+          "金克丝",
+          "爆爆",
+          "Jinx",
+          "炸弹",
+          "涂鸦",
+          "蓝头发",
+          "希尔科的养女"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "金克丝",
+            "爆爆",
+            "Jinx",
+            "炸弹",
+            "涂鸦",
+            "蓝头发",
+            "希尔科的养女"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 18
+        },
+        "display_index": 16
+      },
+      "人物：萨勒芬妮": {
+        "path": "世界书/人物：萨勒芬妮.txt",
+        "keywords": [
+          "萨勒芬妮",
+          "Seraphine",
+          "星籁歌姬",
+          "海克斯耳机",
+          "听觉魔法",
+          "粉色头发"
+        ],
+        "abstract": "萨勒芬妮：能听见灵魂之声的皮城街头歌手；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨勒芬妮",
+            "Seraphine",
+            "星籁歌姬",
+            "海克斯耳机",
+            "听觉魔法",
+            "粉色头发"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 20
+        },
+        "display_index": 17
+      },
+      "人物：奥莉安娜": {
+        "path": "世界书/人物：奥莉安娜.txt",
+        "keywords": [
+          "奥莉安娜",
+          "Orianna",
+          "发条魔灵",
+          "魔偶",
+          "机械女",
+          "发条"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥莉安娜",
+            "Orianna",
+            "发条魔灵",
+            "魔偶",
+            "机械女",
+            "发条"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 29
+        },
+        "display_index": 18
+      },
+      "人物：奥莉安娜_人类": {
+        "path": "世界书/人物：奥莉安娜_人类.txt",
+        "keywords": [
+          "奥莉安娜",
+          "芭蕾"
+        ],
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥莉安娜",
+            "芭蕾"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 29
+        },
+        "display_index": 19
+      },
+      "人物：蔚": {
+        "path": "世界书/人物：蔚.txt",
+        "keywords": [
+          "蔚",
+          "Vi",
+          "祖安",
+          "双城",
+          "静水监狱",
+          "街头斗士",
+          "粉发"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蔚",
+            "Vi",
+            "祖安",
+            "双城",
+            "静水监狱",
+            "街头斗士",
+            "粉发"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 22
+        },
+        "display_index": 20
+      },
+      "人物：凯特琳": {
+        "path": "世界书/人物：凯特琳.txt",
+        "keywords": [
+          "凯特琳",
+          "Caitlyn",
+          "执法官",
+          "基拉曼",
+          "狙击手",
+          "小蛋糕"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯特琳",
+            "Caitlyn",
+            "执法官",
+            "基拉曼",
+            "狙击手",
+            "小蛋糕"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 23
+        },
+        "display_index": 21,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：迦娜": {
+        "path": "世界书/人物：迦娜.txt",
+        "keywords": [
+          "迦娜",
+          "Janna",
+          "风之化身",
+          "青鸟",
+          "信仰",
+          "风暴"
+        ],
+        "abstract": "迦娜：祖安风之精灵，信仰流失正在变淡；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "迦娜",
+            "Janna",
+            "风之化身",
+            "青鸟",
+            "信仰",
+            "风暴"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 21
+        },
+        "display_index": 22
+      },
+      "人物：泽丽": {
+        "path": "世界书/人物：泽丽.txt",
+        "keywords": [
+          "泽丽",
+          "Zeri",
+          "跑酷",
+          "静电",
+          "双马尾",
+          "祖安花火"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泽丽",
+            "Zeri",
+            "跑酷",
+            "静电",
+            "双马尾",
+            "祖安花火"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 24
+        },
+        "display_index": 23
+      },
+      "人物：梅尔": {
+        "path": "世界书/人物：梅尔.txt",
+        "keywords": [
+          "梅尔",
+          "Mel",
+          "议员",
+          "梅达尔达",
+          "诺克萨斯",
+          "金箔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅尔",
+            "Mel",
+            "议员",
+            "梅达尔达",
+            "诺克萨斯",
+            "金箔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 26
+        },
+        "display_index": 24
+      },
+      "人物：烈娜塔": {
+        "path": "世界书/人物：烈娜塔.txt",
+        "keywords": [
+          "烈娜塔",
+          "Renata",
+          "炼金男爵",
+          "资本",
+          "微光",
+          "机械臂"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "烈娜塔",
+            "Renata",
+            "炼金男爵",
+            "资本",
+            "微光",
+            "机械臂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 25
+        },
+        "display_index": 25
+      },
+      "人物：卡密尔": {
+        "path": "世界书/人物：卡密尔.txt",
+        "keywords": [
+          "卡密尔",
+          "Camille",
+          "灰夫人",
+          "海克斯",
+          "腿刃",
+          "精密"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡密尔",
+            "Camille",
+            "灰夫人",
+            "海克斯",
+            "腿刃",
+            "精密"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 27
+        },
+        "display_index": 26
+      },
+      "人物：安蓓萨": {
+        "path": "世界书/人物：安蓓萨.txt",
+        "keywords": [
+          "安蓓萨",
+          "Ambessa",
+          "梅达尔达",
+          "诺克萨斯",
+          "军阀",
+          "肌肉"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安蓓萨",
+            "Ambessa",
+            "梅达尔达",
+            "诺克萨斯",
+            "军阀",
+            "肌肉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 28
+        },
+        "display_index": 27
+      },
+      "人物：希尔科": {
+        "path": "世界书/人物：希尔科.txt",
+        "keywords": [
+          "希尔科",
+          "Silco",
+          "祖安",
+          "微光",
+          "注射器",
+          "微光辛迪加"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希尔科",
+            "Silco",
+            "祖安",
+            "微光",
+            "注射器",
+            "微光辛迪加"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 30
+        },
+        "display_index": 28
+      },
+      "人物：杰斯": {
+        "path": "世界书/人物：杰斯.txt",
+        "keywords": [
+          "杰斯",
+          "Jayce",
+          "塔利斯",
+          "海克斯",
+          "科学院",
+          "发明家"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "杰斯",
+            "Jayce",
+            "塔利斯",
+            "海克斯",
+            "科学院",
+            "发明家"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 31
+        },
+        "display_index": 29
+      },
+      "人物：黑默丁格": {
+        "path": "世界书/人物：黑默丁格.txt",
+        "keywords": [
+          "黑默丁格",
+          "Heimerdinger",
+          "院长",
+          "约德尔人",
+          "科学院",
+          "保守"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑默丁格",
+            "Heimerdinger",
+            "院长",
+            "约德尔人",
+            "科学院",
+            "保守"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 32
+        },
+        "display_index": 30
+      },
+      "人物：辛吉德": {
+        "path": "世界书/人物：辛吉德.txt",
+        "keywords": [
+          "辛吉德",
+          "Singed",
+          "炼金术士",
+          "微光",
+          "实验室",
+          "改造"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "辛吉德",
+            "Singed",
+            "炼金术士",
+            "微光",
+            "实验室",
+            "改造"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 43
+        },
+        "display_index": 31
+      },
+      "人物：维克托": {
+        "path": "世界书/人物：维克托.txt",
+        "keywords": [
+          "维克托",
+          "Viktor",
+          "海克斯",
+          "科学院",
+          "拐杖",
+          "祖安"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "维克托",
+            "Viktor",
+            "海克斯",
+            "科学院",
+            "拐杖",
+            "祖安"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 33
+        },
+        "display_index": 32
+      },
+      "人物：维克托（机械飞升版）": {
+        "path": "世界书/人物：维克托（机械飞升版）.txt",
+        "keywords": [
+          "机械维克托",
+          "Viktor",
+          "光荣进化",
+          "机械先驱",
+          "第三只手",
+          "改造"
+        ],
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "机械维克托",
+            "Viktor",
+            "光荣进化",
+            "机械先驱",
+            "第三只手",
+            "改造"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 33
+        },
+        "display_index": 33
+      },
+      "人物：艾克": {
+        "path": "世界书/人物：艾克.txt",
+        "keywords": [
+          "艾克",
+          "Ekko",
+          "野火帮",
+          "滑板",
+          "底城",
+          "Z驱动"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾克",
+            "Ekko",
+            "野火帮",
+            "滑板",
+            "底城",
+            "Z驱动"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 34
+        },
+        "display_index": 34
+      },
+      "人物：沃里克": {
+        "path": "世界书/人物：沃里克.txt",
+        "keywords": [
+          "沃里克",
+          "Warwick",
+          "范德尔",
+          "狼人",
+          "辛吉德造物",
+          "改造"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "沃里克",
+            "Warwick",
+            "范德尔",
+            "狼人",
+            "辛吉德造物",
+            "改造"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 35
+        },
+        "display_index": 35
+      },
+      "人物：布里茨 ": {
+        "path": "世界书/人物：布里茨.txt",
+        "keywords": [
+          "布里茨",
+          "Blitzcrank",
+          "蒸汽机器人",
+          "废料清理",
+          "维克托造物",
+          "机械爪"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布里茨",
+            "Blitzcrank",
+            "蒸汽机器人",
+            "废料清理",
+            "维克托造物",
+            "机械爪"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 36
+        },
+        "display_index": 36
+      },
+      "人物：扎克": {
+        "path": "世界书/人物：扎克.txt",
+        "keywords": [
+          "扎克",
+          "Zac",
+          "生化魔人",
+          "凝胶",
+          "底城"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "扎克",
+            "Zac",
+            "生化魔人",
+            "凝胶",
+            "底城"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 37
+        },
+        "display_index": 37
+      },
+      "人物：蒙多": {
+        "path": "世界书/人物：蒙多.txt",
+        "keywords": [
+          "蒙多",
+          "Mundo",
+          "祖安医生",
+          "紫色肌肉",
+          "疯人院",
+          "手术刀"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蒙多",
+            "Mundo",
+            "祖安医生",
+            "紫色肌肉",
+            "疯人院",
+            "手术刀"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 38
+        },
+        "display_index": 38
+      },
+      "人物：伊泽瑞尔": {
+        "path": "世界书/人物：伊泽瑞尔.txt",
+        "keywords": [
+          "伊泽瑞尔",
+          "Ezreal",
+          "护臂",
+          "探险家",
+          "恕瑞玛",
+          "跃迁"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊泽瑞尔",
+            "Ezreal",
+            "护臂",
+            "探险家",
+            "恕瑞玛",
+            "跃迁"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 39
+        },
+        "display_index": 39
+      },
+      "人物：图奇": {
+        "path": "世界书/人物：图奇.txt",
+        "keywords": [
+          "图奇",
+          "Twitch",
+          "变异老鼠",
+          "毒液",
+          "祖安瘟疫",
+          "下水道"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "图奇",
+            "Twitch",
+            "变异老鼠",
+            "毒液",
+            "祖安瘟疫",
+            "下水道"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 40
+        },
+        "display_index": 40
+      },
+      "人物：瑞兹": {
+        "path": "世界书/人物：瑞兹.txt",
+        "keywords": [
+          "瑞兹",
+          "Ryze",
+          "符文法师",
+          "卷轴",
+          "紫皮",
+          "奥术"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瑞兹",
+            "Ryze",
+            "符文法师",
+            "卷轴",
+            "紫皮",
+            "奥术"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 41
+        },
+        "display_index": 41
+      },
+      "人物：佐伊": {
+        "path": "世界书/人物：佐伊.txt",
+        "keywords": [
+          "佐伊",
+          "Zoe",
+          "暮光星灵",
+          "传送门",
+          "异色瞳"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "佐伊",
+            "Zoe",
+            "暮光星灵",
+            "传送门",
+            "异色瞳"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 42
+        },
+        "display_index": 42
+      },
+      "世界符文": {
+        "path": "世界书/世界符文.txt",
+        "keywords": [
+          "世界符文",
+          "World Runes",
+          "基石符文",
+          "创世能量",
+          "精密系",
+          "主宰系",
+          "巫术系",
+          "坚决系",
+          "启迪系"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "世界符文",
+            "World Runes",
+            "基石符文",
+            "创世能量",
+            "精密系",
+            "主宰系",
+            "巫术系",
+            "坚决系",
+            "启迪系"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 44
+        },
+        "display_index": 43
+      },
+      "金克丝二次解释": {
+        "path": "世界书/金克丝二次解释.txt",
+        "keywords": [
+          "金克丝",
+          "爆爆"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "金克丝",
+            "爆爆"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 19
+        },
+        "display_index": 44
+      },
+      "沉浸模块": {
+        "path": "世界书/沉浸模块.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 1,
+          "order": 998
+        },
+        "display_index": 49
+      },
+      "艾欧尼亚地区": {
+        "path": "世界书/艾欧尼亚地区.txt",
+        "keywords": [
+          "艾欧尼亚",
+          "纳沃利",
+          "初生之土",
+          "反抗"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾欧尼亚",
+            "纳沃利",
+            "初生之土",
+            "反抗"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 45
+        },
+        "display_index": 50
+      },
+      "精神领域": {
+        "path": "世界书/精神领域.txt",
+        "keywords": [
+          "精神领域",
+          "灵界",
+          "彼岸",
+          "未知维度"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "精神领域",
+            "灵界",
+            "彼岸",
+            "未知维度"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 46
+        },
+        "display_index": 51
+      },
+      "神龙之力": {
+        "path": "世界书/神龙之力.txt",
+        "keywords": [
+          "神龙",
+          "神龙之力",
+          "神龙尊者",
+          "龙魂"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "神龙",
+            "神龙之力",
+            "神龙尊者",
+            "龙魂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 47
+        },
+        "display_index": 52
+      },
+      "势力详情：艾欧尼亚反抗军": {
+        "path": "世界书/势力详情：艾欧尼亚反抗军.txt",
+        "keywords": [
+          "反抗军",
+          "艾瑞莉亚",
+          "普雷西典"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "反抗军",
+            "艾瑞莉亚",
+            "普雷西典"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 48
+        },
+        "display_index": 53
+      },
+      "势力详情：纳沃利兄弟会": {
+        "path": "世界书/势力详情：纳沃利兄弟会.txt",
+        "keywords": [
+          "兄弟会",
+          "激进",
+          "纳沃利",
+          "暴行"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "兄弟会",
+            "激进",
+            "纳沃利",
+            "暴行"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 49
+        },
+        "display_index": 54
+      },
+      "势力详情：均衡教派": {
+        "path": "世界书/势力详情：均衡教派.txt",
+        "keywords": [
+          "均衡教派",
+          "忍者",
+          "信条",
+          "均衡",
+          "灵界"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "均衡教派",
+            "忍者",
+            "信条",
+            "均衡",
+            "灵界"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 50
+        },
+        "display_index": 55
+      },
+      "势力详情：影流教派": {
+        "path": "世界书/势力详情：影流教派.txt",
+        "keywords": [
+          "影流",
+          "刺客",
+          "刺杀",
+          "暗杀",
+          "影流教派",
+          "分身"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "影流",
+            "刺客",
+            "刺杀",
+            "暗杀",
+            "影流教派",
+            "分身"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 51
+        },
+        "display_index": 56
+      },
+      "势力详情：长存之殿": {
+        "path": "世界书/势力详情：长存之殿.txt",
+        "keywords": [
+          "和平主义",
+          "维护",
+          "长存之殿",
+          "神庙",
+          "武僧",
+          "卡尔玛"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "和平主义",
+            "维护",
+            "长存之殿",
+            "神庙",
+            "武僧",
+            "卡尔玛"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 52
+        },
+        "display_index": 57
+      },
+      "势力详情：瓦斯塔亚诸部落": {
+        "path": "世界书/势力详情：瓦斯塔亚诸部落.txt",
+        "keywords": [
+          "野生魔法",
+          "瓦斯塔亚",
+          "自然",
+          "部落",
+          "丛林"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "野生魔法",
+            "瓦斯塔亚",
+            "自然",
+            "部落",
+            "丛林"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 53
+        },
+        "display_index": 58
+      },
+      "势力详情：朔极寺": {
+        "path": "世界书/势力详情：朔极寺.txt",
+        "keywords": [
+          "朔极寺",
+          "神龙",
+          "朔极之矛",
+          "武僧",
+          "守护",
+          "肉体"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "朔极寺",
+            "神龙",
+            "朔极之矛",
+            "武僧",
+            "守护",
+            "肉体"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 54
+        },
+        "display_index": 59
+      },
+      "动态人设生成": {
+        "path": "世界书/动态人设生成.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 8
+        },
+        "display_index": 60
+      },
+      "人物：阿狸": {
+        "path": "世界书/人物：阿狸.txt",
+        "keywords": [
+          "阿狸",
+          "狐妖",
+          "精气"
+        ],
+        "abstract": "阿狸：吸取精魄的瓦斯塔亚狐灵，追寻部族来处；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿狸",
+            "狐妖",
+            "精气"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 55
+        },
+        "display_index": 61
+      },
+      "人物：阿卡丽": {
+        "path": "世界书/人物：阿卡丽.txt",
+        "keywords": [
+          "阿卡丽",
+          "刺客",
+          "忍者",
+          "暗影之拳"
+        ],
+        "abstract": "阿卡丽：脱离均衡教派的独行刺客，守护艾欧尼亚；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿卡丽",
+            "刺客",
+            "忍者",
+            "暗影之拳"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 56
+        },
+        "display_index": 62
+      },
+      "人物：艾瑞莉亚": {
+        "path": "世界书/人物：艾瑞莉亚.txt",
+        "keywords": [
+          "艾瑞莉亚",
+          "反抗军",
+          "领袖",
+          "舞者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾瑞莉亚",
+            "反抗军",
+            "领袖",
+            "舞者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 57
+        },
+        "display_index": 63
+      },
+      "人物：卡尔玛": {
+        "path": "世界书/人物：卡尔玛.txt",
+        "keywords": [
+          "精神领袖",
+          "卡尔玛",
+          "冥想",
+          "梵咒"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "精神领袖",
+            "卡尔玛",
+            "冥想",
+            "梵咒"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 58
+        },
+        "display_index": 64
+      },
+      "人物：辛德拉": {
+        "path": "世界书/人物：辛德拉.txt",
+        "keywords": [
+          "黑暗元首",
+          "辛德拉",
+          "封印",
+          "暗黑魔法",
+          "法球"
+        ],
+        "abstract": "辛德拉：被导师背叛、被修会封印的黑暗元首，浮空堡垒之主；按好感度五阶段描写与<user>的关系，含原版亲密设定",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑暗元首",
+            "辛德拉",
+            "封印",
+            "暗黑魔法",
+            "法球"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 59
+        },
+        "display_index": 65
+      },
+      "人物：莉莉娅": {
+        "path": "世界书/人物：莉莉娅.txt",
+        "keywords": [
+          "莉莉娅",
+          "鹿",
+          "梦境",
+          "小鹿"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莉莉娅",
+            "鹿",
+            "梦境",
+            "小鹿"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 60
+        },
+        "display_index": 66
+      },
+      "人物：霞": {
+        "path": "世界书/人物：霞.txt",
+        "keywords": [
+          "霞",
+          "禽类",
+          "飞羽",
+          "排外"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "霞",
+            "禽类",
+            "飞羽",
+            "排外"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 61
+        },
+        "display_index": 67,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：芸阿娜": {
+        "path": "世界书/人物：芸阿娜.txt",
+        "keywords": [
+          "芸阿娜",
+          "前任暗影之拳",
+          "精神领域"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "芸阿娜",
+            "前任暗影之拳",
+            "精神领域"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 62
+        },
+        "display_index": 68
+      },
+      "人物：洛": {
+        "path": "世界书/人物：洛.txt",
+        "keywords": [
+          "洛",
+          "战舞",
+          "华丽"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "洛",
+            "战舞",
+            "华丽"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 76
+        },
+        "display_index": 69
+      },
+      "人物：李青": {
+        "path": "世界书/人物：李青.txt",
+        "keywords": [
+          "李青",
+          "盲僧",
+          "神龙之力",
+          "武僧"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "李青",
+            "盲僧",
+            "神龙之力",
+            "武僧"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 64
+        },
+        "display_index": 70
+      },
+      "人物：亚索": {
+        "path": "世界书/人物：亚索.txt",
+        "keywords": [
+          "亚索",
+          "浪人",
+          "剑客",
+          "御风剑术"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "亚索",
+            "浪人",
+            "剑客",
+            "御风剑术"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 65
+        },
+        "display_index": 71
+      },
+      "人物：永恩": {
+        "path": "世界书/人物：永恩.txt",
+        "keywords": [
+          "永恩",
+          "亚扎卡纳",
+          "灵魂"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "永恩",
+            "亚扎卡纳",
+            "灵魂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 66
+        },
+        "display_index": 72
+      },
+      "人物：艾翁": {
+        "path": "世界书/人物：艾翁.txt",
+        "keywords": [
+          "艾翁",
+          "翠神",
+          "自然",
+          "森林"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾翁",
+            "翠神",
+            "自然",
+            "森林"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 67
+        },
+        "display_index": 73
+      },
+      "人物：易": {
+        "path": "世界书/人物：易.txt",
+        "keywords": [
+          "易",
+          "剑圣",
+          "无极",
+          "无极之道",
+          "宗师"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "易",
+            "剑圣",
+            "无极",
+            "无极之道",
+            "宗师"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 68
+        },
+        "display_index": 74
+      },
+      "人物：悟空": {
+        "path": "世界书/人物：悟空.txt",
+        "keywords": [
+          "悟空",
+          "学徒",
+          "无极"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "悟空",
+            "学徒",
+            "无极"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 69
+        },
+        "display_index": 75
+      },
+      "人物：慧": {
+        "path": "世界书/人物：慧.txt",
+        "keywords": [
+          "慧",
+          "画家",
+          "颜料",
+          "艺术"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "慧",
+            "画家",
+            "颜料",
+            "艺术"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 70
+        },
+        "display_index": 76
+      },
+      "人物：烬": {
+        "path": "世界书/人物：烬.txt",
+        "keywords": [
+          "烬",
+          "金魔",
+          "死亡",
+          "艺术",
+          "瘸子",
+          "杀手"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "烬",
+            "金魔",
+            "死亡",
+            "艺术",
+            "瘸子",
+            "杀手"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 71
+        },
+        "display_index": 77
+      },
+      "人物：慎": {
+        "path": "世界书/人物：慎.txt",
+        "keywords": [
+          "慎",
+          "暮光之眼",
+          "平衡",
+          "均衡",
+          "魂刃"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "慎",
+            "暮光之眼",
+            "平衡",
+            "均衡",
+            "魂刃"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 72
+        },
+        "display_index": 78
+      },
+      "人物：凯南": {
+        "path": "世界书/人物：凯南.txt",
+        "keywords": [
+          "凯南",
+          "狂暴之心",
+          "逐日",
+          "雷电"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯南",
+            "狂暴之心",
+            "逐日",
+            "雷电"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 73
+        },
+        "display_index": 79
+      },
+      "人物：劫": {
+        "path": "世界书/人物：劫.txt",
+        "keywords": [
+          "劫",
+          "影流之主",
+          "影流",
+          "暗杀",
+          "分身"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "劫",
+            "影流之主",
+            "影流",
+            "暗杀",
+            "分身"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 74
+        },
+        "display_index": 80
+      },
+      "人物：凯隐": {
+        "path": "世界书/人物：凯隐.txt",
+        "keywords": [
+          "凯隐",
+          "魔镰",
+          "暗裔",
+          "影流"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯隐",
+            "魔镰",
+            "暗裔",
+            "影流"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 75
+        },
+        "display_index": 81
+      },
+      "人物：锐雯": {
+        "path": "世界书/人物：锐雯.txt",
+        "keywords": [
+          "锐雯",
+          "断刃",
+          "赎罪"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "锐雯",
+            "断刃",
+            "赎罪"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 63
+        },
+        "display_index": 82
+      },
+      "人物：瑟提": {
+        "path": "世界书/人物：瑟提.txt",
+        "keywords": [
+          "瑟提",
+          "腕豪",
+          "斗士",
+          "竞技场"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瑟提",
+            "腕豪",
+            "斗士",
+            "竞技场"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 77
+        },
+        "display_index": 83
+      },
+      "人物：韦鲁斯": {
+        "path": "世界书/人物：韦鲁斯.txt",
+        "keywords": [
+          "韦鲁斯",
+          "暗裔",
+          "长弓"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "韦鲁斯",
+            "暗裔",
+            "长弓"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 84
+      },
+      "诺克萨斯帝国": {
+        "path": "世界书/诺克萨斯帝国.txt",
+        "keywords": [
+          "诺克萨斯",
+          "帝国",
+          "战争"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "诺克萨斯",
+            "帝国",
+            "战争"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 79
+        },
+        "display_index": 85
+      },
+      "势力详情：崔法利议会": {
+        "path": "世界书/势力详情：崔法利议会.txt",
+        "keywords": [
+          "崔法利",
+          "议会"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "崔法利",
+            "议会"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 80
+        },
+        "display_index": 86
+      },
+      "势力详情：黑色玫瑰": {
+        "path": "世界书/势力详情：黑色玫瑰.txt",
+        "keywords": [
+          "黑色玫瑰",
+          "结社",
+          "苍白女士"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑色玫瑰",
+            "结社",
+            "苍白女士"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 81
+        },
+        "display_index": 87
+      },
+      "势力详情：军事贵族集团": {
+        "path": "世界书/势力详情：军事贵族集团.txt",
+        "keywords": [
+          "贵族",
+          "集团",
+          "家族"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贵族",
+            "集团",
+            "家族"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 82
+        },
+        "display_index": 88
+      },
+      "势力详情：帝国战团与正规军": {
+        "path": "世界书/势力详情：帝国战团与正规军.txt",
+        "keywords": [
+          "战团",
+          "军队"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "战团",
+            "军队"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 83
+        },
+        "display_index": 89
+      },
+      "势力详情：清算人角斗场": {
+        "path": "世界书/势力详情：清算人角斗场.txt",
+        "keywords": [
+          "角斗场",
+          "死斗"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "角斗场",
+            "死斗"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 84
+        },
+        "display_index": 90
+      },
+      "人物：卡特琳娜": {
+        "path": "世界书/人物：卡特琳娜.txt",
+        "keywords": [
+          "卡特琳娜",
+          "卡特"
+        ],
+        "abstract": "卡特琳娜：杜·克卡奥家族长女、诺克萨斯刺客，追查失踪的父亲；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡特琳娜",
+            "卡特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 85
+        },
+        "display_index": 91
+      },
+      "人物：莎弥拉": {
+        "path": "世界书/人物：莎弥拉.txt",
+        "keywords": [
+          "莎弥拉",
+          "佣兵"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莎弥拉",
+            "佣兵"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 86
+        },
+        "display_index": 92
+      },
+      "人物：乐芙兰": {
+        "path": "世界书/人物：乐芙兰.txt",
+        "keywords": [
+          "乐芙兰",
+          "苍白女士"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "乐芙兰",
+            "苍白女士"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 87
+        },
+        "display_index": 93
+      },
+      "人物：贝蕾亚": {
+        "path": "世界书/人物：贝蕾亚.txt",
+        "keywords": [
+          "贝蕾亚",
+          "实验体"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝蕾亚",
+            "实验体"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 88
+        },
+        "display_index": 94
+      },
+      "人物：卡西奥佩娅": {
+        "path": "世界书/人物：卡西奥佩娅.txt",
+        "keywords": [
+          "卡西奥佩娅",
+          "蛇女",
+          "石化"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡西奥佩娅",
+            "蛇女",
+            "石化"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 89
+        },
+        "display_index": 95
+      },
+      "人物：芮尔": {
+        "path": "世界书/人物：芮尔.txt",
+        "keywords": [
+          "芮尔",
+          "熔铁"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "芮尔",
+            "熔铁"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 90
+        },
+        "display_index": 96
+      },
+      "人物：伊莉丝": {
+        "path": "世界书/人物：伊莉丝.txt",
+        "keywords": [
+          "伊莉丝",
+          "蜘蛛"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊莉丝",
+            "蜘蛛"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 100
+        },
+        "display_index": 97,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：拉克丝": {
+        "path": "世界书/人物：拉克丝.txt",
+        "keywords": [
+          "拉克丝"
+        ],
+        "abstract": "拉克丝：冕卫家千金、隐藏光魔法的法师，背负塞拉斯事件的愧疚；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉克丝"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 116
+        },
+        "display_index": 98
+      },
+      "人物：凯尔": {
+        "path": "世界书/人物：凯尔.txt",
+        "keywords": [
+          "凯尔",
+          "飞翼保护神",
+          "天使"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯尔",
+            "飞翼保护神",
+            "天使"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 117
+        },
+        "display_index": 99
+      },
+      "人物：莫甘娜": {
+        "path": "世界书/人物：莫甘娜.txt",
+        "keywords": [
+          "莫甘娜",
+          "面纱女士",
+          "堕落天使"
+        ],
+        "abstract": "莫甘娜：星灵半神、德玛西亚“面纱女士”，庇护被追捕的法师；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莫甘娜",
+            "面纱女士",
+            "堕落天使"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 118
+        },
+        "display_index": 100
+      },
+      "人物：娑娜": {
+        "path": "世界书/人物：娑娜.txt",
+        "keywords": [
+          "娑娜",
+          "叆华"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "娑娜",
+            "叆华"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 119
+        },
+        "display_index": 101
+      },
+      "人物：菲奥娜": {
+        "path": "世界书/人物：菲奥娜.txt",
+        "keywords": [
+          "菲奥娜",
+          "剑姬"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "菲奥娜",
+            "剑姬"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 120
+        },
+        "display_index": 102
+      },
+      "人物：薇恩": {
+        "path": "世界书/人物：薇恩.txt",
+        "keywords": [
+          "薇恩",
+          "猎手"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "薇恩",
+            "猎手"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 121
+        },
+        "display_index": 103
+      },
+      "人物：伊芙琳": {
+        "path": "世界书/人物：伊芙琳.txt",
+        "keywords": [
+          "伊芙琳",
+          "痛苦",
+          "恶魔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊芙琳",
+            "痛苦",
+            "恶魔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 122
+        },
+        "display_index": 104
+      },
+      "人物：希瓦娜": {
+        "path": "世界书/人物：希瓦娜.txt",
+        "keywords": [
+          "希瓦娜",
+          "龙女",
+          "近卫"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希瓦娜",
+            "龙女",
+            "近卫"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 123
+        },
+        "display_index": 105
+      },
+      "人物：波比": {
+        "path": "世界书/人物：波比.txt",
+        "keywords": [
+          "波比",
+          "圣锤"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "波比",
+            "圣锤"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 124
+        },
+        "display_index": 106
+      },
+      "人物：奎因": {
+        "path": "世界书/人物：奎因.txt",
+        "keywords": [
+          "奎因",
+          "游骑兵"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奎因",
+            "游骑兵"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 125
+        },
+        "display_index": 107
+      },
+      "人物：斯维因": {
+        "path": "世界书/人物：斯维因.txt",
+        "keywords": [
+          "斯维因",
+          "统领",
+          "乌鸦"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "斯维因",
+            "统领",
+            "乌鸦"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 101
+        },
+        "display_index": 108
+      },
+      "人物：泰隆": {
+        "path": "世界书/人物：泰隆.txt",
+        "keywords": [
+          "泰隆",
+          "刺客"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泰隆",
+            "刺客"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 102
+        },
+        "display_index": 109
+      },
+      "人物：赛恩": {
+        "path": "世界书/人物：赛恩.txt",
+        "keywords": [
+          "赛恩",
+          "亡灵战神"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赛恩",
+            "亡灵战神"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 103
+        },
+        "display_index": 110
+      },
+      "人物：厄加特": {
+        "path": "世界书/人物：厄加特.txt",
+        "keywords": [
+          "厄加特",
+          "螃蟹"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "厄加特",
+            "螃蟹"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 104
+        },
+        "display_index": 111
+      },
+      "人物：德莱厄斯": {
+        "path": "世界书/人物：德莱厄斯.txt",
+        "keywords": [
+          "德莱厄斯",
+          "诺克萨斯之手"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德莱厄斯",
+            "诺克萨斯之手"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 105
+        },
+        "display_index": 112
+      },
+      "人物：弗拉基米尔": {
+        "path": "世界书/人物：弗拉基米尔.txt",
+        "keywords": [
+          "弗拉基米尔",
+          "吸血鬼",
+          "血魔法"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "弗拉基米尔",
+            "吸血鬼",
+            "血魔法"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 106
+        },
+        "display_index": 113
+      },
+      "人物：克烈": {
+        "path": "世界书/人物：克烈.txt",
+        "keywords": [
+          "克烈",
+          "军士长",
+          "斯噶尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "克烈",
+            "军士长",
+            "斯噶尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 107
+        },
+        "display_index": 114
+      },
+      "人物：德莱文": {
+        "path": "世界书/人物：德莱文.txt",
+        "keywords": [
+          "德莱文",
+          "行刑官"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德莱文",
+            "行刑官"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 108
+        },
+        "display_index": 115
+      },
+      "人物：莫德凯撒": {
+        "path": "世界书/人物：莫德凯撒.txt",
+        "keywords": [
+          "莫德凯撒",
+          "主宰"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莫德凯撒",
+            "主宰"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 109
+        },
+        "display_index": 116
+      },
+      "人物：盖伦": {
+        "path": "世界书/人物：盖伦.txt",
+        "keywords": [
+          "盖伦",
+          "无畏先锋"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "盖伦",
+            "无畏先锋"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 126
+        },
+        "display_index": 117
+      },
+      "人物：嘉文四世": {
+        "path": "世界书/人物：嘉文四世.txt",
+        "keywords": [
+          "嘉文四世",
+          "光盾",
+          "皇子"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "嘉文四世",
+            "光盾",
+            "皇子"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 127
+        },
+        "display_index": 118,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：加里奥": {
+        "path": "世界书/人物：加里奥.txt",
+        "keywords": [
+          "加里奥",
+          "巨像"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "加里奥",
+            "巨像"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 128
+        },
+        "display_index": 119
+      },
+      "人物：塞拉斯": {
+        "path": "世界书/人物：塞拉斯.txt",
+        "keywords": [
+          "塞拉斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 129
+        },
+        "display_index": 120
+      },
+      "人物：赵信": {
+        "path": "世界书/人物：赵信.txt",
+        "keywords": [
+          "赵信",
+          "总管"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赵信",
+            "总管"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 130
+        },
+        "display_index": 121
+      },
+      "人物：卢锡安": {
+        "path": "世界书/人物：卢锡安.txt",
+        "keywords": [
+          "卢锡安",
+          "圣枪游侠"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卢锡安",
+            "圣枪游侠"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 131
+        },
+        "display_index": 122
+      },
+      "人物：费德提克": {
+        "path": "世界书/人物：费德提克.txt",
+        "keywords": [
+          "费德提克",
+          "恐惧",
+          "恶魔",
+          "稻草人"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "费德提克",
+            "恐惧",
+            "恶魔",
+            "稻草人"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 132
+        },
+        "display_index": 123
+      },
+      "人物：萨科": {
+        "path": "世界书/人物：萨科.txt",
+        "keywords": [
+          "萨科",
+          "小丑"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨科",
+            "小丑"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 133
+        },
+        "display_index": 124,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：塔姆": {
+        "path": "世界书/人物：塔姆.txt",
+        "keywords": [
+          "塔姆",
+          "贪婪",
+          "放贷"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塔姆",
+            "贪婪",
+            "放贷"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 134
+        },
+        "display_index": 125
+      },
+      "德玛西亚王国": {
+        "path": "世界书/德玛西亚王国.txt",
+        "keywords": [
+          "德玛西亚"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德玛西亚"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 110
+        },
+        "display_index": 126
+      },
+      "势力详情：王室与贵族议会": {
+        "path": "世界书/势力详情：王室与贵族议会.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 111
+        },
+        "display_index": 127,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "势力详情：搜魔人兵团": {
+        "path": "世界书/势力详情：搜魔人兵团.txt",
+        "keywords": [
+          "搜魔人",
+          "兵团"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "搜魔人",
+            "兵团"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 112
+        },
+        "display_index": 128
+      },
+      "势力详情：法师反抗军": {
+        "path": "世界书/势力详情：法师反抗军.txt",
+        "keywords": [
+          "反抗军"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "反抗军"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 113
+        },
+        "display_index": 129
+      },
+      "势力详情：光照者教团": {
+        "path": "世界书/势力详情：光照者教团.txt",
+        "keywords": [
+          "光照者",
+          "教会",
+          "教团"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "光照者",
+            "教会",
+            "教团"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 114
+        },
+        "display_index": 130
+      },
+      "势力详情：德玛西亚正规军": {
+        "path": "世界书/势力详情：德玛西亚正规军.txt",
+        "keywords": [
+          "无畏先锋",
+          "龙禽"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "无畏先锋",
+            "龙禽"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 115
+        },
+        "display_index": 131
+      }
+    },
+    "MVU": {
+      "[mvu_update]变量输出格式": {
+        "path": "世界书/变量/变量输出格式.txt",
+        "part": "output_format",
+        "keywords": [],
+        "abstract": "MVU变量输出格式",
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 202
+        }
+      },
+      "变量列表": {
+        "path": "世界书/变量/变量列表.txt",
+        "part": "variable_list",
+        "keywords": [],
+        "abstract": "MVU变量列表",
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 200
+        }
+      },
+      "[mvu_update]变量更新规则": {
+        "path": "世界书/变量/变量更新规则.yaml",
+        "part": "update_rules",
+        "keywords": [],
+        "abstract": "MVU变量更新规则",
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 201
+        }
+      },
+      "[InitVar]请勿打开": {
+        "path": "世界书/变量/initvar.yaml",
+        "part": "initvar",
+        "keywords": [],
+        "abstract": "MVU初始变量",
+        "enabled": false,
+        "strategy": {
+          "type": "selective"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 100
+        }
+      }
+    },
+    "界面": {
+      "状态栏输出格式": {
+        "path": "世界书/界面/状态栏输出.txt",
+        "keywords": [],
+        "abstract": "要求AI每轮输出<ztl>状态栏JSON",
+        "enabled": false,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9903
+        }
+      },
+      "选项输出格式": {
+        "path": "世界书/界面/选项输出.txt",
+        "keywords": [],
+        "abstract": "要求AI每轮输出<xuan>六个选项",
+        "enabled": false,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9904
+        }
+      },
+      "对话气泡格式": {
+        "path": "世界书/界面/对话气泡.txt",
+        "keywords": [],
+        "abstract": "要求AI用【说话者】标签包裹台词",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9905
+        }
+      },
+      "梦境模式": {
+        "keywords": [],
+        "abstract": "梦境模式“抱憾终身”叙事导演规则；仅在 世界状态.梦境.是否处于梦境叙事中 为“是”时发送",
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.世界状态.梦境.是否处于梦境叙事中', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/界面/梦境模式.txt"
+          }
+        ],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9906
+        }
+      },
+      "场景卡输出格式": {
+        "path": "世界书/界面/场景卡输出.txt",
+        "keywords": [],
+        "abstract": "要求AI每轮末尾输出<scene_cover>场景结算",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9907
+        }
+      },
+      "立绘输出格式": {
+        "path": "世界书/界面/立绘输出.txt",
+        "keywords": [],
+        "abstract": "场景变化或重要角色登场时输出<SceneInfo>立绘信息",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9908
+        }
+      },
+      "插图输出格式": {
+        "path": "世界书/界面/插图输出.txt",
+        "keywords": [],
+        "abstract": "氛围合适时输出<cg>插图标签",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9909
+        }
+      },
+      "亲密插图输出格式": {
+        "path": "世界书/界面/亲密插图输出.txt",
+        "keywords": [],
+        "abstract": "亲密场景输出<nsfw_cg>插图标签",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9910
+        }
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "角色",
+      "NPC"
+    ],
+    "depth": [
+      "事件",
+      "MVU",
+      "界面"
+    ]
+  },
+  "strategyThresholds": {
+    "角色": {
+      "basic": {
+        "threshold": 5,
+        "required": true
+      },
+      "other": {
+        "threshold": 2,
+        "required": false
+      },
+      "personality": {
+        "threshold": 2,
+        "required": true
+      },
+      "tri_faceted": {
+        "threshold": 2,
+        "required": false
+      }
+    },
+    "事件": 0,
+    "地理": {
+      "faction": {
+        "threshold": 4,
+        "required": false
+      },
+      "region": {
+        "threshold": 4,
+        "required": false
+      },
+      "scene": {
+        "threshold": 4,
+        "required": false
+      }
+    },
+    "MVU": {
+      "initvar": {
+        "threshold": null,
+        "required": false
+      },
+      "output_format": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "update_rules": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "variable_list": {
+        "threshold": "Infinity",
+        "required": false
+      }
+    },
+    "NPC": 0,
+    "扮演准则": "Infinity",
+    "时间线": {
+      "history": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "plot": {
+        "threshold": "Infinity",
+        "required": false
+      }
+    },
+    "世界观": "Infinity",
+    "界面": "Infinity"
+  },
+  "partOrder": {
+    "角色": [
+      "basic",
+      "personality",
+      "tri_faceted",
+      "other"
+    ],
+    "地理": [
+      "region",
+      "scene",
+      "faction"
+    ],
+    "MVU": [
+      "variable_list",
+      "update_rules",
+      "output_format",
+      "initvar"
+    ],
+    "时间线": [
+      "history",
+      "plot"
+    ]
+  },
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "<narrator>\n本卡是以《英雄联盟》符文之地为舞台的开放式冒险。你是这个世界的叙述者，负责扮演<user>以外的全部角色与环境。\n\n叙述原则:\n  - 世界、势力与人物以世界书为准；世界书中有「人物：X」条目的角色，严格按条目描写，未建档的官方角色按「动态人设生成」规则推导。\n  - 金克丝、莫甘娜、拉克丝等人都只是这个世界中的一员，各自有自己的立场与生活，不会无缘无故围着<user>转。\n  - 角色对<user>的态度由 <status_current_variable> 中的好感度与关系阶段决定，先尊重角色性格，再体现关系变化。\n  - 战斗、魔法与伤病遵循世界书中的战力、代价与生死判定规则，行动会带来真实的后果。\n  - 不替<user>说话、不替<user>做决定、不描写<user>的内心。\n</narrator>",
+  "first_messages": [
+    "开场白/开局选择.md",
+    "开场白/角色创建.md",
+    "开场白/0.txt",
+    "开场白/1.txt",
+    "开场白/2.txt"
+  ],
+  "tags": [
+    "英雄联盟",
+    "符文之地",
+    "开放世界",
+    "冒险",
+    "多角色",
+    "MVU"
+  ],
+  "creator": "",
+  "creator_notes": "以《英雄联盟》符文之地为舞台的开放式冒险，金克丝、莫甘娜、拉克丝、卡特琳娜、迦娜、阿狸、阿卡丽、萨勒芬妮等角色按好感度分五个阶段（戒备/陌生/熟悉/恋慕/不渝）展开关系。需要酒馆助手（Tavern Helper）与 MVU 才能显示状态面板与选项。",
+  "version": "1.0",
+  "create_date": "2026-11-26T05:15:59.814Z",
+  "extensions": {
+    "tavern_helper": {
+      "scripts": {
+        "MVU": {
+          "type": "script",
+          "script_file": "脚本/MVU.txt",
+          "enabled": true,
+          "id": "d0311ca6-5e9a-498e-a777-f74dc4dc6b12",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": [
+              {
+                "name": "重新处理变量",
+                "visible": true
+              },
+              {
+                "name": "重新读取初始变量",
+                "visible": true
+              },
+              {
+                "name": "快照楼层",
+                "visible": false
+              },
+              {
+                "name": "重演楼层",
+                "visible": false
+              },
+              {
+                "name": "重试额外模型解析",
+                "visible": false
+              },
+              {
+                "name": "清除旧楼层变量",
+                "visible": false
+              }
+            ]
+          },
+          "data": {}
+        },
+        "面板锚点": {
+          "type": "script",
+          "script_file": "脚本/面板锚点.txt",
+          "enabled": true,
+          "id": "af826f57-d8d1-4623-be8e-1fee3e4c9ed7",
+          "info": "为每条AI回复末尾补上占位符，显示「羁绊」好感条。"
+        }
+      },
+      "variables": {}
+    },
+    "talkativeness": "0.5",
+    "fav": false,
+    "depth_prompt": {
+      "prompt": "",
+      "depth": 4,
+      "role": "system"
+    }
+  },
+  "regex_scripts": {
+    "对AI隐藏状态栏": {
+      "id": "b5f2606f-69cc-4a6a-8ebb-bd8a3b7f671f",
+      "findRegex": "<StatusPlaceHolderImpl/>",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "状态栏界面": {
+      "id": "ce6da13c-4e35-4057-8964-3192b7903acc",
+      "findRegex": "<StatusPlaceHolderImpl/>",
+      "replace_file": "正则/好感条.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏变量更新": {
+      "id": "aa12731a-97c4-4450-ac2f-0bfe1d6a4f64",
+      "findRegex": "/<(update(?:variable)?)>(?:(?!.*<\\/\\1>)(?:(?!<\\1>).)*$|(?:(?!<\\1>).)*<\\/\\1?>)/gsi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "变量更新中美化": {
+      "id": "b9d5f25b-a9d0-41bf-8a69-602d64bbde22",
+      "findRegex": "/<(update(?:variable)?)>(?!.*<\\/\\1>)\\s*((?:(?!<\\1>).)*)\\s*$/gsi",
+      "replace_file": "正则/变量更新中美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "变量更新美化": {
+      "id": "92d49340-fe5e-4929-871f-43d110e5ec76",
+      "findRegex": "/<(update(?:variable)?)>\\s*((?:(?!<\\1>).)*)\\s*<\\/\\1>/gsi",
+      "replace_file": "正则/变量更新美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "对AI隐藏状态栏ztl": {
+      "id": "ef9477a7-bccb-4297-a137-bb784ae7cf03",
+      "findRegex": "/<ztl>[\\s\\S]*?<\\/ztl>/gi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏选项": {
+      "id": "ae0f6d89-14ad-4578-a643-49d654f4183c",
+      "findRegex": "/<xuan>[\\s\\S]*?<\\/xuan>/gi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "选项并入面板": {
+      "id": "f62ccf16-1b54-477c-b45b-57700e6b6839",
+      "findRegex": "/<xuan>[\\s\\S]*?<\\/xuan>/gi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-用户": {
+      "id": "b9d0fb4f-1aaf-40e4-8039-6e74286d03cd",
+      "findRegex": "/【用户角色】([\\s\\S]*?)【\\/用户角色】/g",
+      "replaceString": "<span style=\"display:flex;justify-content:flex-end;margin:10px 0;max-width:100%;\"><span style=\"display:inline-block;max-width:80%;padding:5px 12px;border-radius:14px 4px 14px 14px;background:rgba(63,193,201,0.14);border:1px solid rgba(63,193,201,0.32);\">“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI简化对话气泡-用户": {
+      "id": "f4e397d2-ae4f-42fa-8c31-471334a22255",
+      "findRegex": "/【用户角色】([\\s\\S]*?)【\\/用户角色】/g",
+      "replaceString": "“$1”",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI简化对话气泡": {
+      "id": "85660b5d-4c07-41a1-96db-5662718c9b58",
+      "findRegex": "/【([^【】\\/\\n]{1,20})】([\\s\\S]*?)【\\/\\1】/g",
+      "replaceString": "“$2”",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏旧命运卡片": {
+      "id": "82d061ca-ded4-4a1a-acf9-79b92b7a47b9",
+      "findRegex": "/<fate_ui>[\\s\\S]*?<\\/fate_ui>/gi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "minDepth": 5
+    },
+    "命运卡片": {
+      "id": "59771eb9-6c6b-48e2-9246-f84b17ac697e",
+      "findRegex": "/<fate_ui>([\\s\\S]*?)<\\/fate_ui>/gi",
+      "replace_file": "正则/命运卡片.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏开局表单": {
+      "id": "0558d017-d225-447b-8f48-cfd6ee9f8fc2",
+      "findRegex": "<OpeningFormUI/>",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "开局表单": {
+      "id": "cb4763e7-18d6-4706-b228-a8bc41f2b9c5",
+      "findRegex": "<OpeningFormUI/>",
+      "replace_file": "正则/开局表单.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "隐藏状态栏原文": {
+      "id": "b59e94c0-93e5-4f2f-a06a-20dce5402cb5",
+      "findRegex": "/<ztl>[\\s\\S]*?<\\/ztl>/i",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "场景卡": {
+      "id": "834a2d2f-202e-41fd-bca6-19c4ceddd3af",
+      "findRegex": "<scene_cover>([\\s\\S]*?)<\\/scene_cover>",
+      "replace_file": "正则/场景卡.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "立绘": {
+      "id": "09a3a7db-ce2c-4071-aec8-be28a52b7f51",
+      "findRegex": "<SceneInfo>[\\s\\S]*?</SceneInfo>",
+      "replace_file": "正则/立绘.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "插图": {
+      "id": "d55c7bef-6343-42d1-9b41-e4cf1d02bdf7",
+      "findRegex": "<cg>[\\s\\S]*?</cg>",
+      "replace_file": "正则/插图.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "亲密插图": {
+      "id": "abd15369-1fd7-43f0-bb8d-12008f896277",
+      "findRegex": "<nsfw_cg>[\\s\\S]*?</nsfw_cg>",
+      "replace_file": "正则/亲密插图.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "开局选择": {
+      "id": "1c16bf5f-2f01-4a61-93ee-6490ddfba147",
+      "findRegex": "<character_menu>[\\s\\S]*?</character_menu>",
+      "replace_file": "正则/开局选择.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏旧场景卡": {
+      "id": "963a1dae-bdce-4144-bf03-a65f7fe88326",
+      "findRegex": "/<scene_cover>[\\s\\S]*?<\\/scene_cover>/g",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "minDepth": 3
+    },
+    "对AI隐藏插图标签": {
+      "id": "d3ca74fb-899b-4392-bd99-b9be1521875b",
+      "findRegex": "/<(SceneInfo|cg|nsfw_cg)>[\\s\\S]*?<\\/\\1>/g",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏开局选择": {
+      "id": "b11fc711-ba50-4e60-81ac-e61264f8a3f4",
+      "findRegex": "/<character_menu>[\\s\\S]*?<\\/character_menu>/g",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-金克丝": {
+      "id": "b66139fb-c522-4a3e-a775-4e6f11c68533",
+      "findRegex": "/【金克丝】([\\s\\S]*?)【\\/金克丝】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"金克丝\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #e05fa8;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(224,95,168,0.12);border:1px solid rgba(224,95,168,0.28);\"><b style=\"display:block;color:#e05fa8;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">金克丝</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-萨勒芬妮": {
+      "id": "5a6f0941-6011-4678-b0d0-e598e5d94317",
+      "findRegex": "/【萨勒芬妮】([\\s\\S]*?)【\\/萨勒芬妮】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"萨勒芬妮\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #f29ac0;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(242,154,192,0.12);border:1px solid rgba(242,154,192,0.28);\"><b style=\"display:block;color:#f29ac0;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">萨勒芬妮</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-拉克丝": {
+      "id": "a37e49c6-ebfd-4a36-be4b-92be41fbfd81",
+      "findRegex": "/【拉克丝】([\\s\\S]*?)【\\/拉克丝】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"拉克丝\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #e8b84a;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(232,184,74,0.12);border:1px solid rgba(232,184,74,0.28);\"><b style=\"display:block;color:#e8b84a;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">拉克丝</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-阿狸": {
+      "id": "23db429f-8ca8-4da5-bdc5-968a99d0b6f9",
+      "findRegex": "/【阿狸】([\\s\\S]*?)【\\/阿狸】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"阿狸\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #e36a6a;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(227,106,106,0.12);border:1px solid rgba(227,106,106,0.28);\"><b style=\"display:block;color:#e36a6a;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">阿狸</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-阿卡丽": {
+      "id": "60b61de8-3659-4c5d-8a56-397f9a584df6",
+      "findRegex": "/【阿卡丽】([\\s\\S]*?)【\\/阿卡丽】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"阿卡丽\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #2fb59a;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(47,181,154,0.12);border:1px solid rgba(47,181,154,0.28);\"><b style=\"display:block;color:#2fb59a;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">阿卡丽</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-莫甘娜": {
+      "id": "580d7aad-5c69-43ae-887c-d715aa1dcd84",
+      "findRegex": "/【莫甘娜】([\\s\\S]*?)【\\/莫甘娜】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"莫甘娜\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #7d5bbf;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(125,91,191,0.12);border:1px solid rgba(125,91,191,0.28);\"><b style=\"display:block;color:#7d5bbf;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">莫甘娜</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-迦娜": {
+      "id": "d99e0251-749b-4737-8562-b5fab49a9318",
+      "findRegex": "/【迦娜】([\\s\\S]*?)【\\/迦娜】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"迦娜\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #5fb8d0;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(95,184,208,0.12);border:1px solid rgba(95,184,208,0.28);\"><b style=\"display:block;color:#5fb8d0;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">迦娜</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-卡特琳娜": {
+      "id": "41d5276c-4138-4670-84fb-d8dc6c76a13a",
+      "findRegex": "/【卡特琳娜】([\\s\\S]*?)【\\/卡特琳娜】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"卡特琳娜\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #c8323c;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(200,50,60,0.12);border:1px solid rgba(200,50,60,0.28);\"><b style=\"display:block;color:#c8323c;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">卡特琳娜</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-蔚": {
+      "id": "6bd60646-f47c-4b2d-bf4e-0c13cbc6823a",
+      "findRegex": "/【蔚】([\\s\\S]*?)【\\/蔚】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"蔚\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #e0507a;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(224,80,122,0.12);border:1px solid rgba(224,80,122,0.28);\"><b style=\"display:block;color:#e0507a;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">蔚</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-凯特琳": {
+      "id": "8906653b-5b05-4708-9eca-c7b8a06bc5dd",
+      "findRegex": "/【凯特琳】([\\s\\S]*?)【\\/凯特琳】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,UklGRoIQAABXRUJQVlA4IHYQAACwOgCdASpwAHAAPlEei0QjoY2NxxAcAoJbACdOQA44rC/qvNPrv+S8n3UNGk7nf5f3VfNf0feYXzyvMh+3nq9ekD+6/432CP7d/gOtP9AD9pvTp/c74Rv7B/2PTMwJrgP+b8G/In7r90fWdyR9b+o78w/CGOVl98i9Qj2ZvxIAvrX+v/jlayvfr2AP1o46r0v2Bf6R/jv2O9lrQD+h/6H2Df1t/7HZI9IYO/WIITBpbD/BpC+cJ9fPLzsVA5QMOzpb90D2LprDrBCEDeQy/IqeL4WKAXbNz9ijkMumdDnW/qc+/I1VG+fXmWTiZ9GuprubB8z9PHdMiIWdLvsRbUVs4BRVwZq0K17wmCDBf9LBU8OrJ/54Qd4ncnTdFldWLyOZkoMBJGLeGqmS4acMTZGDU3dvEd73qQE6l27l97c9uGj3vKIMLbGjROXSQD+3WDEx+FlVNiLepg7NQz7u1xQ6EMJ0rKI9OHl0VYmoik76J2GfXPcFo2O+4OHToT0XeECpEy3eVJsgOJ7EE1BqLGaFY/KK4eh3Sx2G44xGXD7mvGpbDyjlvNYPPDK/VbOTZgILXZmJDSPIbmj6aahtba2/AX+YrgTw9s6ERf6dnAbdHJeZ68HEcDZB5PLbDpVgAPxYXtgYqnC5yOYF9SiLDBhmhdng7gBiMpAdK1HtEhEIjm0YxFKK74WdrKJA0SpJgWIQaMgCX7qzfD56Zlvw0rU2ML/ukrXIHmWt8MA8JTXc9FIX1G2DFk9HVc/xXEjaaQRMZoW9bGaXu5EC/YeeiBgFLY+G5ozGy/z11cVnxqrMw/TBjfIGzztcdpLa/8VURCvCj1CriJ6oBFCs4AYO4piwb69gIVSKQLH7nf3dK38Nv7Wq+6/odf+IKOYfK3S5ed62Hamyy2sa6nWAsqe3HBk30VJBqvzquowxsDtu+MFvKhIZBkkbDkfdSVlrxHTDYjrXAoercoZBB1f7g++iHjaGkvK5J8aS/jSt7/ad9CfO9ju8iw40LQFBibNXSEX+Pmi7UsV6ZGtDqqmW3FggTlqg88V2hXmpttbLZ4n8uKC+Z+A4B8v5xms+vwsYs03qrPp5OSy2KE0mbEOujCixNcGyJ/jveUyKDtKQ2i2yDZTuK8JbI/oHfiKMdexhhvmP32nYmeo1IWXtUYm9/hd4BOP3OmPxauP5C/VRIsGnCw1F4lWho2fD8qXTk11bhMnWvJr/GGYkc6aJjSaH5xrQXpAXiUdUznuG9FOgQKOmqjV4H0BMgiPyY/tOEhlEUlbt3x9J1Bgm3KpfehEi5oxKi70qR/J89eCnhRnmuYF6VmC8YdOd0hJosf1rp/lf5aeEqu9a4ZUxllO+SWTe62sLRBqyLRD+rTQSexhsEufy/ZDZ0OCa0ydSneJ0pphQ9DuaGl+Jz1CCtHI6PbzqNvEGDs5s1OOrTsXNWlWCb/ns3NTehT1v6LLXRV+US6XysGHxSRCpKczI5whoI2RHcV6KWNE2mrtYa/N/40RpT8T83yQtfCgVmGCg4wKnoNyCYGndM6WwGRx4xbNIzBkViMZrr54LjhDt+OfgHQbE/1DJ22kEzm9RHJHHWE8PV0rBFKGwNtGp41EDxYy5RWujU5na//hoymfUKP5Y7w3mW3Gg1kMDzP53qXhVqSAOGUqOG97FTq999OyjkIjOy7cQizUMOIBnGHrg4j4A290P4XUE/raf31rOB3KetqTHkQyqHzlajvWICOc76PKrYZfb7AcAQzJ9cjM4xRxtthirHABLrDuHjzbksJISSNGCwUwl00+Llm8LRe/UyfKxckOcnK1KdmTZ6IjVMfFZE8WPd/CVIkSEOC/yf5cs/sZ9HTokOTF5bV1+PEvF2vjRKArrwH7UMNWLtoEMGUiGX2cMgBa97sUE1Dyi4xJeBIwham3AOtVXTSSqTmua/7ZPf7zrEbD4qefonjXy6M/zMhr2caA47BeE4x1vvxykbGSyuqdkulPSk6W1qySelDVpQ4Gice9LPr9Q4XGo0HznorcWPyl2t+3+X2WNPpcpYzQRb0YVgTGTAzF3emuJcIN+f6hKoBW78lWie7Vuyx16VchgIK5mjOaCAKG7N8NrrqrdIl2dlE+IdnYVtwG+jOMovckWWaoqb2VOrCfOmBvoHG1bWQ2FDrjKXGASjkNHGeF1J20jApzxFlVCDuvrcE5p7XSKtYS2QQhnGrGj+d++/JdZB+NjU7lmna+eV4b1PFR9Yh7DsUDe1IJs06xW31Anzr3Zl8++ido7VbL+qiRtCavgiR4R5GbYgHkEWjsfTwSx2JVpJBtZK9oGNCDE5iOSuW7qsnPXGCiOb+nzHH9a880Liq/Ip8/WOhQxJZqfU6OFAh0+8erBqE/SGPRB+8ipIlGZQJRPcmvY9j+RnMPsuIG81BN3EvSGCM8PNot/PIkSSt7LILrG1BOhfmlQ8ESH19LJctJ89B6i2Q8TCrlBtD2jFnGKJZ8oBnAkh7ittdjtjegWHMbUxKsBjLpG/7RCG9fIClBgV8VQJqmDYxPzWRSe+x/lZWy+eqK34mWzEgTITrpj/o2kGP9KxU4X5l3lqKkUGhazxi0Yw1ifDVvI40b/SLFnfMC5NOTpSWqopy3SMj+SZf+pkTfWf2MB2+3aZ7mZwfGOcfbjqfx2NUHj2YCh2/+HeShrwwzXyJ4jECGMOeLwaEXNQ3zh6js3yT9Xp0KqmmqW+lZtnopUOFfZlcpimHyc1VdD831w473T1lSD7LhmyGe3orpTR2EHeLYHMiPiBsZLv04114kjpp3yr80Z1PUs07HMWErDdaU9XKa71h68WutpA3CtqY4SPF+AITsaOums12tL8dZDFfr4tKbDCTNODymDO3aqHC1qTnTd1hs38LwcRjJy6Jp5uX8q85TEI/RtH1QkCvBIeBJF67q9WniD4WLWTPEekJvlvmOL6525/yFpVnLQjeX6bAvFwYzXw5/Rvg8O13O7M4HOOkoVkoHrcPe7JNkb8mBwCeh7Nb3+5Jm4gVMYDy/+69AbkVxpKTYcN0RjQe+lsgSjGGA8U501HMcKv1YP0fKD8HLYu9xy2LGgT3TvB5Q0cksJdFrW29ThBk0nFWf8jCFoAuNJmNwWP9dM3nx0wEnCX1RSZLMZKXBD2pHU8iZVJVBGRopVupy6SwFApSu4JrJZu9EtgIzmSxhbk/yvd3WqksQEPVtW8f7EFJOvb/FERkMBOiTOv8VRly1t6gLSiMC2+LDmiyjbj8PUyafceV2CviGHJ6R6UHfv7Yyzk6xNKeH54WyuShDtU1r+HkBPPNJ3vI4yj2+YA0ram7Z2qHUWqp1CuXsVIaL/N002zWkD6wwvvtTyw0tXu1REfB1HhO4qX1Zn7A5+hJ36nr6GGUs8RMU4VgquaO6eN2axIy2FZuPZufqFCZgFhBH/GLxW0aKoye84ok7r6awbwCOtAoqX5cwEd3VMWGMSgq3kLkBd7XD/VqoCha0sT9G5/O+j55snVwQ130DQuUFC4fw49Y65E8bSRbvXjroeGPpGCiK9zFaCE5/t3r5zFTb7kPE3MFoKplCgberC3FpxBPZHDprsMiHwstI/+KL8Y1QS7pRkbWAqfQuO9uBZRYjvjtHdL/AAJNlzGXlavT8W2/Wmkeu9sbifc7icK5oew/LeNLtkb3WIzEScgeG21iemmbOkdEJw9FZepCF/v8Vs5g9It7xa9zkSWm3FHyF8y5DNwaiiQjX/wVLaTMzQXOXfFH8ZLJfCQ8IfP4g4oiU498JByDstzsiMZLIpcHgsOMrkqFZ+G1633YxIAO4wrmNFyr+a/o/qKEQO848PfY1RoqQ8eqe+niaSI0/2pDqdcGWRQD3mSHDJTdjuKU/cgoedv53CiX1CEcFaFGayICpAPkGvmD74xtKZuXWcn6/X2TwqpJpmuK0xAAd0BO6TFcfjz+b/cNb30fLD4zorf6swb8P0vRfJXN+5Tzf0SGYYl7V0Qa7qkNpe7fWhE/9GWY56xQztH8KGLOd5/zvzoEtQq8R2OeGTz0avI/8Ch4IjFAN3VSAfKlCq7hl/2KdkzRakpNkg2pqn5GyL2yBdgCeyl0tronPK+iGNSZFEAGUz0enntJkaID0ECiTbA7nApqMaVUJghZPDX59KNDZccYTiX31kLPgv5aNbxTM9ahKAI5Jc85mmHIYfkOjSdN+4y13EePFE7mVQ5VtH//9vG24CkYFikbnEumzPdRMDnrq3VhogBSako1D3WYVOKx7QYI7qnicQrovI5bDfHYFWTN7LUVLxGW9DGmZDv6p464XUJs63qGaUN66nQ1C+cKpTisftzD5x4V1abz7L4gD7YRZUir19VRDPELJpj83QCcsaKgjeOUHin6dyKx0NCUiYVgVUh+YNHn6gvm/9A7+gIUsU96OzPhJ6GWguhdr/Od1RLbGzP/brdSgo1R437TWxm/GyxHB+tGUK1bQrdQ7LVHdFX6g+VMkipH5w35fldWu6FcLWwMG/Mf5/FW4iW0pjuWbsFYA80mtXQxCI3d6nJbtrsCo03XpCYwXeBkQKqmxvvVOhRfVyFuaIIXHLK39cKYRs6vhu3xt79e8WbeTQVMkMZURRVjBPL5XxYJP0pkKDge4lLDnAqNp2vAuR5NkAcwCusDKDJmoD0IzkcnF5LZUPRnB47kxUyVnCgfFUv8tlTnE8OMhsrgPjqptLrHk6fsHS4PDGZ+Pc3owIN/zQot2GAFC4dUPdJDOnmEGsDHqYUL7mAC3Th0rxfG9JhmQVAMbCwq5gVfDIYo4lC7ZVpTqxeGoOr9PJeee+ueoZrzoYkoQBurR9gd8+A6qtXkusgDYefBtkJ4zgkwid+8JxQwE6pZwed3UrwUnLQg5o6b1g/2bSoGEJ8O+as4827NokA/MYD5ZohkZFKswsd82x1Jm8lZ0D2P2MWdbnstBu13KTXsP0kQkzLpzvCo5+zekK7/8ivzQcOVxCMtWI2MofP65SuInpNl5+ILrLfbKjvVbggbilrvuGLbnmNzK9tYI+RwxyLT5Z8isrHJgC6A3dpLU3RZTYOMI97+bjaEUK0Ssosc5WES4s9aVGeqcGgSItT2D/G3ensUNuh/fcX43sRdBvFMEKLAHQYWMSqV/yRM9GW+4MXnd7yEtIkGtgyWhi386jBp61xmhYQqD0EqQ1G2Xct0Ku82qInuoseXoK3m+/0oIdKCQPD8h+4JhJSC9TUM7iKYokwLTG6db4Xi37YY17PTRgMr2jVPIMBni9Y7F0lPx0U8mIZ3ueswDGTgUSbucL//fdsX5lUqVsJDb+491K2N7k0a2s51etmZD/79jSEvIcF0L0/tARO4QpBBoShudCnWoHnnv+nORHMTet5S0VycFV47UpPegMAG2VPPGxC14d8wIvSu2zP5V6NSSyPTKBa7gW3M7m0kXS87sKprZsPYb/0o/PWf0BwUHpteniOvAhk1seyYVQRceAaHNV/q+S1QF6jHH810tmbRN4wKTuo/kI3YrUrFIrVymuWbvVfEnQDbnY1ovcs4TJYzrry6/JZcGJ4DiL2h7McxtoT02Va+npOzzeBqiGWIx+ejd0XrzRPER8aNDUMoi+sMM5xI2sg9+/VlI8ad9694/Grzb+ZFc7SAAAAA==\" alt=\"凯特琳\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #4f7fd6;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(79,127,214,0.12);border:1px solid rgba(79,127,214,0.28);\"><b style=\"display:block;color:#4f7fd6;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">凯特琳</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-泽丽": {
+      "id": "5f448549-8c3a-411a-824a-eab9fb425b54",
+      "findRegex": "/【泽丽】([\\s\\S]*?)【\\/泽丽】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,UklGRlIRAABXRUJQVlA4IEYRAADwOQCdASpwAHAAPlEgjEQjoiEZK7dsOAUEtgBOmVVBn918yKtf4f+w7d8Wi25/wPVx+pN6l5h/OK9Jf+f9GbqZvQl6Wf+8+dvgE/FL7J4D/jnzH+k/tX7q+vRir67tQv5h+B8anJZ456h3sj/bejNBP0n9A73U+3cTviBcKt6h7A3kyf5Xkw+qPYM/nn963639nXfjhec8ML7sg7Pyvf/ofxvgOefZqALuQWyF7HxEcsR4FI7xcUiGifB/s+7mmJVlXbLSTq76Kek114tHJrH0O/IW+DL6q8F31Hy2WvKAP6EPmn/98U6/0izRSPP4owanXzTxKJMYDW4JCDJDZElW4MYILtQrskEimA+kJeUZsYdJa/V6L7z0CQ2t1o8eHDYErqi+Y7eAJLoFsytwzTKCQLO9jX/Tr/nv8pKu3JFbZayCSzy+fJHpMz906UUf7bzxafJnNZGV9zs77eJwaTOH9lK4/vH1hb3/uv86yB4pnO0MQrxyBTB1exVqH6QEAvBkHFuSesZgnRae9k3N6ww7ivf/IwDyEWP+/e4CBYmrXItCqFq1u0u63NHOt/hi7KZPnmyW7SKmkjvru938YOz4hOEH3XpscjOwpDDVvCtoQBYWPZqxuScAAP7+qoi42a/gZ0t6U9Frm6813QvY8iKOaHMSWI86AcDekSdGz4FubbSSOA/ygwOw3MI27EBwSwq57WKYkiKHn6eKOsUy2EFtQf2uDBUO+/zHtcVKhVJvJvp4Ko6bc7vEkJ/NrFnAvW4bTZJ7M2u7SG/jheZuSeNHM2vXeHV5cRCIduZ7TBr1dqS9PSLUnp4MU/dClwXSKZPDzfNrp4yq1BxF6Bp1hZp26FffdaDGQxtWzMAFhlkRUPV1M69UCr6lumBtWoxbqkDQC477PtNhn+BKZbU52r5qJn8zRRpOFgrT5NEddSbIzex23RG6S0pAsV2WnrWUK+2GNNm5/d2Zs5LR2OC6qCj1Fc2j8quoH4DY4IH7hfKRoMbldMVa1fbH85amR3TKxFm2ykk5pmfodMyEXtBvPJ1xe06PITLyYansPd5TsyL5nAucfQeKYZaQEozOu0vzc9IHytPOv834J+OVeGT5gdF97pXPLF0DgzSW8ATZGGD6HJBmbuBs3ZeTyFW0vyc5LlCmNp6/xKldp1PtfO//FBCM7IqMm0HG/M4npo2iSXNtxbjQeXmk8tn4rCU1aeou/zTJb+VZ7PQhDudpnK7BmuNvqpgr19cXfgF+aC8V5ouTjSoJP39C0qykuIBbLnhBZlKLEF092tVupNZS/f0HHH0n30g+KTzv6XbxXXVeusvRnWt4MAPVHT4Zlptis2gYg39IfD5sE3SwBQs5YqJQ6nEsMJnG5rfeL8qg7Bgd0QKix8i3EO5Ou5ham5ADTWe8PgtdlQaItolvGBrNT/lMYu6/ISJldisH2JSxGyfPbBBGUAISpkwXxzgG2Nx6vmAo0orZNfqOUIoO83YOjNUC/q6Il/m5QaVDuZJw08agIsclia0qK+gbh2j6E7BVnETo90ZvQRNIxwedvpJ8M2C5o9HHJkxN2ouEV76CRnusYq6/lJkhPv1GEawwJHmtlBc+qa/mJb0bio9fjVcEVR/3rDvWLMH2a0NBmlE8DxoAnlTVc5eJiGR9CdWyUIci/JNw6apFB11FNHZaQ9xYQScwF3X2AUzwITmYRX0O01peH9UpoPVBha7O2BzGd8epZgceMK1uhVJtU5ag+1iTO68axNIzvm5cg//f+VGFvpPumtYhtCNZfnfRW3hpGohEyvd4YL7e8fdedyJk0vLUJtI8xOpo8RnzEUkA22DxulbnS90oaH5KJE0bSliVeAaVPkcFWgwk28NE1FMRrBdsdxGiDLaWh/cfjhr93qD5XVeif/x4u0vX4AybcD68Klx1xg5cnijslyRbuHMpo0tP7LT/7xkSJhghcHF62Xe3yS4Lasswi+mdWp9Y6Zv6duYm8d0GzhkDiDItAWXIssEeLfpEgaEIpsb+r4TvZPpfJrQhLLcmQu3rU8/2TLut7JCT5PdXRWmB54WRuOw/sT9DF2LqTL+wvsuEof1+QFLqMzScJfOUnkpS87ED4R60DoADm1RF/56qpFsE2ry0UvBY148Y8sq2LSAyPjl8rDrNvYBcXy0it6R60Sij9kIQCrsKvHid2nIQp6Ql/KgPrcdF7tVPwptufQpF8Wi73kJmvaohgy+UJUIWa9eQIghoT/dcNwNaVmgKEpSMPY4RE9WPm/7tQYt0XOGVgM6+lQPGKdT6vD+javDc22JFMLhnKuJmILXvVf8tIcgN05n+N+hOtX4ewLbpS+JLt1CEmfJS4DE8HvMvE8/6NIzCFCoe7RgH4s0sO9OOM/vmsfSFzqM38CR+ouuXaYNvdRbsvCwzokSLvZYt7JwEPJQDhpomekXahnzxewJjM7s0qjEKJrWympJzMuXmrJrc1ac1hFzWbc+To/8EnWFiXMuSObbMC24LNXp1qNbX+k9kVlwVWTmmUHyjHnqSCYiG7U8L+CVbPiwkxnSnw5FoemVxXy2wcHqBOfHUS/lQYkU7fX4UhHqyq7KQ48mRKh//yG1AM+3K6uIkOwy8x54XK39HnwpH4259jiRiWVyEtcUTE2Hkblh34428zAo8Lpzfs915kk6V3G/svTU9FGR5dWUrBXQZZSa+F5RvY+r+WPPwjizuu+svONuWSxhzf6YIX0VHlumECO71VNURnryVwKQD4xx8wlHgelFGuKp1m7CU17j2bWy6hxHM7jMZ8upBCvkj0D7b0GlPSsUAQwNL4w4n+T1EP8Kz5S/COZPLA8Hz6eIWLxPbXoU56ou91UGGgH7qnyL6a+S5V8a4oRarIqIV51kyo+yFZdsCNxaBZgvdyhUFfQTzld+b2RB/mKv7WmviOuOJvTJkQ99GxHRE2kb4PbpUwnuADA/Pf85x9f9enxtLtgFiMuy1TCnQ4cQ7b0gLjIpQoJThoCCVr9NJJGqX8wyuD1/5BjSN2z36fX6Xju+m5dYCccDD4fXFzLJaJ3eHoVzI0OZBp543E0iL+ETlEfrXfjGtS/eWcq6RI3rX3aDCJRmfskWiOaeSP+8Ued5QuKdTxpYQ8JMUjtH1s1Hdmtvq8Rb4qdHLQrlLpBIn71nTvjDws+hGp9dqlewgaOwKCW6Yx4jcPb0Z0T1Vv4urQ3LqZhwzLUqyZtn3RoG+3XDl9nS9ENCzOyTuv/8F72fK/8c/67Z3s3pLSvg4rquvxq9KPRZnEUXl2WUbmvR1BAPISnd7jwIZFRANfWJDoOP3r56eNp02rmGyyu1DIomxrgo1eCH0mFOip/dOwArgzhwkQ828//6QXph2QL3PGz3Vdh0OwaFK5TTIGcp/CEdFPzZJxaGUh/xSAzyuchTLKly2chqyzfj7G0/SKdFM3o7j9xwvZ79aCgNPW9Tzj5uZaeSuBICdjolofexSwvsknwPdQyzy2Q8hLguYXEw7AXYw54MQzh6Cf5so/sx2S8sv9obym8IeP5a0W3fsYs/58xuJve9/IJr065p2c+TTY29O8IJ2UuQRBma9YwfP/0vLRPMNHN0CcY9TJJCwNmfrVjSJe0qs3qnB+E901/s4rH+7oyxszbn5LtO/0x5/t/15pkpIW//iWx/YeAB+z7ozOpYCs6rvO8UzTQZJxTIBmYc9vzcIUrD3JrfYyf627AgX8gPNvmMxhn0PtZCSyYPMuOehuhVZCYbCFWZk9DpkDYCWXc/eEFPr8xXHvYz/0kJRJBxWfKniGtoRpDisWBj3IzlXp93PuRb2dBucEaQfM1LN8x6ZemYa6j1v/g8R+mo2DN+JPrhJh9cowcQ4c/+TqHBJWEPrcJ2w+Tzg4nXfyjECo80AduZhA/aVuIO5K6G983CUJqDz5f6rXcYZ70hcK17nXQpgeBqXI2N6PZekcoH7afUIUqlxWqjHHxa3+mbmjz0S13rtGyE3y4rBNyVyaOyI6sx8fAd0v5VXNHtN2DNNfm7ZuqvgU7NfGLuZ5x+jOKByEx74g84gGYQwMx81yQ02JAhJ5x/HOmtZHPW7GhJtHfUvOSayb8e06X+Py5vwa2aN3+rrSYrJwhOPMOLaxZZwK748L4iPe6iG/2Jz569xnFYua/ebsdurGOUb3+IiruGR6It7fv7Rj6pIkbntuhblqNSM8DMPZV1PWeL8SL1JaAYLinZnlotJZwtXVDn5rZm1siJSfaKEKuD+gSOO36TBCn7MISq0vao44hDZoNPlWqflgz8jp1hFM+xjNPoiZ5LjvBPS75GjLELmUp1H7/k7lrjj68V6goS4V7v/TfL43M9ho8URMqUSl7PCbPSsEy82KoUVr5WHd6XmaYZdwv40ciAN17BddtHuYdYTOzK82T1aG/zxlv5DrxNcPTvIi4iF0wcTuDKNRbP/oD9Ys3fUgEKuzZL8vnc7HX9sd5YdefcjUxOnsylGi5OlxsReXEF2xYFxpxlCaytAySi4FXaszlQbjP1Hmyd6adBMAm/OsafTdJx7/8XQcaJQ2LK/5vJD1YpqIinz02pxK+LYhF7sRDToEITJbteogSmkKZO18RvQPyNm1v2aGhiufk2H4L9JBOcO2IeM6DbOkOR+ysC5b2kbuqyxw8kloMdDqUNPfeIszcvb+xXWkuvtrs46pXqJch9PRIBajkLnTHBle4rGRnw6d3Qh5OI2VvROzpGw8mLlfuwZ4J0crGafay1iKOZoHMiRIOhwh9hAW5UjVo8gEq3lZmYpH1pJdkGzrY5fyj8nvDYIHdpC9mq3w7LCxcZMi2dwWIO9Urr+dyRHcGU6cvNWupZAAQkeUznVj/vs40DH+1js40b9xy4S3vV/qYkmH9DJ2JG16ouK9ukaykACLybk01OLFI9hOfcBHrk3FcDV7CjMkLZOSjGfkrlZj5E240sMvYh7aAdzZXrDpxkOLpaMITD4zQ+DD9sXmKiYXe6PfcWfDN9TjZRAzhd7FpK+a7uzTesVuCGn/l/yKc3ADxd8n+p+EwOHh2df0NwKftF2gKjwNdkfNG+5NC2wfm6s+C6qsz4DM/dj5b2U+/jBBlsdemCcFKGF345T4dArLJFLNQGk0usBbmlMNiFbim/Ag0c2gzabiFA2ziqfHl+s8qwz+psEERX7AsC7LqUP9BkZiT+DaB3DuwYZIm5V0xsp/x6MykWKGwRe4ta9UqSVTnCX0CCZrVePPnIZIzRIxMjv9ZtKwYjhKz/AM4tkd4o4LcrBHLpo0iqEO8oA+ebfSQxE4/3erUijLSUtH1Mg7wbms0TalR2AKBxvoB1NM6B0WSelvjPCsMh52bmdH2UKI/s/f2GXHdPr1g1LbDFtL9VMoGqiCeZZse2q33iavRkybYslPk+kRS+EFqJJ4El1qJb18rf7q9A6d63FgFkTwnDhJH5yOxq/LumqekojgaT76QEM2J4qwe15OOWf7VwysGD0e/rDaBunO67jkyn1cV6kxlNahN6AdZQqyKzvs7+OwkzznlpBaTxgEiSmvX06PV7/KIXP43LcDDTaJa6r2krPK6XejU2PWpUfkT/7eir8MiaRMd+gZxlPb4hpMeOWqmFevkqkJUknM0NgQ2KDu4wGu3u74rxvUT/4cs0vx1/908BTzUPifg3MHq8yA+uuMA7R2qyu+Yd1OaufxqUcOwGwjF6mUx2H41jJSA10/dOCZOkV06fFpgjcjvGG/4Hi3G8r+Y25SnaphZK3HME8G0rzvej0aRmW92zWDHltpVAM+4bPDfood09jURE6mk5OYy+Ia1SqJXV3RCvv9DBKDyVNqKaA4KTQAwaG1quYdKriID9ym4HbzudKULue1dmG3X9PUHb1S+aMQwgNX7IML4r6w5ToQSvfH+gnd7z5i7/wd9lzqNMiDA6AjywAAAA=\" alt=\"泽丽\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #7cc23f;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(124,194,63,0.12);border:1px solid rgba(124,194,63,0.28);\"><b style=\"display:block;color:#7cc23f;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">泽丽</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡-辛德拉": {
+      "id": "e878c177-6b89-41cf-887e-a93527014e85",
+      "findRegex": "/【辛德拉】([\\s\\S]*?)【\\/辛德拉】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><img src=\"data:image/webp;base64,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\" alt=\"辛德拉\" style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;object-fit:cover;border:2px solid #8e4fd0;box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(142,79,208,0.12);border:1px solid rgba(142,79,208,0.28);\"><b style=\"display:block;color:#8e4fd0;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">辛德拉</b>“$1”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对话气泡": {
+      "id": "69d0b005-b174-4b16-b470-d31f08ec018d",
+      "findRegex": "/【([^【】\\/\\n]{1,20})】([\\s\\S]*?)【\\/\\1】/g",
+      "replaceString": "<span style=\"display:flex;align-items:flex-start;gap:8px;margin:10px 0;max-width:100%;\"><span style=\"width:36px;height:36px;flex:0 0 36px;border-radius:50%;border:2px solid #c8a45a;background:rgba(200,164,90,0.18);box-shadow:0 1px 4px rgba(0,0,0,.25);margin-top:1px;\"></span><span style=\"display:inline-block;padding:4px 11px 5px;border-radius:4px 14px 14px 14px;background:rgba(200,164,90,0.10);border:1px solid rgba(200,164,90,0.28);\"><b style=\"display:block;color:#c8a45a;font-size:0.78em;letter-spacing:1px;line-height:1.4;\">$1</b>“$2”</span></span>",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    }
+  },
+  "initvar_overrides": {
+    "开场白/0.txt": "开场白/initvar/0.yaml",
+    "开场白/1.txt": "开场白/initvar/1.yaml",
+    "开场白/2.txt": "开场白/initvar/2.yaml"
+  },
+  "zod": {
+    "scriptName": "Zod",
+    "scriptId": "5b3b09af-35e3-4149-a0f7-2f08776ed6a1",
+    "schemaPath": "schema.ts",
+    "importUrl": "https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js"
+  }
+}

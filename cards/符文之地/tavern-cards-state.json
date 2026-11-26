@@ -3323,6 +3323,288 @@
           "order": 9910
         }
       }
+    },
+    "主线": {
+      "主线：双城之战": {
+        "abstract": "皮尔特沃夫与祖安：以《双城之战》为蓝本的六章主线；仅在 主线剧情.双城之战.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 60
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.双城之战.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/双城之战.txt"
+          }
+        ]
+      },
+      "主线：法师革命": {
+        "abstract": "德玛西亚：塞拉斯叛乱与禁魔律法的五章主线；仅在 主线剧情.法师革命.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 61
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.法师革命.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/法师革命.txt"
+          }
+        ]
+      },
+      "主线：初生之土之战": {
+        "abstract": "艾欧尼亚：战后余波、灵花祭与诺克萨斯第二次远征；仅在 主线剧情.初生之土之战.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 62
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.初生之土之战.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/初生之土之战.txt"
+          }
+        ]
+      },
+      "主线：崔法利之影": {
+        "abstract": "诺克萨斯：斯维因与黑色玫瑰的权力斗争；仅在 主线剧情.崔法利之影.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 63
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.崔法利之影.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/崔法利之影.txt"
+          }
+        ]
+      },
+      "主线：冰霜王座": {
+        "abstract": "弗雷尔卓德：三族争霸、守望者与半神之怒；仅在 主线剧情.冰霜王座.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 64
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.冰霜王座.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/冰霜王座.txt"
+          }
+        ]
+      },
+      "主线：太阳圆盘": {
+        "abstract": "恕瑞玛：阿兹尔复国、希维尔血脉与飞升之战；仅在 主线剧情.太阳圆盘.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 65
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.太阳圆盘.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/太阳圆盘.txt"
+          }
+        ]
+      },
+      "主线：焚烧之潮": {
+        "abstract": "比尔吉沃特：普朗克与厄运小姐的港口之争；仅在 主线剧情.焚烧之潮.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 66
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.焚烧之潮.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/焚烧之潮.txt"
+          }
+        ]
+      },
+      "主线：星辰之巅": {
+        "abstract": "巨神峰：日月之争、星灵与铸星龙王；仅在 主线剧情.星辰之巅.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 67
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.星辰之巅.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/星辰之巅.txt"
+          }
+        ]
+      },
+      "主线：王国的觉醒": {
+        "abstract": "以绪塔尔：开放边境与奇亚娜的王位之路；仅在 主线剧情.王国的觉醒.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 68
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.王国的觉醒.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/王国的觉醒.txt"
+          }
+        ]
+      },
+      "主线：约德尔奇谭": {
+        "abstract": "班德尔城：门户失灵、忧郁蔓延与维迦的阴谋；仅在 主线剧情.约德尔奇谭.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 69
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.约德尔奇谭.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/约德尔奇谭.txt"
+          }
+        ]
+      },
+      "主线：虚空入侵": {
+        "abstract": "全境威胁：虚空裂隙、卑尔维斯与守望者；仅在 主线剧情.虚空入侵.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 70
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.虚空入侵.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/虚空入侵.txt"
+          }
+        ]
+      },
+      "主线：铁之亡魂": {
+        "abstract": "全境威胁：莫德凯撒归来与死亡国度；仅在 主线剧情.铁之亡魂.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 71
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.铁之亡魂.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/铁之亡魂.txt"
+          }
+        ]
+      },
+      "主线：破败之咒": {
+        "abstract": "全境威胁：佛耶戈与黑雾；仅在 主线剧情.破败之咒.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 72
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.破败之咒.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/破败之咒.txt"
+          }
+        ]
+      },
+      "主线：暗裔复苏": {
+        "abstract": "全境威胁：暗裔武器与亚托克斯；仅在 主线剧情.暗裔复苏.启用 为“是”时发送",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 73
+        },
+        "contents": [
+          {
+            "content": "@@if getvar('stat_data.主线剧情.暗裔复苏.启用', { defaults: '否' }) === '是'"
+          },
+          {
+            "file": "世界书/主线/暗裔复苏.txt"
+          }
+        ]
+      }
     }
   },
   "typeLists": {
@@ -3330,7 +3612,8 @@
       "世界观",
       "扮演准则",
       "时间线",
-      "地理"
+      "地理",
+      "主线"
     ],
     "after_char": [
       "角色",
@@ -3407,7 +3690,8 @@
       }
     },
     "世界观": "Infinity",
-    "界面": "Infinity"
+    "界面": "Infinity",
+    "主线": "Infinity"
   },
   "partOrder": {
     "角色": [
