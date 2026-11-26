@@ -1,0 +1,27 @@
+// 为每条新的 AI 回复末尾补上状态面板占位符 <StatusPlaceHolderImpl/>。
+// 这样即使 AI 因预设的输出格式而没有写 <ztl>，状态面板也会照常显示。
+// 占位符本身由正则「对AI隐藏状态栏」从发给 AI 的内容中移除，不占用上下文。
+const PLACEHOLDER = '<StatusPlaceHolderImpl/>';
+
+async function ensurePlaceholder(message_id) {
+  try {
+    const msg = getChatMessages(message_id)[0];
+    if (!msg || msg.role !== 'assistant') return;
+    if (msg.message.includes(PLACEHOLDER) || msg.message.includes('<OpeningFormUI/>')) return;
+    await setChatMessages([{ message_id, message: msg.message.replace(/\s*$/, '') + '\n\n' + PLACEHOLDER }], { refresh: 'affected' });
+  } catch (e) {
+    console.warn('[符文之地] 补充状态面板占位符失败', e);
+  }
+}
+
+function ensureLatest() {
+  const id = getLastMessageId();
+  if (id >= 0) ensurePlaceholder(id);
+}
+
+$(() => {
+  // 等 MVU 先处理完本楼的变量更新，再补占位符
+  eventOn(tavern_events.MESSAGE_RECEIVED, message_id => setTimeout(() => ensurePlaceholder(message_id), 800));
+  eventOn(tavern_events.CHAT_CHANGED, () => setTimeout(ensureLatest, 1500));
+  setTimeout(ensureLatest, 1500);
+});
