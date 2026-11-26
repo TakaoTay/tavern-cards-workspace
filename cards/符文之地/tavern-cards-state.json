@@ -3200,7 +3200,7 @@
         "path": "世界书/界面/状态栏输出.txt",
         "keywords": [],
         "abstract": "要求AI每轮输出<ztl>状态栏JSON",
-        "enabled": true,
+        "enabled": false,
         "strategy": {
           "type": "constant"
         },
@@ -3215,7 +3215,7 @@
         "path": "世界书/界面/选项输出.txt",
         "keywords": [],
         "abstract": "要求AI每轮输出<xuan>六个选项",
-        "enabled": true,
+        "enabled": false,
         "strategy": {
           "type": "constant"
         },
@@ -3261,6 +3261,66 @@
           "role": "system",
           "depth": 0,
           "order": 9906
+        }
+      },
+      "场景卡输出格式": {
+        "path": "世界书/界面/场景卡输出.txt",
+        "abstract": "要求AI每轮末尾输出<scene_cover>场景结算",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9907
+        }
+      },
+      "立绘输出格式": {
+        "path": "世界书/界面/立绘输出.txt",
+        "abstract": "场景变化或重要角色登场时输出<SceneInfo>立绘信息",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9908
+        }
+      },
+      "插图输出格式": {
+        "path": "世界书/界面/插图输出.txt",
+        "abstract": "氛围合适时输出<cg>插图标签",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9909
+        }
+      },
+      "亲密插图输出格式": {
+        "path": "世界书/界面/亲密插图输出.txt",
+        "abstract": "亲密场景输出<nsfw_cg>插图标签",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9910
         }
       }
     }
@@ -3378,6 +3438,7 @@
   },
   "description": "<narrator>\n本卡是以《英雄联盟》符文之地为舞台的开放式冒险。你是这个世界的叙述者，负责扮演<user>以外的全部角色与环境。\n\n叙述原则:\n  - 世界、势力与人物以世界书为准；世界书中有「人物：X」条目的角色，严格按条目描写，未建档的官方角色按「动态人设生成」规则推导。\n  - 金克丝、莫甘娜、拉克丝等人都只是这个世界中的一员，各自有自己的立场与生活，不会无缘无故围着<user>转。\n  - 角色对<user>的态度由 <status_current_variable> 中的好感度与关系阶段决定，先尊重角色性格，再体现关系变化。\n  - 战斗、魔法与伤病遵循世界书中的战力、代价与生死判定规则，行动会带来真实的后果。\n  - 不替<user>说话、不替<user>做决定、不描写<user>的内心。\n</narrator>",
   "first_messages": [
+    "开场白/开局选择.md",
     "开场白/角色创建.md",
     "开场白/0.txt",
     "开场白/1.txt",
@@ -3438,7 +3499,7 @@
         "面板锚点": {
           "type": "script",
           "script_file": "脚本/面板锚点.txt",
-          "enabled": true,
+          "enabled": false,
           "id": "af826f57-d8d1-4623-be8e-1fee3e4c9ed7",
           "info": "为每条AI回复补上状态面板占位符，让面板不依赖AI是否输出<ztl>。"
         }
@@ -3476,7 +3537,7 @@
       "placement": [
         2
       ],
-      "disabled": false,
+      "disabled": true,
       "markdownOnly": true,
       "promptOnly": false,
       "runOnEdit": true,
@@ -3685,6 +3746,7 @@
     "隐藏状态栏原文": {
       "id": "b59e94c0-93e5-4f2f-a06a-20dce5402cb5",
       "findRegex": "/<ztl>[\\s\\S]*?<\\/ztl>/i",
+      "replaceString": "",
       "trimStrings": [],
       "placement": [
         2
@@ -3693,8 +3755,120 @@
       "markdownOnly": true,
       "promptOnly": false,
       "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "场景卡": {
+      "id": "834a2d2f-202e-41fd-bca6-19c4ceddd3af",
+      "findRegex": "<scene_cover>([\\s\\S]*?)<\\/scene_cover>",
+      "replace_file": "正则/场景卡.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "立绘": {
+      "id": "09a3a7db-ce2c-4071-aec8-be28a52b7f51",
+      "findRegex": "<SceneInfo>[\\s\\S]*?</SceneInfo>",
+      "replace_file": "正则/立绘.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "插图": {
+      "id": "d55c7bef-6343-42d1-9b41-e4cf1d02bdf7",
+      "findRegex": "<cg>[\\s\\S]*?</cg>",
+      "replace_file": "正则/插图.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "亲密插图": {
+      "id": "abd15369-1fd7-43f0-bb8d-12008f896277",
+      "findRegex": "<nsfw_cg>[\\s\\S]*?</nsfw_cg>",
+      "replace_file": "正则/亲密插图.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "开局选择": {
+      "id": "1c16bf5f-2f01-4a61-93ee-6490ddfba147",
+      "findRegex": "<character_menu>[\\s\\S]*?</character_menu>",
+      "replace_file": "正则/开局选择.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏旧场景卡": {
+      "id": "963a1dae-bdce-4144-bf03-a65f7fe88326",
+      "findRegex": "/<scene_cover>[\\s\\S]*?<\\/scene_cover>/g",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
       "substituteRegex": 0,
-      "replaceString": ""
+      "minDepth": 3
+    },
+    "对AI隐藏插图标签": {
+      "id": "d3ca74fb-899b-4392-bd99-b9be1521875b",
+      "findRegex": "/<(SceneInfo|cg|nsfw_cg)>[\\s\\S]*?<\\/\\1>/g",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏开局选择": {
+      "id": "b11fc711-ba50-4e60-81ac-e61264f8a3f4",
+      "findRegex": "/<character_menu>[\\s\\S]*?<\\/character_menu>/g",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
     }
   },
   "initvar_overrides": {

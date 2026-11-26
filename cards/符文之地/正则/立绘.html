@@ -1,0 +1,909 @@
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>符文之地 立绘系统</title>
+    <style>
+        :root {
+            --text-main: #5c6c7b;
+            --text-sub: #8ea1b3;
+            --accent-color: #a3c2e0;
+            --accent-pink: #f0c9d6;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --border-line: rgba(163, 194, 224, 0.4);
+            --shadow-soft: 0 12px 30px rgba(136, 153, 175, 0.12);
+            --shadow-hover: 0 16px 40px rgba(163, 194, 224, 0.25);
+            --radius-card: 12px;
+            --elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 阻止移动端点击时出现蓝色高亮背景 */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            background: transparent;
+            color: var(--text-main);
+            padding: 6px;
+            /* 适配全面屏底部安全区 */
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .scene-card-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 12px auto;
+        }
+
+        .scene-info-panel {
+            position: relative;
+            border-radius: 16px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid #ffffff;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            will-change: max-height, opacity;
+        }
+
+        .scene-info-panel::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(
+                -45deg,
+                var(--accent-color), var(--accent-color) 12px,
+                var(--accent-pink) 12px, var(--accent-pink) 24px,
+                #ffffff 24px, #ffffff 36px
+            );
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        .scene-header {
+            padding: 16px 12px 12px;
+            border-bottom: 1px dashed rgba(163, 194, 224, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .meta-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--accent-color);
+            border-radius: 20px;
+            color: #5c6c7b;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(163, 194, 224, 0.15);
+            text-align: center;
+        }
+
+        .meta-star {
+            color: var(--accent-pink);
+            font-size: 14px;
+            animation: twinkle 2s infinite ease-in-out;
+            will-change: opacity, transform;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .controls-container {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 8px 16px; /* 增大移动端热区 */
+            background: #ffffff;
+            border: 1px solid var(--border-line);
+            border-radius: 8px;
+            color: var(--text-sub);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s var(--elastic);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            user-select: none;
+        }
+
+        .action-button:active {
+            transform: scale(0.95);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .action-button:hover {
+                color: var(--accent-color);
+                border-color: var(--accent-color);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 10px rgba(163, 194, 224, 0.2);
+            }
+        }
+
+        .collapse-icon {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.4s var(--elastic);
+            will-change: transform;
+        }
+        .collapse-icon svg { width: 100%; height: 100%; fill: currentColor; }
+        .collapse-icon.collapsed { transform: rotate(180deg); }
+
+        .character-container {
+            padding: 20px 16px;
+            max-height: 2500px;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+            opacity: 1;
+            will-change: max-height, opacity;
+        }
+
+        .character-container.collapsed {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            opacity: 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            justify-items: center;
+        }
+
+        .character-card {
+            width: 100%;
+            max-width: 280px;
+            background: #ffffff;
+            border: 1px solid rgba(163, 194, 224, 0.2);
+            border-radius: var(--radius-card);
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s var(--elastic), box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .character-avatar {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            background: #f8fbff;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-in;
+            border: 1px solid rgba(163, 194, 224, 0.15);
+            /* 预留高度防止图片加载抖动 */
+            contain: paint;
+        }
+
+        .character-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: opacity 0.3s ease;
+            will-change: opacity;
+        }
+
+        .character-avatar-fallback {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #b9cadd;
+            font-size: 12px;
+            letter-spacing: 1px;
+            gap: 6px;
+            pointer-events: none;
+            background: #f8fbff;
+            z-index: 2;
+        }
+        .character-avatar-fallback svg {
+            width: 20px;
+            height: 20px;
+            fill: #dbe4ee;
+        }
+
+        .character-info-area {
+            padding: 8px 4px 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .character-name-group {
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .character-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .character-outfit {
+            font-size: 10px;
+            color: var(--text-sub);
+            letter-spacing: 1px;
+            background: #f0f4f8;
+            padding: 2px 6px;
+            border-radius: 8px;
+            margin-top: 2px;
+            display: inline-block;
+        }
+
+        .switcher-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: #f8fbff;
+            border-radius: 8px;
+            padding: 4px;
+            margin-top: 4px;
+            border: 1px dashed rgba(163, 194, 224, 0.4);
+            user-select: none;
+        }
+
+        .switch-btn {
+            background: #ffffff;
+            border: 1px solid rgba(163, 194, 224, 0.3);
+            border-radius: 6px;
+            width: 32px; /* 增大触控区 */
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.02);
+            /* 阻止双击缩放 */
+            touch-action: manipulation;
+        }
+
+        .switch-btn:active {
+            background: var(--accent-color);
+            color: #ffffff;
+            transform: scale(0.9);
+        }
+
+        .switch-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .switch-index {
+            font-size: 11px;
+            font-weight: bold;
+            color: var(--text-sub);
+            letter-spacing: 2px;
+        }
+
+        .system-loading {
+            padding: 30px;
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* ==================== Modal 通用设定 ==================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw; height: 100vh;
+            z-index: 999990;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            will-change: opacity;
+            /* 防止滚动穿透辅助 */
+            touch-action: none;
+        }
+        .modal-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* ==================== 放大查看 Modal ==================== */
+        .image-viewer-modal {
+            background: rgba(0, 0, 0, 0.85); /* 手机端黑色背景对比更好 */
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+
+        .image-viewer-modal img {
+            max-width: 95%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            transform: scale(0.95);
+            transition: transform 0.4s var(--elastic);
+            will-change: transform;
+        }
+        .image-viewer-modal.show img {
+            transform: scale(1);
+        }
+
+        /* ==================== 独立图库 Modal ==================== */
+        .gallery-modal {
+            background: rgba(248, 251, 255, 0.98);
+            flex-direction: column;
+            /* 恢复触摸滚动供图库内容使用 */
+            touch-action: auto;
+        }
+
+        .gallery-modal-header {
+            flex-shrink: 0;
+            padding: max(16px, env(safe-area-inset-top)) 20px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed rgba(163, 194, 224, 0.3);
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(136, 153, 175, 0.05);
+            z-index: 2;
+        }
+
+        .gallery-modal-title {
+            color: var(--text-main);
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .gallery-modal-title span { color: var(--accent-color); }
+
+        .gallery-modal-close {
+            color: var(--text-sub);
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 16px; /* 增大点击热区 */
+            background: #f8fbff;
+            border-radius: 8px;
+            border: 1px solid rgba(163, 194, 224, 0.3);
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .gallery-modal-close:active {
+            background: var(--accent-pink);
+            color: #fff;
+            transform: scale(0.95);
+        }
+
+        .gallery-modal-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            padding-bottom: max(16px, env(safe-area-inset-bottom));
+            -webkit-overflow-scrolling: touch; /* iOS 流畅滚动 */
+            scroll-behavior: smooth;
+        }
+
+        .gallery-section {
+            margin-bottom: 24px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(163, 194, 224, 0.25);
+            box-shadow: 0 4px 12px rgba(136, 153, 175, 0.05);
+        }
+
+        .gallery-section-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding: 6px 10px;
+            background: #f8fbff;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-pink);
+            display: inline-block;
+            border-top: 1px dashed rgba(163, 194, 224, 0.3);
+            border-right: 1px dashed rgba(163, 194, 224, 0.3);
+            border-bottom: 1px dashed rgba(163, 194, 224, 0.3);
+        }
+
+        .gallery-outfit-group {
+            margin-bottom: 16px;
+        }
+        .gallery-outfit-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            scrollbar-width: none; /* Firefox 隐藏滚动条 */
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+        .gallery-row::-webkit-scrollbar { display: none; } /* Chrome/Safari 隐藏滚动条 */
+
+        .gallery-thumb {
+            flex-shrink: 0;
+            width: clamp(90px, 25vw, 110px); /* 响应式缩略图尺寸 */
+            aspect-ratio: 2 / 3;
+            background: #f8fbff;
+            border: 1px solid rgba(163, 194, 224, 0.3);
+            border-radius: 8px;
+            padding: 4px;
+            cursor: zoom-in;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            scroll-snap-align: start;
+        }
+
+        .gallery-thumb:active {
+            transform: scale(0.96);
+            border-color: var(--accent-color);
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 4px;
+        }
+
+        .gallery-thumb-label {
+            margin-top: 4px;
+            color: var(--text-sub);
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            background: #ffffff;
+            padding: 2px 4px;
+            border-radius: 4px;
+            border: 1px dashed rgba(163, 194, 224, 0.4);
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ==================== 手机端极限适配 ==================== */
+        @media screen and (max-width: 600px) {
+            body { padding: 4px; }
+            .scene-info-panel { border-radius: 12px; }
+            .scene-header { padding: 12px 8px 10px; }
+            .meta-row { font-size: 12px; padding: 4px 12px; gap: 4px; }
+            .character-container { padding: 12px 8px; }
+
+            .character-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 10px;
+            }
+
+            .character-card { padding: 4px; border-radius: 10px; }
+            .character-name { font-size: 13px; }
+            .switch-btn { width: 30px; height: 30px; } /* 保持易触控 */
+            .switch-index { font-size: 10px; }
+
+            .gallery-modal-header { padding: max(12px, env(safe-area-inset-top)) 12px 12px; }
+            .gallery-modal-content { padding: 12px 8px max(12px, env(safe-area-inset-bottom)); }
+            .gallery-section { padding: 10px; margin-bottom: 16px; border-radius: 10px; }
+        }
+
+        @media screen and (max-width: 360px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .character-card { max-width: 100%; }
+            .gallery-thumb { width: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene-card-wrapper" id="app-root">
+        <div class="scene-info-panel">
+            <div class="system-loading">✦ 正在载入符文之地...</div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            /* ========== 获取消息内容 ========== */
+            function getMessageData() {
+                var chatMessages = getChatMessages(getCurrentMessageId());
+                if (!chatMessages || chatMessages.length === 0) return null;
+                return chatMessages[0].message;
+            }
+
+            /* ========== 全局配置与别名识别 ========== */
+
+            var allCharacters = [
+                { name: '金克丝', code: 'jinx', aliases: ['金克丝', '爆爆', 'Jinx'] },
+                { name: '萨勒芬妮', code: 'seraphine', aliases: ['萨勒芬妮', '小芬', 'Seraphine'] },
+                { name: '拉克丝', code: 'lux', aliases: ['拉克丝', '拉克丝安娜', '冕卫', 'Lux'] },
+                { name: '阿狸', code: 'ahri', aliases: ['阿狸', '九尾狐', 'Ahri'] },
+                { name: '阿卡丽', code: 'akali', aliases: ['阿卡丽', 'Akali'] },
+                { name: '莫甘娜', code: 'morgana', aliases: ['莫甘娜', '面纱女士', 'Morgana'] },
+                { name: '迦娜', code: 'janna', aliases: ['迦娜', '风之化身', 'Janna'] },
+                { name: '卡特琳娜', code: 'katarina', aliases: ['卡特琳娜', '卡特', 'Katarina'] },
+                { name: '蔚', code: 'vi', aliases: ['蔚', '皮城执法官蔚', 'Vi'] },
+                { name: '凯特琳', code: 'caitlyn', aliases: ['凯特琳', '凯特琳·基拉曼', 'Caitlyn'] },
+                { name: '泽丽', code: 'zeri', aliases: ['泽丽', 'Zeri'] }
+            ];
+
+            var outfitTypes = [
+                { label: '日常', code: 'rc' },
+                { label: '外出', code: 'wc' },
+                { label: '战斗', code: 'zf' }
+            ];
+
+            /* 构建支持别名的完整字典 */
+            var nameMap = {};
+            allCharacters.forEach(function(c) {
+                nameMap[c.name] = { code: c.code, displayName: c.name };
+                if (c.aliases) {
+                    c.aliases.forEach(function(alias) {
+                        nameMap[alias] = { code: c.code, displayName: c.name };
+                    });
+                }
+            });
+
+            var outfitMap = {
+                '日常': 'rc',
+                '外出': 'wc',
+                '战斗': 'zf',
+                '制服': 'zf'
+            };
+
+            window.cardStates = {};
+
+            /* ========== 智能路由获取基础链接 ========== */
+            function getBaseUrl(charCode) {
+                return (window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/');
+            }
+
+            function getImageUrl(charCode, outfitCode, index) {
+                return getBaseUrl(charCode) + charCode + '_' + outfitCode + '_' + index + '.png';
+            }
+
+            /* ========== 数据解析引擎 ========== */
+            function parseSceneData(text) {
+                var result = { type: '日常场景', characters: [] };
+                var match = text.match(/<SceneInfo>([\s\S]*?)<\/SceneInfo>/);
+                if (!match || !match[1]) return null;
+
+                var lines = match[1].split('\n');
+                lines.forEach(function(line) {
+                    line = line.trim();
+                    if (!line) return;
+
+                    if (line.indexOf('场景类型：') !== -1) {
+                        result.type = line.replace('场景类型：', '').replace('场景类型:', '').trim();
+                    }
+
+                    if (line.startsWith('-')) {
+                        var parts = line.substring(1).split('|');
+                        if (parts.length >= 2) {
+                            var parsedName = parts[0].trim();
+                            if (nameMap.hasOwnProperty(parsedName)) {
+                                var charData = nameMap[parsedName];
+                                result.characters.push({
+                                    name: charData.displayName, /* 统一显示为全名 */
+                                    code: charData.code,
+                                    outfit: parts[1].trim()
+                                });
+                            }
+                        }
+                    }
+                });
+                return result;
+            }
+
+            /* ========== SVG 图标 ========== */
+            var svgs = {
+                noImage: '<svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>',
+                arrowDown: '<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>',
+                gallery: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>',
+                left: '<svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>',
+                right: '<svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>'
+            };
+
+            /* ========== 图库界面生成 (增加 lazy loading) ========== */
+            function buildGalleryModalHtml() {
+                var html = '<div class="modal-overlay gallery-modal" id="gallery-modal">';
+                html += '<div class="gallery-modal-header">';
+                html += '  <div class="gallery-modal-title">' + svgs.gallery + '&nbsp;<span>✦ 画廊 ✦</span></div>';
+                html += '  <div class="gallery-modal-close" onclick="window.closeGalleryModal()">关闭</div>';
+                html += '</div>';
+
+                html += '<div class="gallery-modal-content" onclick="event.stopPropagation()">'; /* 阻止点击内容区域关闭 */
+                /* 过滤重复名字防止图库中展示重复的记录，这里我们基于 code 去重生成 */
+                var addedCodes = {};
+                allCharacters.forEach(function(char) {
+                    if (addedCodes[char.code]) return;
+                    addedCodes[char.code] = true;
+
+                    html += '<div class="gallery-section">';
+                    html += '<div class="gallery-section-title">❀ 档案记录：' + char.name + '</div>';
+
+                    outfitTypes.forEach(function(outfit) {
+                        html += '<div class="gallery-outfit-group">';
+                        html += '<div class="gallery-row">';
+                        for(var i = 1; i <= 5; i++) {
+                            var imgUrl = getImageUrl(char.code, outfit.code, i);
+                            html += '<div class="gallery-thumb" onclick="window.openImageModal(\'' + imgUrl + '\')">';
+                            /* 性能优化：加入 loading="lazy" */
+                            html += '  <img src="' + imgUrl + '" loading="lazy" alt="' + char.name + ' ' + outfit.label + ' ' + i + '" onerror="this.parentElement.style.display=\'none\'">';
+                            html += '  <div class="gallery-thumb-label">' + outfit.label + ' ' + i + '</div>';
+                            html += '</div>';
+                        }
+                        html += '</div>';
+                        html += '</div>';
+                    });
+
+                    html += '</div>';
+                });
+                html += '</div></div>';
+                return html;
+            }
+
+            /* ========== 主界面渲染 ========== */
+            function init() {
+                try {
+                    var root = document.getElementById('app-root');
+                    var text = getMessageData();
+                    if (!text) {
+                        root.innerHTML = '<div class="scene-info-panel"><div class="system-loading">呜...没有读取到场景数据呢</div></div>';
+                        return;
+                    }
+
+                    var data = parseSceneData(text);
+                    if (!data || data.characters.length === 0) {
+                        root.style.display = 'none';
+                        return;
+                    }
+
+                    var html = '<div class="scene-info-panel">';
+                    html += '<div class="scene-header">';
+                    html += '  <div class="meta-row"><span class="meta-star">✧</span><span>' + data.type + '</span><span class="meta-star">✧</span></div>';
+                    html += '  <div class="controls-container">';
+                    html += '    <button class="action-button" id="btn-collapse">';
+                    html += '      <div class="collapse-icon" id="icon-collapse">' + svgs.arrowDown + '</div>';
+                    html += '      <span id="text-collapse">折叠卡片</span>';
+                    html += '    </button>';
+                    html += '    <button class="action-button" id="btn-gallery">';
+                    html += '      <div class="collapse-icon">' + svgs.gallery + '</div>';
+                    html += '      <span>打开图库</span>';
+                    html += '    </button>';
+                    html += '  </div>';
+                    html += '</div>';
+
+                    html += '<div class="character-container" id="char-container">';
+                    html += '<div class="character-grid">';
+
+                    data.characters.forEach(function(char, idx) {
+                        var codeName = char.code;
+                        var codeOutfit = outfitMap[char.outfit] || 'rc';
+                        var cardId = 'card_' + idx;
+
+                        var randomStart = Math.floor(Math.random() * 5) + 1;
+                        window.cardStates[cardId] = { charCode: codeName, outfitCode: codeOutfit, index: randomStart };
+                        var imgSrc = getImageUrl(codeName, codeOutfit, randomStart);
+
+                        var fallbackHtml = '<div class="character-avatar-fallback" id="fb_' + cardId + '" style="display:none;">' + svgs.noImage + '<span>加载失败惹</span></div>';
+                        var errorEvent = "this.style.opacity=\'0\'; document.getElementById(\'fb_" + cardId + "\').style.display=\'flex\';";
+
+                        html += '<div class="character-card">';
+
+                        html += '  <div class="character-avatar" onclick="window.openImageModal(document.getElementById(\'img_' + cardId + '\').src)">';
+                        /* 首页立绘也加入懒加载，避免首屏拥堵 */
+                        html += '    <img id="img_' + cardId + '" src="' + imgSrc + '" loading="lazy" alt="' + char.name + '" onerror="' + errorEvent + '">';
+                        html +=      fallbackHtml;
+                        html += '  </div>';
+
+                        html += '  <div class="character-info-area">';
+                        html += '    <div class="character-name-group">';
+                        html += '      <div class="character-name">' + char.name + '</div>';
+                        html += '      <div class="character-outfit">' + char.outfit + '</div>';
+                        html += '    </div>';
+
+                        html += '    <div class="switcher-controls">';
+                        html += '      <div class="switch-btn" onclick="window.changeCardImage(event, \'' + cardId + '\', -1)">' + svgs.left + '</div>';
+                        html += '      <div class="switch-index" id="idx_' + cardId + '">' + randomStart + ' / 5</div>';
+                        html += '      <div class="switch-btn" onclick="window.changeCardImage(event, \'' + cardId + '\', 1)">' + svgs.right + '</div>';
+                        html += '    </div>';
+
+                        html += '  </div>';
+                        html += '</div>';
+                    });
+
+                    html += '</div></div></div>';
+
+                    /* 追加 Modals */
+                    html += buildGalleryModalHtml();
+                    html += '<div id="image-modal" class="modal-overlay image-viewer-modal" onclick="window.closeImageModal()">';
+                    html += '  <img id="modal-img" src="" alt="立绘大图" onclick="event.stopPropagation()">';
+                    html += '</div>';
+
+                    root.innerHTML = html;
+
+                    setTimeout(function() {
+                        var container = document.getElementById('char-container');
+                        var icon = document.getElementById('icon-collapse');
+                        var collapseText = document.getElementById('text-collapse');
+                        var btnCollapse = document.getElementById('btn-collapse');
+                        if (btnCollapse) {
+                            btnCollapse.onclick = function() {
+                                container.classList.toggle('collapsed');
+                                icon.classList.toggle('collapsed');
+                                collapseText.textContent = container.classList.contains('collapsed') ? '展开卡片' : '折叠卡片';
+                            };
+                        }
+
+                        var btnGallery = document.getElementById('btn-gallery');
+                        if (btnGallery) {
+                            btnGallery.onclick = function() {
+                                var modal = document.getElementById('gallery-modal');
+                                if (modal) {
+                                    modal.classList.add('show');
+                                    window.lockBodyScroll(true);
+                                }
+                            };
+                        }
+                    }, 50);
+                } catch (error) {
+                    console.error("渲染错误:", error);
+                }
+            }
+
+            /* ========== 辅助：防滚动穿透 ========== */
+            var scrollPosition = 0;
+            window.lockBodyScroll = function(isLock) {
+                var body = document.body;
+                if (isLock) {
+                    scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+                    body.style.position = 'fixed';
+                    body.style.top = '-' + scrollPosition + 'px';
+                    body.style.width = '100%';
+                } else {
+                    body.style.position = '';
+                    body.style.top = '';
+                    body.style.width = '';
+                    window.scrollTo(0, scrollPosition);
+                }
+            };
+
+            /* ========== 全局交互逻辑 ========== */
+            /* 简易防抖，防止狂点导致资源过度请求 */
+            var switchLocks = {};
+
+            window.changeCardImage = function(event, cardId, delta) {
+                if (event) event.stopPropagation();
+
+                if (switchLocks[cardId]) return;
+                switchLocks[cardId] = true;
+                setTimeout(function() { switchLocks[cardId] = false; }, 300);
+
+                var state = window.cardStates[cardId];
+                if (!state) return;
+
+                state.index += delta;
+                if (state.index > 5) state.index = 1;
+                if (state.index < 1) state.index = 5;
+
+                var newSrc = getImageUrl(state.charCode, state.outfitCode, state.index);
+
+                var imgElem = document.getElementById('img_' + cardId);
+                var idxElem = document.getElementById('idx_' + cardId);
+                var fbElem = document.getElementById('fb_' + cardId);
+
+                /* 平滑过渡效果 */
+                if(imgElem) imgElem.style.opacity = '0.3';
+
+                var tempImg = new Image();
+                tempImg.onload = function() {
+                    if (imgElem) {
+                        imgElem.src = newSrc;
+                        imgElem.style.opacity = '1';
+                    }
+                    if (fbElem) fbElem.style.display = 'none';
+                };
+                tempImg.onerror = function() {
+                    if (imgElem) imgElem.style.opacity = '0';
+                    if (fbElem) fbElem.style.display = 'flex';
+                };
+                tempImg.src = newSrc;
+
+                if (idxElem) idxElem.textContent = state.index + ' / 5';
+            };
+
+            window.openImageModal = function(src) {
+                var modal = document.getElementById('image-modal');
+                var img = document.getElementById('modal-img');
+                if (modal && img && src.indexOf('.png') !== -1) {
+                    img.src = src;
+                    modal.classList.add('show');
+                    window.lockBodyScroll(true);
+                }
+            };
+            window.closeImageModal = function() {
+                var modal = document.getElementById('image-modal');
+                if (modal) {
+                    modal.classList.remove('show');
+                    /* 延迟移除防穿透，避免页面闪动 */
+                    setTimeout(function() { window.lockBodyScroll(false); }, 300);
+                }
+            };
+            window.closeGalleryModal = function() {
+                var modal = document.getElementById('gallery-modal');
+                if (modal) {
+                    modal.classList.remove('show');
+                    setTimeout(function() { window.lockBodyScroll(false); }, 300);
+                }
+            };
+
+            /* 修正后的酒馆规范加载方式 */
+            $(function() {
+                init();
+            });
+        })();
+    </script>
+</body>
+</html>
+```
