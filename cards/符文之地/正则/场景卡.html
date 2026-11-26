@@ -18,9 +18,9 @@
   var OUTFITS = { rc: 0, wc: 1, zf: 2 };
   var SCENES = ['jg', 'jx', 'gb', 'sl', 'js', 'hg', 'hl', 'jz', 'sm', 'qd', 'zc', 'cg'];
   function pick(list, i) { return list[((i % list.length) + list.length) % list.length]; }
-  // 符文之地传说卡牌原画放在自己的图片仓库 lor/ 目录下；仓库上线前保持 false，只用官方皮肤原画
-  var USE_LOR = window.RT_USE_LOR_ART !== undefined ? window.RT_USE_LOR_ART : false;
-  var BASE = window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/';
+  // 符文之地传说卡牌原画放在自己的图片仓库 lor/ 目录下；设为 false 则只用官方皮肤原画
+  var USE_LOR = window.RT_USE_LOR_ART !== undefined ? window.RT_USE_LOR_ART : true;
+  var BASE = window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/art@main/';
   function cgPool(code, a) {
     var pool = [];
     if (USE_LOR && a.lor) for (var n = 1; n <= a.lor; n++) pool.push(BASE + 'lor/' + code + '_' + n + '.jpg');
@@ -650,7 +650,7 @@
             /* ================= 全局智能图片路由 ================= */
             if (!window.acgGetBaseUrl) {
                 window.acgGetBaseUrl = function(roleKey, isNsfw) {
-                    return (window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/') + (isNsfw ? 'nsfw/' : '');
+                    return (window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/art@main/') + (isNsfw ? 'nsfw/' : '');
                 };
             }
 

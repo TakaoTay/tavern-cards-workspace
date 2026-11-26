@@ -18,9 +18,9 @@
   var OUTFITS = { rc: 0, wc: 1, zf: 2 };
   var SCENES = ['jg', 'jx', 'gb', 'sl', 'js', 'hg', 'hl', 'jz', 'sm', 'qd', 'zc', 'cg'];
   function pick(list, i) { return list[((i % list.length) + list.length) % list.length]; }
-  // 符文之地传说卡牌原画放在自己的图片仓库 lor/ 目录下；仓库上线前保持 false，只用官方皮肤原画
-  var USE_LOR = window.RT_USE_LOR_ART !== undefined ? window.RT_USE_LOR_ART : false;
-  var BASE = window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/';
+  // 符文之地传说卡牌原画放在自己的图片仓库 lor/ 目录下；设为 false 则只用官方皮肤原画
+  var USE_LOR = window.RT_USE_LOR_ART !== undefined ? window.RT_USE_LOR_ART : true;
+  var BASE = window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/art@main/';
   function cgPool(code, a) {
     var pool = [];
     if (USE_LOR && a.lor) for (var n = 1; n <= a.lor; n++) pool.push(BASE + 'lor/' + code + '_' + n + '.jpg');
@@ -591,9 +591,9 @@
 
         var CHARACTERS = [
             { id: 'rin', name: '自定义开局', romaji: 'CUSTOM START', tags: ['角色创建', '自选地区', '梦境模式'], quote: '“下一个故事属于你。”', swipe: 1, cover: '', desc: '填写姓名、年龄、能级、所在地区与人际关系，从你设定的地方开始。' },
-            { id: 'yuunagi', name: '祖安·最后一盏灯', romaji: 'ZAUN', tags: ['金克丝', '地下酒馆', '执法官'], quote: '“嘘……你听见了吗？楼上有人在数钱。”', swipe: 2, cover: window.rtArt((window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/') + 'jinx_rc_1.png'), desc: '雨夜的灰烬街酒馆里，有人在拆手雷，有人在找新面孔的麻烦。' },
-            { id: 'reina', name: '德玛西亚·黑森林', romaji: 'DEMACIA', tags: ['莫甘娜', '搜魔人', '逃亡'], quote: '“把火把熄了。然后告诉我，你是来抓人的，还是来逃命的。”', swipe: 3, cover: window.rtArt((window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/') + 'morgana_rc_1.png'), desc: '搜魔人的火把在身后连成一线，废弃磨坊门口坐着披着长袍的女人。' },
-            { id: 'chinatsu', name: '艾欧尼亚·芝云省', romaji: 'IONIA', tags: ['阿狸', '阿卡丽', '命案'], quote: '“你是来杀我的，还是来求我的？”', swipe: 4, cover: window.rtArt((window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/') + 'ahri_rc_1.png'), desc: '山中废弃神庙里，九尾狐与倒挂在横梁上的忍者同时盯住了你。' }
+            { id: 'yuunagi', name: '祖安·最后一盏灯', romaji: 'ZAUN', tags: ['金克丝', '地下酒馆', '执法官'], quote: '“嘘……你听见了吗？楼上有人在数钱。”', swipe: 2, cover: window.rtArt((window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/art@main/') + 'jinx_rc_1.png'), desc: '雨夜的灰烬街酒馆里，有人在拆手雷，有人在找新面孔的麻烦。' },
+            { id: 'reina', name: '德玛西亚·黑森林', romaji: 'DEMACIA', tags: ['莫甘娜', '搜魔人', '逃亡'], quote: '“把火把熄了。然后告诉我，你是来抓人的，还是来逃命的。”', swipe: 3, cover: window.rtArt((window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/art@main/') + 'morgana_rc_1.png'), desc: '搜魔人的火把在身后连成一线，废弃磨坊门口坐着披着长袍的女人。' },
+            { id: 'chinatsu', name: '艾欧尼亚·芝云省', romaji: 'IONIA', tags: ['阿狸', '阿卡丽', '命案'], quote: '“你是来杀我的，还是来求我的？”', swipe: 4, cover: window.rtArt((window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/art@main/') + 'ahri_rc_1.png'), desc: '山中废弃神庙里，九尾狐与倒挂在横梁上的忍者同时盯住了你。' }
         ];
 
         function jump(swipeId) {
