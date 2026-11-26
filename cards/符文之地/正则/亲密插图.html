@@ -6,27 +6,37 @@
 <script>
 /* ===== 官方立绘映射（League of Legends Data Dragon）=====
  * 这些角色的图片暂时直接读取拳头官方的皮肤原画；之后换成自己的图片时，删掉对应角色即可回到 RT_IMG_BASE。
+ *   lor：符文之地传说卡牌原画（自己仓库的 lor/ 目录）→ 场景卡图片、插图，排在官方皮肤原画之前
  *   splash：横版原画 → 场景卡图片、插图
  *   loading：竖版加载图 → 立绘、开局封面
  *   tiles：方形头像 → Q版头像
  */
 (function () {
   var DD = 'https://ddragon.leagueoflegends.com/cdn/img/champion/';
-  var ART = {"akali": {"id": "Akali", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 32, 50, 60, 61, 68, 70, 71, 82, 92, 102, 103]}, "ahri": {"id": "Ahri", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 14, 15, 16, 17, 27, 28, 42, 65, 66, 76, 85, 86, 88, 89, 97]}, "katarina": {"id": "Katarina", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21, 29, 37, 47, 48, 59, 60, 70]}, "lux": {"id": "Lux", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 14, 15, 16, 17, 18, 19, 29, 38, 39, 40, 42, 61, 70, 72]}, "seraphine": {"id": "Seraphine", "skins": [0, 1, 2, 3, 4, 14, 15, 24, 34, 43, 50, 59, 68, 69]}, "janna": {"id": "Janna", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 20, 27, 36, 45, 46, 56, 66, 67]}, "syndra": {"id": "Syndra", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 16, 25, 34, 44, 54, 65]}};
+    var ART = {"akali": {"id": "Akali", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 32, 50, 60, 61, 68, 70, 71, 82, 92, 102, 103]}, "ahri": {"id": "Ahri", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 14, 15, 16, 17, 27, 28, 42, 65, 66, 76, 85, 86, 88, 89, 97], "lor": 8}, "katarina": {"id": "Katarina", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21, 29, 37, 47, 48, 59, 60, 70], "lor": 4}, "lux": {"id": "Lux", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 14, 15, 16, 17, 18, 19, 29, 38, 39, 40, 42, 61, 70, 72], "lor": 4}, "seraphine": {"id": "Seraphine", "skins": [0, 1, 2, 3, 4, 14, 15, 24, 34, 43, 50, 59, 68, 69], "lor": 4}, "janna": {"id": "Janna", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 20, 27, 36, 45, 46, 56, 66, 67], "lor": 4}, "syndra": {"id": "Syndra", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 16, 25, 34, 44, 54, 65]}};
   var EMOS = ['rc', 'kx', 'sq', 'wq', 'pd', 'ty', 'zq'];
   var OUTFITS = { rc: 0, wc: 1, zf: 2 };
   var SCENES = ['jg', 'jx', 'gb', 'sl', 'js', 'hg', 'hl', 'jz', 'sm', 'qd', 'zc', 'cg'];
   function pick(list, i) { return list[((i % list.length) + list.length) % list.length]; }
+  // 符文之地传说卡牌原画放在自己的图片仓库 lor/ 目录下；仓库上线前保持 false，只用官方皮肤原画
+  var USE_LOR = window.RT_USE_LOR_ART !== undefined ? window.RT_USE_LOR_ART : false;
+  var BASE = window.RT_IMG_BASE || 'https://testingcf.jsdelivr.net/gh/TakaoTay/runeterra-art@main/';
+  function cgPool(code, a) {
+    var pool = [];
+    if (USE_LOR && a.lor) for (var n = 1; n <= a.lor; n++) pool.push(BASE + 'lor/' + code + '_' + n + '.jpg');
+    a.skins.forEach(function (s) { pool.push(DD + 'splash/' + a.id + '_' + s + '.jpg'); });
+    return pool;
+  }
   function url(kind, a, num) { return DD + kind + '/' + a.id + '_' + num + '.jpg'; }
   window.rtArt = function (src) {
-    if (!src || src.indexOf(DD) === 0 || /\/nsfw\//.test(src)) return src;
+    if (!src || src.indexOf(DD) === 0 || src.indexOf(BASE + 'lor/') === 0 || /\/nsfw\//.test(src)) return src;
     var m = String(src).match(/\/([a-z]+)_([a-z0-9_]+)\.(?:png|jpg)(?:\?.*)?$/);
     if (!m || !ART[m[1]]) return src;
     var a = ART[m[1]], rest = m[2], s = a.skins, k;
-    if (/^\d+$/.test(rest)) return url('splash', a, pick(s, Number(rest) - 1));
+    if (/^\d+$/.test(rest)) return pick(cgPool(m[1], a), Number(rest) - 1);
     if ((k = rest.match(/^([a-z]+)_q$/)) && EMOS.indexOf(k[1]) !== -1) return url('tiles', a, pick(s, EMOS.indexOf(k[1])));
     if ((k = rest.match(/^(rc|wc|zf)_(\d+)$/))) return url('loading', a, pick(s, OUTFITS[k[1]] * 5 + Number(k[2]) - 1));
-    if ((k = rest.match(/^([a-z]+)_(\d+)$/)) && SCENES.indexOf(k[1]) !== -1) return url('splash', a, pick(s, SCENES.indexOf(k[1]) * 3 + Number(k[2]) - 1));
+    if ((k = rest.match(/^([a-z]+)_(\d+)$/)) && SCENES.indexOf(k[1]) !== -1) return pick(cgPool(m[1], a), SCENES.indexOf(k[1]) * 3 + Number(k[2]) - 1);
     return src;
   };
   function fix(img) {
