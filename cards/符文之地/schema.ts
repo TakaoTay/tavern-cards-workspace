@@ -8,11 +8,26 @@ export const Schema = z.object({
       各方势力声望: z
         .record(z.string().describe('势力名'), z.enum(['仇恨', '冷淡', '中立', '友善', '尊敬', '崇拜']))
         .prefault({}),
+      梦境: z
+        .object({
+          是否处于梦境叙事中: z.enum(['是', '否']).prefault('否'),
+          核心参与者: z.string().prefault(''),
+        })
+        .prefault({}),
     })
     .prefault({}),
 
   主角: z
     .object({
+      档案: z
+        .object({
+          姓名: z.string().prefault('待定'),
+          性别: z.string().prefault('待定'),
+          年龄: z.coerce.number().prefault(0),
+          外貌: z.string().prefault(''),
+          背景: z.string().prefault(''),
+        })
+        .prefault({}),
       基础能级: z
         .enum(['T5凡人级', 'T4精英级', 'T3英雄级', 'T2半神级', 'T1星神级', 'T0原初级'])
         .or(z.literal('待定'))
@@ -50,6 +65,7 @@ export const Schema = z.object({
             .number()
             .transform(value => _.clamp(Math.round(value), -100, 1000))
             .prefault(100),
+          与主角关系: z.string().prefault(''),
           状态: z
             .object({
               伤势等级: z.string().prefault('无伤'),

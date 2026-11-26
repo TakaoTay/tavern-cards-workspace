@@ -1,0 +1,307 @@
+```
+<body>
+<style>
+:root {
+  --c-surface: #12161f;
+  --c-surface-raised: #1b2130;
+  --c-surface-sunken: #0c0f16;
+  --c-border: #2c3447;
+  --c-border-accent: #8a6d3b;
+  --c-text: #e6e1d3;
+  --c-text-muted: #9aa3b5;
+  --c-accent: #c8a45a;
+  --c-accent-soft: rgba(200, 164, 90, 0.14);
+  --c-hextech: #3fc1c9;
+  --c-hextech-soft: rgba(63, 193, 201, 0.14);
+  --c-dream: #a58ad6;
+  --c-danger: #d0545b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 4px 0; background: transparent; color: var(--c-text);
+  font-family: "Sarasa Gothic SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 13px; line-height: 1.55; }
+.form { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 10px; overflow: hidden; }
+.form-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--c-border-accent);
+  background: linear-gradient(90deg, var(--c-accent-soft), transparent 70%); }
+.form-head h2 { margin: 0; font-size: 17px; color: var(--c-accent); letter-spacing: 2px; }
+.form-head p { margin: 4px 0 0; color: var(--c-text-muted); font-size: 12px; }
+.sec { padding: 12px 16px; border-bottom: 1px solid var(--c-border); }
+.sec-title { color: var(--c-accent); font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 12px; }
+label { display: block; font-size: 12px; color: var(--c-text-muted); }
+label .req { color: var(--c-danger); }
+input, select, textarea { width: 100%; margin-top: 3px; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--c-border);
+  background: var(--c-surface-sunken); color: var(--c-text); font: inherit; font-size: 13px; }
+textarea { resize: vertical; min-height: 54px; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c-hextech); }
+.full { grid-column: 1 / -1; }
+.hint { font-size: 11px; color: var(--c-text-muted); margin-top: 3px; }
+.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 6px; }
+.tier { padding: 7px 8px; border-radius: 6px; border: 1px solid var(--c-border); background: var(--c-surface-raised); cursor: pointer; }
+.tier b { display: block; font-size: 12px; }
+.tier small { color: var(--c-text-muted); font-size: 11px; }
+.tier.on { border-color: var(--c-accent); background: var(--c-accent-soft); }
+.rel { display: grid; grid-template-columns: 1.1fr 0.9fr 2fr auto; gap: 6px; align-items: end; margin-bottom: 6px; }
+.rel input, .rel select { margin-top: 0; }
+@media (max-width: 480px) { .rel { grid-template-columns: 1fr 1fr; } .rel .rel-desc { grid-column: 1 / -1; } }
+.btn { padding: 6px 12px; border-radius: 6px; border: 1px solid var(--c-border); background: var(--c-surface-raised);
+  color: var(--c-text); font: inherit; font-size: 12px; cursor: pointer; }
+.btn:hover { border-color: var(--c-hextech); background: var(--c-hextech-soft); }
+.btn-x { padding: 6px 9px; color: var(--c-text-muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.chip { font-size: 11px; padding: 3px 8px; border-radius: 10px; border: 1px solid var(--c-border); background: var(--c-surface-raised);
+  color: var(--c-text-muted); cursor: pointer; }
+.chip:hover { color: var(--c-text); border-color: var(--c-accent); }
+.dream { display: flex; gap: 10px; align-items: flex-start; }
+.switch { position: relative; flex: 0 0 40px; height: 22px; border-radius: 11px; background: var(--c-border); cursor: pointer; margin-top: 2px; transition: background .2s; }
+.switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--c-text); transition: left .2s; }
+.switch.on { background: var(--c-dream); }
+.switch.on::after { left: 21px; }
+.dream-body b { color: var(--c-dream); }
+.dream-body p { margin: 2px 0 0; font-size: 12px; color: var(--c-text-muted); }
+#dream-extra { display: none; margin-top: 8px; }
+#dream-extra.on { display: block; }
+.foot { padding: 12px 16px; display: flex; align-items: center; gap: 12px; justify-content: flex-end; background: var(--c-surface-sunken); }
+.msg { flex: 1; font-size: 12px; color: var(--c-danger); }
+.msg.ok { color: var(--c-hextech); }
+.go { padding: 8px 18px; border-radius: 6px; border: 1px solid var(--c-accent); background: var(--c-accent-soft); color: var(--c-accent);
+  font: inherit; font-weight: 700; letter-spacing: 2px; cursor: pointer; }
+.go:hover { background: var(--c-accent); color: var(--c-surface); }
+.go:disabled { opacity: .5; cursor: default; }
+</style>
+
+<div class="form" id="form">
+  <div class="form-head">
+    <h2>◆ 踏入符文之地</h2>
+    <p>设定你的角色与开局。提交后，故事会从你选择的地方开始。</p>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">角色档案</div>
+    <div class="grid">
+      <label>姓名 <span class="req">*</span><input id="f-name" placeholder="你在符文之地的名字"></label>
+      <label>性别<select id="f-gender"><option>女</option><option>男</option><option>其他</option></select></label>
+      <label>年龄<input id="f-age" type="number" min="1" max="9999" placeholder="例如 22"></label>
+      <label class="full">外貌<textarea id="f-look" placeholder="发色、身形、伤疤、穿着……只写想让人记住的部分"></textarea></label>
+      <label class="full">背景<textarea id="f-bg" placeholder="出身、职业、过往经历、正在追寻的东西"></textarea></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">战力能级</div>
+    <div class="tiers" id="tiers"></div>
+    <div class="hint" id="tier-hint"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">所在地区</div>
+    <div class="grid">
+      <label>大地点<select id="f-region"></select></label>
+      <label>具体地点<input id="f-place" placeholder="例如 灰烬街的地下酒馆"></label>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">与其他角色的关系（可选）</div>
+    <div id="rels"></div>
+    <button class="btn" id="add-rel">＋ 添加关系</button>
+    <div class="hint">选择的阶段决定开局好感度：戒备 -50 · 陌生 100 · 熟悉 450 · 恋慕 750 · 不渝 920</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">开场事件</div>
+    <textarea id="f-event" placeholder="开局时正在发生什么？留空则由叙述者根据地区自行安排。"></textarea>
+    <div class="chips" id="event-chips"></div>
+  </div>
+
+  <div class="sec">
+    <div class="dream">
+      <div class="switch" id="dream-switch"></div>
+      <div class="dream-body">
+        <b>梦境模式</b>
+        <p>“抱憾终身”玩法：在一场与现实无异的梦里与她们结下羁绊，你会在梦中死去，她们将走完没有你的余生，最后所有人一同醒来、重逢。</p>
+        <div id="dream-extra">
+          <label>核心参与者（醒来后保留记忆的角色，用“、”分隔；留空则为进入梦境时同场的主要角色）
+            <input id="f-dream-who" placeholder="例如 拉克丝、莫甘娜"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="msg" id="msg"></span>
+    <button class="go" id="go">开始冒险</button>
+  </div>
+</div>
+
+<script>
+const TIERS = [
+  ['T5凡人级', '普通人、士兵、未觉醒的法师'],
+  ['T4精英级', '军官、初阶法师、黑帮头目、改造者'],
+  ['T3英雄级', '顶尖刺客、高阶法师，可左右小型战役'],
+  ['T2半神级', '飞升者、暗裔，能量足以改变地形'],
+  ['T1星神级', '星灵宿主级，世界级威胁（慎选）']
+];
+const REGIONS = ['皮尔特沃夫', '祖安', '德玛西亚', '诺克萨斯', '艾欧尼亚', '弗雷尔卓德', '恕瑞玛', '比尔吉沃特', '巨神峰', '暗影岛', '以绪塔尔', '班德尔城'];
+const CHARACTERS = ['金克丝', '莫甘娜', '拉克丝', '卡特琳娜', '迦娜', '阿狸', '阿卡丽', '萨勒芬妮', '蔚', '凯特琳', '泽丽', '烈娜塔', '梅尔', '卡密尔',
+  '安蓓萨', '希尔科', '杰斯', '黑默丁格', '辛吉德', '维克托', '艾克', '沃里克', '布里茨', '扎克', '蒙多', '伊泽瑞尔', '图奇', '瑞兹', '佐伊',
+  '奥莉安娜', '艾瑞莉亚', '卡尔玛', '辛德拉', '莉莉娅', '霞', '洛', '芸阿娜', '李青', '亚索', '永恩', '艾翁', '易', '悟空', '慧', '烬', '慎',
+  '凯南', '劫', '凯隐', '锐雯', '瑟提', '韦鲁斯', '莎弥拉', '乐芙兰', '贝蕾亚', '卡西奥佩娅', '芮尔', '伊莉丝', '凯尔', '娑娜', '菲奥娜',
+  '薇恩', '伊芙琳', '希瓦娜', '波比', '奎因', '斯维因', '泰隆', '赛恩', '厄加特', '德莱厄斯', '弗拉基米尔', '克烈', '德莱文', '莫德凯撒',
+  '盖伦', '嘉文四世', '加里奥', '塞拉斯', '赵信', '卢锡安', '费德提克', '萨科', '塔姆'];
+const STAGE_VALUE = { 戒备: -50, 陌生: 100, 熟悉: 450, 恋慕: 750, 不渝: 920 };
+const EVENT_PRESETS = [
+  ['酒馆偶遇', '在一间嘈杂的酒馆里，一场意外的冲突把我卷了进去。'],
+  ['被追捕中', '我正被当地的执法者或军队追捕，必须尽快找到藏身之处。'],
+  ['接下委托', '我刚刚接下一份报酬丰厚却来历不明的委托，雇主约我在今晚碰面。'],
+  ['异象降临', '天空裂开了一道发光的缝隙，周围的魔法开始失控。'],
+  ['旧识重逢', '一位多年未见的故人突然出现在我面前，带来了一个坏消息。'],
+  ['初来乍到', '我刚刚抵达这里，身上只剩一点盘缠，对这座城市一无所知。']
+];
+
+let tier = 'T5凡人级';
+let dreamOn = false;
+
+function $id(id) { return document.getElementById(id); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+function renderTiers() {
+  $id('tiers').innerHTML = TIERS.map(([t, d]) =>
+    '<div class="tier' + (t === tier ? ' on' : '') + '" data-tier="' + t + '"><b>' + t + '</b><small>' + d + '</small></div>').join('');
+  $id('tier-hint').textContent = tier === 'T1星神级' ? 'T1 意味着你足以与星灵抗衡，大部分冲突将失去悬念。' : '';
+}
+function addRel(name, stage, desc) {
+  const row = document.createElement('div');
+  row.className = 'rel';
+  row.innerHTML =
+    '<label>角色<select class="rel-name">' + CHARACTERS.map(c => '<option' + (c === name ? ' selected' : '') + '>' + c + '</option>').join('') + '</select></label>' +
+    '<label>关系阶段<select class="rel-stage">' + Object.keys(STAGE_VALUE).map(s => '<option' + (s === (stage || '熟悉') ? ' selected' : '') + '>' + s + '</option>').join('') + '</select></label>' +
+    '<label class="rel-desc">关系描述<input class="rel-text" placeholder="例如 一同在下城长大的青梅竹马" value="' + esc(desc || '') + '"></label>' +
+    '<button class="btn btn-x" title="移除">✕</button>';
+  $id('rels').appendChild(row);
+}
+
+function init() {
+  $id('f-region').innerHTML = REGIONS.map(r => '<option>' + r + '</option>').join('');
+  $id('event-chips').innerHTML = EVENT_PRESETS.map(([k], i) => '<span class="chip" data-i="' + i + '">' + k + '</span>').join('');
+  renderTiers();
+}
+
+document.addEventListener('click', ev => {
+  const t = ev.target.closest('.tier');
+  if (t) { tier = t.dataset.tier; renderTiers(); return; }
+  if (ev.target.id === 'add-rel') { addRel(); return; }
+  const x = ev.target.closest('.btn-x');
+  if (x) { x.closest('.rel').remove(); return; }
+  const chip = ev.target.closest('.chip');
+  if (chip) { $id('f-event').value = EVENT_PRESETS[Number(chip.dataset.i)][1]; return; }
+  if (ev.target.closest('#dream-switch')) {
+    dreamOn = !dreamOn;
+    $id('dream-switch').classList.toggle('on', dreamOn);
+    $id('dream-extra').classList.toggle('on', dreamOn);
+    return;
+  }
+  if (ev.target.id === 'go') submit();
+});
+
+function collect() {
+  const rels = Array.from(document.querySelectorAll('.rel')).map(r => ({
+    name: r.querySelector('.rel-name').value,
+    stage: r.querySelector('.rel-stage').value,
+    desc: r.querySelector('.rel-text').value.trim()
+  }));
+  return {
+    name: $id('f-name').value.trim(),
+    gender: $id('f-gender').value,
+    age: Number($id('f-age').value) || 0,
+    look: $id('f-look').value.trim(),
+    bg: $id('f-bg').value.trim(),
+    tier,
+    region: $id('f-region').value,
+    place: $id('f-place').value.trim(),
+    rels,
+    event: $id('f-event').value.trim(),
+    dream: dreamOn,
+    dreamWho: $id('f-dream-who').value.trim()
+  };
+}
+
+function stageOf(v) { return v < 0 ? '戒备' : v < 350 ? '陌生' : v < 700 ? '熟悉' : v < 900 ? '恋慕' : '不渝'; }
+
+function applyToStat(stat, f) {
+  _.set(stat, '主角.档案', { 姓名: f.name, 性别: f.gender, 年龄: f.age, 外貌: f.look, 背景: f.bg });
+  _.set(stat, '主角.基础能级', f.tier);
+  _.set(stat, '世界状态.大地点', f.region);
+  _.set(stat, '世界状态.具体地点', f.place || '待定');
+  _.set(stat, '世界状态.梦境', { 是否处于梦境叙事中: f.dream ? '是' : '否', 核心参与者: f.dream ? f.dreamWho : '' });
+  f.rels.forEach(r => {
+    const v = STAGE_VALUE[r.stage];
+    const old = _.get(stat, ['近期NPC', r.name], {});
+    _.set(stat, ['近期NPC', r.name], _.merge({ 基础能级: '待定', 状态: { 伤势等级: '无伤', 魔法能量透支状态: '正常' }, 物品栏: {} }, old,
+      { 好感度: v, 与主角关系: r.desc || r.stage, _关系阶段: stageOf(v) }));
+  });
+  return stat;
+}
+
+function buildMessage(f) {
+  const lines = ['【开局设定】',
+    '姓名：' + f.name + '　性别：' + f.gender + (f.age ? '　年龄：' + f.age : ''),
+    '战力能级：' + f.tier,
+    '所在地：' + f.region + (f.place ? '·' + f.place : '')];
+  if (f.look) lines.push('外貌：' + f.look);
+  if (f.bg) lines.push('背景：' + f.bg);
+  if (f.rels.length) lines.push('人际关系：' + f.rels.map(r => r.name + '（' + r.stage + (r.desc ? '，' + r.desc : '') + '）').join('；'));
+  lines.push('开场事件：' + (f.event || '由叙述者根据所在地区安排'));
+  if (f.dream) lines.push('梦境模式：开启' + (f.dreamWho ? '，核心参与者：' + f.dreamWho : ''));
+  lines.push('', '请根据以上设定，以<user>为主角写出故事的开场。');
+  return lines.join('\n');
+}
+
+async function writeVariables(f) {
+  if (typeof getCurrentMessageId !== 'function') return;
+  const opt = { type: 'message', message_id: getCurrentMessageId() };
+  let mvu = null;
+  try {
+    if (typeof waitGlobalInitialized === 'function') {
+      mvu = await Promise.race([waitGlobalInitialized('Mvu'), new Promise(r => setTimeout(() => r(null), 4000))]);
+    }
+  } catch (e) { mvu = null; }
+  const M = (typeof Mvu !== 'undefined' && Mvu) ? Mvu : mvu;
+  if (M && M.getMvuData && M.replaceMvuData) {
+    const data = M.getMvuData(opt) || {};
+    data.stat_data = applyToStat(data.stat_data || {}, f);
+    await M.replaceMvuData(data, opt);
+  } else if (typeof updateVariablesWith === 'function') {
+    updateVariablesWith(vars => { vars.stat_data = applyToStat(vars.stat_data || {}, f); return vars; }, opt);
+  }
+}
+
+async function submit() {
+  const f = collect();
+  const msg = $id('msg');
+  if (!f.name) { msg.className = 'msg'; msg.textContent = '请填写姓名'; $id('f-name').focus(); return; }
+  $id('go').disabled = true;
+  msg.className = 'msg ok';
+  msg.textContent = '正在写入设定……';
+  try {
+    await writeVariables(f);
+    const text = buildMessage(f);
+    if (typeof createChatMessages === 'function' && typeof triggerSlash === 'function') {
+      await createChatMessages([{ role: 'user', message: text }]);
+      msg.textContent = '设定完成，故事即将开始……';
+      await triggerSlash('/trigger');
+    } else {
+      console.log(text);
+      msg.textContent = '（预览模式）设定已生成，请查看控制台';
+      $id('go').disabled = false;
+    }
+  } catch (e) {
+    msg.className = 'msg';
+    msg.textContent = '出错了：' + (e && e.message ? e.message : e);
+    $id('go').disabled = false;
+  }
+}
+
+init();
+</script>
+</body>
+```

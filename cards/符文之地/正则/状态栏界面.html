@@ -84,6 +84,13 @@ body { margin: 0; padding: 4px 0; background: transparent; color: var(--c-text);
 .toast { text-align: center; font-size: 11px; color: var(--c-hextech); height: 0; overflow: hidden; transition: height .2s; }
 .toast.on { height: 16px; margin-top: 4px; }
 
+.rt-dream { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--c-text-muted); cursor: pointer; border: none; background: none; font-family: inherit; padding: 0; }
+.rt-dream i { width: 26px; height: 14px; border-radius: 7px; background: var(--c-border); position: relative; transition: background .2s; }
+.rt-dream i::after { content: ''; position: absolute; top: 2px; left: 2px; width: 10px; height: 10px; border-radius: 50%; background: var(--c-text); transition: left .2s; }
+.rt-dream.on { color: #a58ad6; }
+.rt-dream.on i { background: #a58ad6; }
+.rt-dream.on i::after { left: 14px; }
+.rt-err { padding: 8px 12px; color: var(--c-danger); font-size: 12px; white-space: pre-wrap; }
 .cg-view { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 9; cursor: zoom-out; }
 .cg-view.on { display: flex; }
 .cg-view img { max-width: 96%; max-height: 96%; border-radius: 8px; border: 1px solid var(--c-border-accent); }
@@ -161,6 +168,10 @@ function readStatData() {
   if (!inTavern()) return window.__RT_DEMO_STAT__ || {};
   try {
     const vars = getVariables({ type: 'message', message_id: getCurrentMessageId() });
+    if (vars && vars.stat_data) return vars.stat_data;
+  } catch (e) {}
+  try {
+    const vars = getVariables({ type: 'message', message_id: 'latest' });
     return (vars && vars.stat_data) || {};
   } catch (e) { return {}; }
 }
@@ -192,8 +203,10 @@ function renderHead(stat, ztl) {
   if (where) items.push(['地点', where]);
   if (w.当前任务 && w.当前任务 !== '无') items.push(['任务', w.当前任务]);
   if (!items.length) items.push(['符文之地', '旅途尚未开始']);
+  const dreamOn = ((w.梦境 || {}).是否处于梦境叙事中) === '是';
   document.getElementById('rt-head').innerHTML = items
-    .map(([k, v]) => '<div class="item"><span class="label">' + esc(k) + '</span><span class="value">' + esc(v) + '</span></div>').join('');
+    .map(([k, v]) => '<div class="item"><span class="label">' + esc(k) + '</span><span class="value">' + esc(v) + '</span></div>').join('') +
+    '<button class="rt-dream' + (dreamOn ? ' on' : '') + '" title="切换梦境模式（写入最新楼层）"><i></i>梦境</button>';
 }
 
 function renderCharacters(stat, ztl) {
@@ -269,6 +282,35 @@ function renderOptions(options) {
 }
 
 function render() {
+  try { renderUnsafe(); } catch (e) {
+    document.getElementById('rt-pages').innerHTML = '<div class="rt-err">状态面板出错：' + esc(e && e.message ? e.message : e) + '</div>';
+  }
+}
+
+async function toggleDream() {
+  const opt = { type: 'message', message_id: 'latest' };
+  try {
+    if (typeof Mvu !== 'undefined' && Mvu && Mvu.getMvuData) {
+      const data = Mvu.getMvuData(opt) || {};
+      const cur = _.get(data, 'stat_data.世界状态.梦境.是否处于梦境叙事中', '否');
+      _.set(data, 'stat_data.世界状态.梦境.是否处于梦境叙事中', cur === '是' ? '否' : '是');
+      await Mvu.replaceMvuData(data, opt);
+    } else if (typeof updateVariablesWith === 'function') {
+      updateVariablesWith(vars => {
+        const cur = _.get(vars, 'stat_data.世界状态.梦境.是否处于梦境叙事中', '否');
+        _.set(vars, 'stat_data.世界状态.梦境.是否处于梦境叙事中', cur === '是' ? '否' : '是');
+        return vars;
+      }, opt);
+    }
+    if (typeof toastr !== 'undefined') toastr.info('梦境模式已切换，下一轮回复生效');
+  } catch (e) {
+    if (typeof toastr !== 'undefined') toastr.error('切换失败：' + (e && e.message ? e.message : e));
+  }
+  lastKey = '';
+  setTimeout(render, 300);
+}
+
+function renderUnsafe() {
   const text = readMessageText();
   const stat = readStatData();
   const key = text.length + '|' + JSON.stringify(stat);
@@ -297,6 +339,7 @@ function render() {
 
 /* ---------- 交互 ---------- */
 document.addEventListener('click', ev => {
+  if (ev.target.closest('.rt-dream')) { toggleDream(); return; }
   const tab = ev.target.closest('.rt-tab');
   if (tab) {
     currentTab = tab.dataset.tab;
