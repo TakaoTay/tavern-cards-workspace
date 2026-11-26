@@ -1,0 +1,66 @@
+```
+<body>
+<style>
+:root {
+  --c-surface: #12161f;
+  --c-surface-raised: #1b2130;
+  --c-border: #2c3447;
+  --c-text: #e6e1d3;
+  --c-text-muted: #9aa3b5;
+  --c-accent: #c8a45a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 4px 0; background: transparent; color: var(--c-text);
+  font-family: "Sarasa Gothic SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 13px; line-height: 1.55; }
+.fate { max-width: 560px; margin: 0 auto; background: var(--c-surface); border: 1px solid var(--c-border);
+  border-left: 3px solid var(--tone, var(--c-accent)); border-radius: 8px; overflow: hidden; }
+.fate-head { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--c-border);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--tone, var(--c-accent)) 18%, transparent), transparent 75%); }
+.fate-icon { font-size: 16px; }
+.fate-title { font-weight: 700; letter-spacing: 1px; color: var(--tone, var(--c-accent)); }
+.fate-body { padding: 8px 12px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+.fate-body .k { color: var(--c-text-muted); white-space: nowrap; }
+.fate-body .v { overflow-wrap: anywhere; }
+.fate-raw { padding: 8px 12px; white-space: pre-wrap; color: var(--c-text-muted); }
+</style>
+<div class="fate" id="fate"></div>
+<textarea id="fate-src" hidden>$1</textarea>
+<script>
+const FATE_TYPES = {
+  quest:        ['委托', '📜', '#c8a45a'],
+  item:         ['获得物品', '🎁', '#5fb878'],
+  skill:        ['能力领悟', '✨', '#3fc1c9'],
+  letter:       ['信件传讯', '✉️', '#a58ad6'],
+  bounty:       ['悬赏令', '🎯', '#d0545b'],
+  reputation:   ['声望变动', '⚖️', '#c8a45a'],
+  trading:      ['交易结算', '💰', '#e0a84a'],
+  augmentation: ['躯体改造', '🦾', '#3fc1c9'],
+  corruption:   ['污染警告', '☣️', '#8fd14f'],
+  discovery:    ['区域发现', '🧭', '#5fa8d6'],
+  judgment:     ['审判通告', '🔨', '#d0545b'],
+  ritual:       ['魔法仪式', '🔮', '#b46ad6']
+};
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+(function () {
+  const src = document.getElementById('fate-src').value || '';
+  const box = document.getElementById('fate');
+  const typeMatch = src.match(/:::\s*([a-zA-Z]+)/);
+  const type = typeMatch ? typeMatch[1].toLowerCase() : '';
+  const meta = FATE_TYPES[type] || ['记录', '◆', '#c8a45a'];
+  const fields = [];
+  src.replace(/\[([^\[\]|]+)\|([^\[\]]*)\]/g, (all, k, v) => { fields.push([k.trim(), v.trim()]); return all; });
+  box.style.setProperty('--tone', meta[2]);
+  let html = '<div class="fate-head"><span class="fate-icon">' + meta[1] + '</span><span class="fate-title">' + esc(meta[0]) + '</span></div>';
+  if (fields.length) {
+    html += '<div class="fate-body">' + fields.filter(f => f[1]).map(([k, v]) =>
+      '<span class="k">' + esc(k) + '</span><span class="v">' + esc(v) + '</span>').join('') + '</div>';
+  } else {
+    html += '<div class="fate-raw">' + esc(src.replace(/:::\s*[a-zA-Z]*/g, '').trim()) + '</div>';
+  }
+  box.innerHTML = html;
+})();
+</script>
+</body>
+```

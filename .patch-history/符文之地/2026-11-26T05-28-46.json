@@ -1,0 +1,3617 @@
+{
+  "projectName": "符文之地",
+  "worldbookName": "符文之地",
+  "form": "charactercard",
+  "mvu": true,
+  "entryManifest": {
+    "unknown": {
+      "世界观/总纲": {
+        "path": "世界书/世界观_总纲.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 1
+        },
+        "display_index": 0
+      },
+      "战力体系": {
+        "path": "世界书/战力体系.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 2
+        },
+        "display_index": 1
+      },
+      "战力因果与生死判定": {
+        "path": "世界书/战力因果与生死判定.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 3
+        },
+        "display_index": 2
+      },
+      "世界运转": {
+        "path": "世界书/世界运转.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 4
+        },
+        "display_index": 3
+      },
+      "权力生态": {
+        "path": "世界书/权力生态.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 5
+        },
+        "display_index": 4
+      },
+      "伤病与恢复": {
+        "path": "世界书/伤病与恢复.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 6
+        },
+        "display_index": 5
+      },
+      "经济体系": {
+        "path": "世界书/经济体系.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 7
+        },
+        "display_index": 6
+      },
+      "魔法代价": {
+        "path": "世界书/魔法代价.txt",
+        "keywords": [
+          "魔法",
+          "施法",
+          "法师",
+          "海克斯",
+          "水晶",
+          "元素",
+          "灵界",
+          "精神领域",
+          "血魔法",
+          "禁忌",
+          "星灵",
+          "透支",
+          "禁魔石",
+          "炼金"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "魔法",
+            "施法",
+            "法师",
+            "海克斯",
+            "水晶",
+            "元素",
+            "灵界",
+            "精神领域",
+            "血魔法",
+            "禁忌",
+            "星灵",
+            "透支",
+            "禁魔石",
+            "炼金"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 9
+        },
+        "display_index": 7
+      },
+      "精神攻击判定": {
+        "path": "世界书/精神攻击判定.txt",
+        "keywords": [
+          "精神攻击",
+          "精神",
+          "腐化",
+          "侵蚀",
+          "篡改",
+          "迷惑",
+          "魅惑"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "精神攻击",
+            "精神",
+            "腐化",
+            "侵蚀",
+            "篡改",
+            "迷惑",
+            "魅惑"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 10
+        },
+        "display_index": 8
+      },
+      "皮尔特沃夫与祖安": {
+        "path": "世界书/皮尔特沃夫与祖安.txt",
+        "keywords": [
+          "皮尔特沃夫",
+          "皮城",
+          "祖安",
+          "海闸",
+          "双城"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "皮尔特沃夫",
+            "皮城",
+            "祖安",
+            "海闸",
+            "双城"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 11
+        },
+        "display_index": 9
+      },
+      "势力详情：科学院": {
+        "path": "世界书/势力详情：科学院.txt",
+        "keywords": [
+          "杰斯",
+          "科学院"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "杰斯",
+            "科学院"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 12
+        },
+        "display_index": 10
+      },
+      "势力详情：费罗斯家族": {
+        "path": "世界书/势力详情：费罗斯家族.txt",
+        "keywords": [
+          "费罗斯",
+          "卡密尔",
+          "灰夫人",
+          "海克斯水晶垄断",
+          "首席密探",
+          "原初水晶"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "费罗斯",
+            "卡密尔",
+            "灰夫人",
+            "海克斯水晶垄断",
+            "首席密探",
+            "原初水晶"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 13
+        },
+        "display_index": 11,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "势力详情：执法官": {
+        "path": "世界书/势力详情：执法官.txt",
+        "keywords": [
+          "执法官",
+          "皮城守卫",
+          "马库斯",
+          "凯特琳",
+          "巡警",
+          "警长",
+          "静水监狱"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "执法官",
+            "皮城守卫",
+            "马库斯",
+            "凯特琳",
+            "巡警",
+            "警长",
+            "静水监狱"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 14
+        },
+        "display_index": 12
+      },
+      "势力详情：希尔科势力": {
+        "path": "世界书/势力详情：希尔科势力.txt",
+        "keywords": [
+          "希尔科",
+          "金克丝",
+          "塞维卡",
+          "微光",
+          "福根酒馆",
+          "祖安统治者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希尔科",
+            "金克丝",
+            "塞维卡",
+            "微光",
+            "福根酒馆",
+            "祖安统治者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 15
+        },
+        "display_index": 13
+      },
+      "势力详情：炼金男爵联盟": {
+        "path": "世界书/势力详情：炼金男爵联盟.txt",
+        "keywords": [
+          "炼金男爵",
+          "化学男爵",
+          "芬恩",
+          "微光工厂",
+          "黑帮",
+          "地头蛇"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "炼金男爵",
+            "化学男爵",
+            "芬恩",
+            "微光工厂",
+            "黑帮",
+            "地头蛇"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 16
+        },
+        "display_index": 14,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "势力详情：野火帮": {
+        "path": "世界书/势力详情：野火帮.txt",
+        "keywords": [
+          "野火帮",
+          "萤火虫帮",
+          "艾克",
+          "反抗组织",
+          "悬浮滑板",
+          "树树"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "野火帮",
+            "萤火虫帮",
+            "艾克",
+            "反抗组织",
+            "悬浮滑板",
+            "树树"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 17
+        },
+        "display_index": 15
+      },
+      "人物：金克丝": {
+        "path": "世界书/人物：金克丝.txt",
+        "keywords": [
+          "金克丝",
+          "爆爆",
+          "Jinx",
+          "炸弹",
+          "涂鸦",
+          "蓝头发",
+          "希尔科的养女"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "金克丝",
+            "爆爆",
+            "Jinx",
+            "炸弹",
+            "涂鸦",
+            "蓝头发",
+            "希尔科的养女"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 18
+        },
+        "display_index": 16
+      },
+      "人物：萨勒芬妮": {
+        "path": "世界书/人物：萨勒芬妮.txt",
+        "keywords": [
+          "萨勒芬妮",
+          "Seraphine",
+          "星籁歌姬",
+          "海克斯耳机",
+          "听觉魔法",
+          "粉色头发"
+        ],
+        "abstract": "萨勒芬妮：能听见灵魂之声的皮城街头歌手；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨勒芬妮",
+            "Seraphine",
+            "星籁歌姬",
+            "海克斯耳机",
+            "听觉魔法",
+            "粉色头发"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 20
+        },
+        "display_index": 17
+      },
+      "人物：奥莉安娜": {
+        "path": "世界书/人物：奥莉安娜.txt",
+        "keywords": [
+          "奥莉安娜",
+          "Orianna",
+          "发条魔灵",
+          "魔偶",
+          "机械女",
+          "发条"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥莉安娜",
+            "Orianna",
+            "发条魔灵",
+            "魔偶",
+            "机械女",
+            "发条"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 29
+        },
+        "display_index": 18
+      },
+      "人物：奥莉安娜_人类": {
+        "path": "世界书/人物：奥莉安娜_人类.txt",
+        "keywords": [
+          "奥莉安娜",
+          "芭蕾"
+        ],
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奥莉安娜",
+            "芭蕾"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 29
+        },
+        "display_index": 19
+      },
+      "人物：蔚": {
+        "path": "世界书/人物：蔚.txt",
+        "keywords": [
+          "蔚",
+          "Vi",
+          "祖安",
+          "双城",
+          "静水监狱",
+          "街头斗士",
+          "粉发"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蔚",
+            "Vi",
+            "祖安",
+            "双城",
+            "静水监狱",
+            "街头斗士",
+            "粉发"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 22
+        },
+        "display_index": 20
+      },
+      "人物：凯特琳": {
+        "path": "世界书/人物：凯特琳.txt",
+        "keywords": [
+          "凯特琳",
+          "Caitlyn",
+          "执法官",
+          "基拉曼",
+          "狙击手",
+          "小蛋糕"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯特琳",
+            "Caitlyn",
+            "执法官",
+            "基拉曼",
+            "狙击手",
+            "小蛋糕"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 23
+        },
+        "display_index": 21,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：迦娜": {
+        "path": "世界书/人物：迦娜.txt",
+        "keywords": [
+          "迦娜",
+          "Janna",
+          "风之化身",
+          "青鸟",
+          "信仰",
+          "风暴"
+        ],
+        "abstract": "迦娜：祖安风之精灵，信仰流失正在变淡；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "迦娜",
+            "Janna",
+            "风之化身",
+            "青鸟",
+            "信仰",
+            "风暴"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 21
+        },
+        "display_index": 22
+      },
+      "人物：泽丽": {
+        "path": "世界书/人物：泽丽.txt",
+        "keywords": [
+          "泽丽",
+          "Zeri",
+          "跑酷",
+          "静电",
+          "双马尾",
+          "祖安花火"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泽丽",
+            "Zeri",
+            "跑酷",
+            "静电",
+            "双马尾",
+            "祖安花火"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 24
+        },
+        "display_index": 23
+      },
+      "人物：梅尔": {
+        "path": "世界书/人物：梅尔.txt",
+        "keywords": [
+          "梅尔",
+          "Mel",
+          "议员",
+          "梅达尔达",
+          "诺克萨斯",
+          "金箔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "梅尔",
+            "Mel",
+            "议员",
+            "梅达尔达",
+            "诺克萨斯",
+            "金箔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 26
+        },
+        "display_index": 24
+      },
+      "人物：烈娜塔": {
+        "path": "世界书/人物：烈娜塔.txt",
+        "keywords": [
+          "烈娜塔",
+          "Renata",
+          "炼金男爵",
+          "资本",
+          "微光",
+          "机械臂"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "烈娜塔",
+            "Renata",
+            "炼金男爵",
+            "资本",
+            "微光",
+            "机械臂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 25
+        },
+        "display_index": 25
+      },
+      "人物：卡密尔": {
+        "path": "世界书/人物：卡密尔.txt",
+        "keywords": [
+          "卡密尔",
+          "Camille",
+          "灰夫人",
+          "海克斯",
+          "腿刃",
+          "精密"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡密尔",
+            "Camille",
+            "灰夫人",
+            "海克斯",
+            "腿刃",
+            "精密"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 27
+        },
+        "display_index": 26
+      },
+      "人物：安蓓萨": {
+        "path": "世界书/人物：安蓓萨.txt",
+        "keywords": [
+          "安蓓萨",
+          "Ambessa",
+          "梅达尔达",
+          "诺克萨斯",
+          "军阀",
+          "肌肉"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "安蓓萨",
+            "Ambessa",
+            "梅达尔达",
+            "诺克萨斯",
+            "军阀",
+            "肌肉"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 28
+        },
+        "display_index": 27
+      },
+      "人物：希尔科": {
+        "path": "世界书/人物：希尔科.txt",
+        "keywords": [
+          "希尔科",
+          "Silco",
+          "祖安",
+          "微光",
+          "注射器",
+          "微光辛迪加"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希尔科",
+            "Silco",
+            "祖安",
+            "微光",
+            "注射器",
+            "微光辛迪加"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 30
+        },
+        "display_index": 28
+      },
+      "人物：杰斯": {
+        "path": "世界书/人物：杰斯.txt",
+        "keywords": [
+          "杰斯",
+          "Jayce",
+          "塔利斯",
+          "海克斯",
+          "科学院",
+          "发明家"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "杰斯",
+            "Jayce",
+            "塔利斯",
+            "海克斯",
+            "科学院",
+            "发明家"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 31
+        },
+        "display_index": 29
+      },
+      "人物：黑默丁格": {
+        "path": "世界书/人物：黑默丁格.txt",
+        "keywords": [
+          "黑默丁格",
+          "Heimerdinger",
+          "院长",
+          "约德尔人",
+          "科学院",
+          "保守"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑默丁格",
+            "Heimerdinger",
+            "院长",
+            "约德尔人",
+            "科学院",
+            "保守"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 32
+        },
+        "display_index": 30
+      },
+      "人物：辛吉德": {
+        "path": "世界书/人物：辛吉德.txt",
+        "keywords": [
+          "辛吉德",
+          "Singed",
+          "炼金术士",
+          "微光",
+          "实验室",
+          "改造"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "辛吉德",
+            "Singed",
+            "炼金术士",
+            "微光",
+            "实验室",
+            "改造"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 43
+        },
+        "display_index": 31
+      },
+      "人物：维克托": {
+        "path": "世界书/人物：维克托.txt",
+        "keywords": [
+          "维克托",
+          "Viktor",
+          "海克斯",
+          "科学院",
+          "拐杖",
+          "祖安"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "维克托",
+            "Viktor",
+            "海克斯",
+            "科学院",
+            "拐杖",
+            "祖安"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 33
+        },
+        "display_index": 32
+      },
+      "人物：维克托（机械飞升版）": {
+        "path": "世界书/人物：维克托（机械飞升版）.txt",
+        "keywords": [
+          "机械维克托",
+          "Viktor",
+          "光荣进化",
+          "机械先驱",
+          "第三只手",
+          "改造"
+        ],
+        "abstract": "",
+        "enabled": false,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "机械维克托",
+            "Viktor",
+            "光荣进化",
+            "机械先驱",
+            "第三只手",
+            "改造"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 33
+        },
+        "display_index": 33
+      },
+      "人物：艾克": {
+        "path": "世界书/人物：艾克.txt",
+        "keywords": [
+          "艾克",
+          "Ekko",
+          "野火帮",
+          "滑板",
+          "底城",
+          "Z驱动"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾克",
+            "Ekko",
+            "野火帮",
+            "滑板",
+            "底城",
+            "Z驱动"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 34
+        },
+        "display_index": 34
+      },
+      "人物：沃里克": {
+        "path": "世界书/人物：沃里克.txt",
+        "keywords": [
+          "沃里克",
+          "Warwick",
+          "范德尔",
+          "狼人",
+          "辛吉德造物",
+          "改造"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "沃里克",
+            "Warwick",
+            "范德尔",
+            "狼人",
+            "辛吉德造物",
+            "改造"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 35
+        },
+        "display_index": 35
+      },
+      "人物：布里茨 ": {
+        "path": "世界书/人物：布里茨.txt",
+        "keywords": [
+          "布里茨",
+          "Blitzcrank",
+          "蒸汽机器人",
+          "废料清理",
+          "维克托造物",
+          "机械爪"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "布里茨",
+            "Blitzcrank",
+            "蒸汽机器人",
+            "废料清理",
+            "维克托造物",
+            "机械爪"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 36
+        },
+        "display_index": 36
+      },
+      "人物：扎克": {
+        "path": "世界书/人物：扎克.txt",
+        "keywords": [
+          "扎克",
+          "Zac",
+          "生化魔人",
+          "凝胶",
+          "底城"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "扎克",
+            "Zac",
+            "生化魔人",
+            "凝胶",
+            "底城"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 37
+        },
+        "display_index": 37
+      },
+      "人物：蒙多": {
+        "path": "世界书/人物：蒙多.txt",
+        "keywords": [
+          "蒙多",
+          "Mundo",
+          "祖安医生",
+          "紫色肌肉",
+          "疯人院",
+          "手术刀"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "蒙多",
+            "Mundo",
+            "祖安医生",
+            "紫色肌肉",
+            "疯人院",
+            "手术刀"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 38
+        },
+        "display_index": 38
+      },
+      "人物：伊泽瑞尔": {
+        "path": "世界书/人物：伊泽瑞尔.txt",
+        "keywords": [
+          "伊泽瑞尔",
+          "Ezreal",
+          "护臂",
+          "探险家",
+          "恕瑞玛",
+          "跃迁"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊泽瑞尔",
+            "Ezreal",
+            "护臂",
+            "探险家",
+            "恕瑞玛",
+            "跃迁"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 39
+        },
+        "display_index": 39
+      },
+      "人物：图奇": {
+        "path": "世界书/人物：图奇.txt",
+        "keywords": [
+          "图奇",
+          "Twitch",
+          "变异老鼠",
+          "毒液",
+          "祖安瘟疫",
+          "下水道"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "图奇",
+            "Twitch",
+            "变异老鼠",
+            "毒液",
+            "祖安瘟疫",
+            "下水道"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 40
+        },
+        "display_index": 40
+      },
+      "人物：瑞兹": {
+        "path": "世界书/人物：瑞兹.txt",
+        "keywords": [
+          "瑞兹",
+          "Ryze",
+          "符文法师",
+          "卷轴",
+          "紫皮",
+          "奥术"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瑞兹",
+            "Ryze",
+            "符文法师",
+            "卷轴",
+            "紫皮",
+            "奥术"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 41
+        },
+        "display_index": 41
+      },
+      "人物：佐伊": {
+        "path": "世界书/人物：佐伊.txt",
+        "keywords": [
+          "佐伊",
+          "Zoe",
+          "暮光星灵",
+          "传送门",
+          "异色瞳"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "佐伊",
+            "Zoe",
+            "暮光星灵",
+            "传送门",
+            "异色瞳"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 42
+        },
+        "display_index": 42
+      },
+      "世界符文": {
+        "path": "世界书/世界符文.txt",
+        "keywords": [
+          "世界符文",
+          "World Runes",
+          "基石符文",
+          "创世能量",
+          "精密系",
+          "主宰系",
+          "巫术系",
+          "坚决系",
+          "启迪系"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "世界符文",
+            "World Runes",
+            "基石符文",
+            "创世能量",
+            "精密系",
+            "主宰系",
+            "巫术系",
+            "坚决系",
+            "启迪系"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 44
+        },
+        "display_index": 43
+      },
+      "金克丝二次解释": {
+        "path": "世界书/金克丝二次解释.txt",
+        "keywords": [
+          "金克丝",
+          "爆爆"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "金克丝",
+            "爆爆"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 19
+        },
+        "display_index": 44
+      },
+      "沉浸模块": {
+        "path": "世界书/沉浸模块.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 1,
+          "order": 998
+        },
+        "display_index": 49
+      },
+      "艾欧尼亚地区": {
+        "path": "世界书/艾欧尼亚地区.txt",
+        "keywords": [
+          "艾欧尼亚",
+          "纳沃利",
+          "初生之土",
+          "反抗"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾欧尼亚",
+            "纳沃利",
+            "初生之土",
+            "反抗"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 45
+        },
+        "display_index": 50
+      },
+      "精神领域": {
+        "path": "世界书/精神领域.txt",
+        "keywords": [
+          "精神领域",
+          "灵界",
+          "彼岸",
+          "未知维度"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "精神领域",
+            "灵界",
+            "彼岸",
+            "未知维度"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 46
+        },
+        "display_index": 51
+      },
+      "神龙之力": {
+        "path": "世界书/神龙之力.txt",
+        "keywords": [
+          "神龙",
+          "神龙之力",
+          "神龙尊者",
+          "龙魂"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "神龙",
+            "神龙之力",
+            "神龙尊者",
+            "龙魂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 47
+        },
+        "display_index": 52
+      },
+      "势力详情：艾欧尼亚反抗军": {
+        "path": "世界书/势力详情：艾欧尼亚反抗军.txt",
+        "keywords": [
+          "反抗军",
+          "艾瑞莉亚",
+          "普雷西典"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "反抗军",
+            "艾瑞莉亚",
+            "普雷西典"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 48
+        },
+        "display_index": 53
+      },
+      "势力详情：纳沃利兄弟会": {
+        "path": "世界书/势力详情：纳沃利兄弟会.txt",
+        "keywords": [
+          "兄弟会",
+          "激进",
+          "纳沃利",
+          "暴行"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "兄弟会",
+            "激进",
+            "纳沃利",
+            "暴行"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 49
+        },
+        "display_index": 54
+      },
+      "势力详情：均衡教派": {
+        "path": "世界书/势力详情：均衡教派.txt",
+        "keywords": [
+          "均衡教派",
+          "忍者",
+          "信条",
+          "均衡",
+          "灵界"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "均衡教派",
+            "忍者",
+            "信条",
+            "均衡",
+            "灵界"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 50
+        },
+        "display_index": 55
+      },
+      "势力详情：影流教派": {
+        "path": "世界书/势力详情：影流教派.txt",
+        "keywords": [
+          "影流",
+          "刺客",
+          "刺杀",
+          "暗杀",
+          "影流教派",
+          "分身"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "影流",
+            "刺客",
+            "刺杀",
+            "暗杀",
+            "影流教派",
+            "分身"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 51
+        },
+        "display_index": 56
+      },
+      "势力详情：长存之殿": {
+        "path": "世界书/势力详情：长存之殿.txt",
+        "keywords": [
+          "和平主义",
+          "维护",
+          "长存之殿",
+          "神庙",
+          "武僧",
+          "卡尔玛"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "和平主义",
+            "维护",
+            "长存之殿",
+            "神庙",
+            "武僧",
+            "卡尔玛"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 52
+        },
+        "display_index": 57
+      },
+      "势力详情：瓦斯塔亚诸部落": {
+        "path": "世界书/势力详情：瓦斯塔亚诸部落.txt",
+        "keywords": [
+          "野生魔法",
+          "瓦斯塔亚",
+          "自然",
+          "部落",
+          "丛林"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "野生魔法",
+            "瓦斯塔亚",
+            "自然",
+            "部落",
+            "丛林"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 53
+        },
+        "display_index": 58
+      },
+      "势力详情：朔极寺": {
+        "path": "世界书/势力详情：朔极寺.txt",
+        "keywords": [
+          "朔极寺",
+          "神龙",
+          "朔极之矛",
+          "武僧",
+          "守护",
+          "肉体"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "朔极寺",
+            "神龙",
+            "朔极之矛",
+            "武僧",
+            "守护",
+            "肉体"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 54
+        },
+        "display_index": 59
+      },
+      "动态人设生成": {
+        "path": "世界书/动态人设生成.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 8
+        },
+        "display_index": 60
+      },
+      "人物：阿狸": {
+        "path": "世界书/人物：阿狸.txt",
+        "keywords": [
+          "阿狸",
+          "狐妖",
+          "精气"
+        ],
+        "abstract": "阿狸：吸取精魄的瓦斯塔亚狐灵，追寻部族来处；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿狸",
+            "狐妖",
+            "精气"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 55
+        },
+        "display_index": 61
+      },
+      "人物：阿卡丽": {
+        "path": "世界书/人物：阿卡丽.txt",
+        "keywords": [
+          "阿卡丽",
+          "刺客",
+          "忍者",
+          "暗影之拳"
+        ],
+        "abstract": "阿卡丽：脱离均衡教派的独行刺客，守护艾欧尼亚；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "阿卡丽",
+            "刺客",
+            "忍者",
+            "暗影之拳"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 56
+        },
+        "display_index": 62
+      },
+      "人物：艾瑞莉亚": {
+        "path": "世界书/人物：艾瑞莉亚.txt",
+        "keywords": [
+          "艾瑞莉亚",
+          "反抗军",
+          "领袖",
+          "舞者"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾瑞莉亚",
+            "反抗军",
+            "领袖",
+            "舞者"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 57
+        },
+        "display_index": 63
+      },
+      "人物：卡尔玛": {
+        "path": "世界书/人物：卡尔玛.txt",
+        "keywords": [
+          "精神领袖",
+          "卡尔玛",
+          "冥想",
+          "梵咒"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "精神领袖",
+            "卡尔玛",
+            "冥想",
+            "梵咒"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 58
+        },
+        "display_index": 64
+      },
+      "人物：辛德拉": {
+        "path": "世界书/人物：辛德拉.txt",
+        "keywords": [
+          "黑暗元首",
+          "辛德拉",
+          "封印",
+          "暗黑魔法",
+          "法球"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑暗元首",
+            "辛德拉",
+            "封印",
+            "暗黑魔法",
+            "法球"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 59
+        },
+        "display_index": 65
+      },
+      "人物：莉莉娅": {
+        "path": "世界书/人物：莉莉娅.txt",
+        "keywords": [
+          "莉莉娅",
+          "鹿",
+          "梦境",
+          "小鹿"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莉莉娅",
+            "鹿",
+            "梦境",
+            "小鹿"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 60
+        },
+        "display_index": 66
+      },
+      "人物：霞": {
+        "path": "世界书/人物：霞.txt",
+        "keywords": [
+          "霞",
+          "禽类",
+          "飞羽",
+          "排外"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "霞",
+            "禽类",
+            "飞羽",
+            "排外"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 61
+        },
+        "display_index": 67,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：芸阿娜": {
+        "path": "世界书/人物：芸阿娜.txt",
+        "keywords": [
+          "芸阿娜",
+          "前任暗影之拳",
+          "精神领域"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "芸阿娜",
+            "前任暗影之拳",
+            "精神领域"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 62
+        },
+        "display_index": 68
+      },
+      "人物：洛": {
+        "path": "世界书/人物：洛.txt",
+        "keywords": [
+          "洛",
+          "战舞",
+          "华丽"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "洛",
+            "战舞",
+            "华丽"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 76
+        },
+        "display_index": 69
+      },
+      "人物：李青": {
+        "path": "世界书/人物：李青.txt",
+        "keywords": [
+          "李青",
+          "盲僧",
+          "神龙之力",
+          "武僧"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "李青",
+            "盲僧",
+            "神龙之力",
+            "武僧"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 64
+        },
+        "display_index": 70
+      },
+      "人物：亚索": {
+        "path": "世界书/人物：亚索.txt",
+        "keywords": [
+          "亚索",
+          "浪人",
+          "剑客",
+          "御风剑术"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "亚索",
+            "浪人",
+            "剑客",
+            "御风剑术"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 65
+        },
+        "display_index": 71
+      },
+      "人物：永恩": {
+        "path": "世界书/人物：永恩.txt",
+        "keywords": [
+          "永恩",
+          "亚扎卡纳",
+          "灵魂"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "永恩",
+            "亚扎卡纳",
+            "灵魂"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 66
+        },
+        "display_index": 72
+      },
+      "人物：艾翁": {
+        "path": "世界书/人物：艾翁.txt",
+        "keywords": [
+          "艾翁",
+          "翠神",
+          "自然",
+          "森林"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "艾翁",
+            "翠神",
+            "自然",
+            "森林"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 67
+        },
+        "display_index": 73
+      },
+      "人物：易": {
+        "path": "世界书/人物：易.txt",
+        "keywords": [
+          "易",
+          "剑圣",
+          "无极",
+          "无极之道",
+          "宗师"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "易",
+            "剑圣",
+            "无极",
+            "无极之道",
+            "宗师"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 68
+        },
+        "display_index": 74
+      },
+      "人物：悟空": {
+        "path": "世界书/人物：悟空.txt",
+        "keywords": [
+          "悟空",
+          "学徒",
+          "无极"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "悟空",
+            "学徒",
+            "无极"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 69
+        },
+        "display_index": 75
+      },
+      "人物：慧": {
+        "path": "世界书/人物：慧.txt",
+        "keywords": [
+          "慧",
+          "画家",
+          "颜料",
+          "艺术"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "慧",
+            "画家",
+            "颜料",
+            "艺术"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 70
+        },
+        "display_index": 76
+      },
+      "人物：烬": {
+        "path": "世界书/人物：烬.txt",
+        "keywords": [
+          "烬",
+          "金魔",
+          "死亡",
+          "艺术",
+          "瘸子",
+          "杀手"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "烬",
+            "金魔",
+            "死亡",
+            "艺术",
+            "瘸子",
+            "杀手"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 71
+        },
+        "display_index": 77
+      },
+      "人物：慎": {
+        "path": "世界书/人物：慎.txt",
+        "keywords": [
+          "慎",
+          "暮光之眼",
+          "平衡",
+          "均衡",
+          "魂刃"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "慎",
+            "暮光之眼",
+            "平衡",
+            "均衡",
+            "魂刃"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 72
+        },
+        "display_index": 78
+      },
+      "人物：凯南": {
+        "path": "世界书/人物：凯南.txt",
+        "keywords": [
+          "凯南",
+          "狂暴之心",
+          "逐日",
+          "雷电"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯南",
+            "狂暴之心",
+            "逐日",
+            "雷电"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 73
+        },
+        "display_index": 79
+      },
+      "人物：劫": {
+        "path": "世界书/人物：劫.txt",
+        "keywords": [
+          "劫",
+          "影流之主",
+          "影流",
+          "暗杀",
+          "分身"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "劫",
+            "影流之主",
+            "影流",
+            "暗杀",
+            "分身"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 74
+        },
+        "display_index": 80
+      },
+      "人物：凯隐": {
+        "path": "世界书/人物：凯隐.txt",
+        "keywords": [
+          "凯隐",
+          "魔镰",
+          "暗裔",
+          "影流"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯隐",
+            "魔镰",
+            "暗裔",
+            "影流"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 75
+        },
+        "display_index": 81
+      },
+      "人物：锐雯": {
+        "path": "世界书/人物：锐雯.txt",
+        "keywords": [
+          "锐雯",
+          "断刃",
+          "赎罪"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "锐雯",
+            "断刃",
+            "赎罪"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 63
+        },
+        "display_index": 82
+      },
+      "人物：瑟提": {
+        "path": "世界书/人物：瑟提.txt",
+        "keywords": [
+          "瑟提",
+          "腕豪",
+          "斗士",
+          "竞技场"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "瑟提",
+            "腕豪",
+            "斗士",
+            "竞技场"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 77
+        },
+        "display_index": 83
+      },
+      "人物：韦鲁斯": {
+        "path": "世界书/人物：韦鲁斯.txt",
+        "keywords": [
+          "韦鲁斯",
+          "暗裔",
+          "长弓"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "韦鲁斯",
+            "暗裔",
+            "长弓"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 78
+        },
+        "display_index": 84
+      },
+      "诺克萨斯帝国": {
+        "path": "世界书/诺克萨斯帝国.txt",
+        "keywords": [
+          "诺克萨斯",
+          "帝国",
+          "战争"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "诺克萨斯",
+            "帝国",
+            "战争"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 79
+        },
+        "display_index": 85
+      },
+      "势力详情：崔法利议会": {
+        "path": "世界书/势力详情：崔法利议会.txt",
+        "keywords": [
+          "崔法利",
+          "议会"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "崔法利",
+            "议会"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 80
+        },
+        "display_index": 86
+      },
+      "势力详情：黑色玫瑰": {
+        "path": "世界书/势力详情：黑色玫瑰.txt",
+        "keywords": [
+          "黑色玫瑰",
+          "结社",
+          "苍白女士"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "黑色玫瑰",
+            "结社",
+            "苍白女士"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 81
+        },
+        "display_index": 87
+      },
+      "势力详情：军事贵族集团": {
+        "path": "世界书/势力详情：军事贵族集团.txt",
+        "keywords": [
+          "贵族",
+          "集团",
+          "家族"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贵族",
+            "集团",
+            "家族"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 82
+        },
+        "display_index": 88
+      },
+      "势力详情：帝国战团与正规军": {
+        "path": "世界书/势力详情：帝国战团与正规军.txt",
+        "keywords": [
+          "战团",
+          "军队"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "战团",
+            "军队"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 83
+        },
+        "display_index": 89
+      },
+      "势力详情：清算人角斗场": {
+        "path": "世界书/势力详情：清算人角斗场.txt",
+        "keywords": [
+          "角斗场",
+          "死斗"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "角斗场",
+            "死斗"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 84
+        },
+        "display_index": 90
+      },
+      "人物：卡特琳娜": {
+        "path": "世界书/人物：卡特琳娜.txt",
+        "keywords": [
+          "卡特琳娜",
+          "卡特"
+        ],
+        "abstract": "卡特琳娜：杜·克卡奥家族长女、诺克萨斯刺客，追查失踪的父亲；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡特琳娜",
+            "卡特"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 85
+        },
+        "display_index": 91
+      },
+      "人物：莎弥拉": {
+        "path": "世界书/人物：莎弥拉.txt",
+        "keywords": [
+          "莎弥拉",
+          "佣兵"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莎弥拉",
+            "佣兵"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 86
+        },
+        "display_index": 92
+      },
+      "人物：乐芙兰": {
+        "path": "世界书/人物：乐芙兰.txt",
+        "keywords": [
+          "乐芙兰",
+          "苍白女士"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "乐芙兰",
+            "苍白女士"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 87
+        },
+        "display_index": 93
+      },
+      "人物：贝蕾亚": {
+        "path": "世界书/人物：贝蕾亚.txt",
+        "keywords": [
+          "贝蕾亚",
+          "实验体"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "贝蕾亚",
+            "实验体"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 88
+        },
+        "display_index": 94
+      },
+      "人物：卡西奥佩娅": {
+        "path": "世界书/人物：卡西奥佩娅.txt",
+        "keywords": [
+          "卡西奥佩娅",
+          "蛇女",
+          "石化"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卡西奥佩娅",
+            "蛇女",
+            "石化"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 89
+        },
+        "display_index": 95
+      },
+      "人物：芮尔": {
+        "path": "世界书/人物：芮尔.txt",
+        "keywords": [
+          "芮尔",
+          "熔铁"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "芮尔",
+            "熔铁"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 90
+        },
+        "display_index": 96
+      },
+      "人物：伊莉丝": {
+        "path": "世界书/人物：伊莉丝.txt",
+        "keywords": [
+          "伊莉丝",
+          "蜘蛛"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊莉丝",
+            "蜘蛛"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 100
+        },
+        "display_index": 97,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：拉克丝": {
+        "path": "世界书/人物：拉克丝.txt",
+        "keywords": [
+          "拉克丝"
+        ],
+        "abstract": "拉克丝：冕卫家千金、隐藏光魔法的法师，背负塞拉斯事件的愧疚；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "拉克丝"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 116
+        },
+        "display_index": 98
+      },
+      "人物：凯尔": {
+        "path": "世界书/人物：凯尔.txt",
+        "keywords": [
+          "凯尔",
+          "飞翼保护神",
+          "天使"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "凯尔",
+            "飞翼保护神",
+            "天使"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 117
+        },
+        "display_index": 99
+      },
+      "人物：莫甘娜": {
+        "path": "世界书/人物：莫甘娜.txt",
+        "keywords": [
+          "莫甘娜",
+          "面纱女士",
+          "堕落天使"
+        ],
+        "abstract": "莫甘娜：星灵半神、德玛西亚“面纱女士”，庇护被追捕的法师；按好感度五阶段描写与<user>的关系",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莫甘娜",
+            "面纱女士",
+            "堕落天使"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 118
+        },
+        "display_index": 100
+      },
+      "人物：娑娜": {
+        "path": "世界书/人物：娑娜.txt",
+        "keywords": [
+          "娑娜",
+          "叆华"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "娑娜",
+            "叆华"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 119
+        },
+        "display_index": 101
+      },
+      "人物：菲奥娜": {
+        "path": "世界书/人物：菲奥娜.txt",
+        "keywords": [
+          "菲奥娜",
+          "剑姬"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "菲奥娜",
+            "剑姬"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 120
+        },
+        "display_index": 102
+      },
+      "人物：薇恩": {
+        "path": "世界书/人物：薇恩.txt",
+        "keywords": [
+          "薇恩",
+          "猎手"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "薇恩",
+            "猎手"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 121
+        },
+        "display_index": 103
+      },
+      "人物：伊芙琳": {
+        "path": "世界书/人物：伊芙琳.txt",
+        "keywords": [
+          "伊芙琳",
+          "痛苦",
+          "恶魔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "伊芙琳",
+            "痛苦",
+            "恶魔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 122
+        },
+        "display_index": 104
+      },
+      "人物：希瓦娜": {
+        "path": "世界书/人物：希瓦娜.txt",
+        "keywords": [
+          "希瓦娜",
+          "龙女",
+          "近卫"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "希瓦娜",
+            "龙女",
+            "近卫"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 123
+        },
+        "display_index": 105
+      },
+      "人物：波比": {
+        "path": "世界书/人物：波比.txt",
+        "keywords": [
+          "波比",
+          "圣锤"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "波比",
+            "圣锤"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 124
+        },
+        "display_index": 106
+      },
+      "人物：奎因": {
+        "path": "世界书/人物：奎因.txt",
+        "keywords": [
+          "奎因",
+          "游骑兵"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "奎因",
+            "游骑兵"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 125
+        },
+        "display_index": 107
+      },
+      "人物：斯维因": {
+        "path": "世界书/人物：斯维因.txt",
+        "keywords": [
+          "斯维因",
+          "统领",
+          "乌鸦"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "斯维因",
+            "统领",
+            "乌鸦"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 101
+        },
+        "display_index": 108
+      },
+      "人物：泰隆": {
+        "path": "世界书/人物：泰隆.txt",
+        "keywords": [
+          "泰隆",
+          "刺客"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "泰隆",
+            "刺客"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 102
+        },
+        "display_index": 109
+      },
+      "人物：赛恩": {
+        "path": "世界书/人物：赛恩.txt",
+        "keywords": [
+          "赛恩",
+          "亡灵战神"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赛恩",
+            "亡灵战神"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 103
+        },
+        "display_index": 110
+      },
+      "人物：厄加特": {
+        "path": "世界书/人物：厄加特.txt",
+        "keywords": [
+          "厄加特",
+          "螃蟹"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "厄加特",
+            "螃蟹"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 104
+        },
+        "display_index": 111
+      },
+      "人物：德莱厄斯": {
+        "path": "世界书/人物：德莱厄斯.txt",
+        "keywords": [
+          "德莱厄斯",
+          "诺克萨斯之手"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德莱厄斯",
+            "诺克萨斯之手"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 105
+        },
+        "display_index": 112
+      },
+      "人物：弗拉基米尔": {
+        "path": "世界书/人物：弗拉基米尔.txt",
+        "keywords": [
+          "弗拉基米尔",
+          "吸血鬼",
+          "血魔法"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "弗拉基米尔",
+            "吸血鬼",
+            "血魔法"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 106
+        },
+        "display_index": 113
+      },
+      "人物：克烈": {
+        "path": "世界书/人物：克烈.txt",
+        "keywords": [
+          "克烈",
+          "军士长",
+          "斯噶尔"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "克烈",
+            "军士长",
+            "斯噶尔"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 107
+        },
+        "display_index": 114
+      },
+      "人物：德莱文": {
+        "path": "世界书/人物：德莱文.txt",
+        "keywords": [
+          "德莱文",
+          "行刑官"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德莱文",
+            "行刑官"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 108
+        },
+        "display_index": 115
+      },
+      "人物：莫德凯撒": {
+        "path": "世界书/人物：莫德凯撒.txt",
+        "keywords": [
+          "莫德凯撒",
+          "主宰"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "莫德凯撒",
+            "主宰"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 109
+        },
+        "display_index": 116
+      },
+      "人物：盖伦": {
+        "path": "世界书/人物：盖伦.txt",
+        "keywords": [
+          "盖伦",
+          "无畏先锋"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "盖伦",
+            "无畏先锋"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 126
+        },
+        "display_index": 117
+      },
+      "人物：嘉文四世": {
+        "path": "世界书/人物：嘉文四世.txt",
+        "keywords": [
+          "嘉文四世",
+          "光盾",
+          "皇子"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "嘉文四世",
+            "光盾",
+            "皇子"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 127
+        },
+        "display_index": 118,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：加里奥": {
+        "path": "世界书/人物：加里奥.txt",
+        "keywords": [
+          "加里奥",
+          "巨像"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "加里奥",
+            "巨像"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 128
+        },
+        "display_index": 119
+      },
+      "人物：塞拉斯": {
+        "path": "世界书/人物：塞拉斯.txt",
+        "keywords": [
+          "塞拉斯"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塞拉斯"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 129
+        },
+        "display_index": 120
+      },
+      "人物：赵信": {
+        "path": "世界书/人物：赵信.txt",
+        "keywords": [
+          "赵信",
+          "总管"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "赵信",
+            "总管"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 130
+        },
+        "display_index": 121
+      },
+      "人物：卢锡安": {
+        "path": "世界书/人物：卢锡安.txt",
+        "keywords": [
+          "卢锡安",
+          "圣枪游侠"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "卢锡安",
+            "圣枪游侠"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 131
+        },
+        "display_index": 122
+      },
+      "人物：费德提克": {
+        "path": "世界书/人物：费德提克.txt",
+        "keywords": [
+          "费德提克",
+          "恐惧",
+          "恶魔",
+          "稻草人"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "费德提克",
+            "恐惧",
+            "恶魔",
+            "稻草人"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 132
+        },
+        "display_index": 123
+      },
+      "人物：萨科": {
+        "path": "世界书/人物：萨科.txt",
+        "keywords": [
+          "萨科",
+          "小丑"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "萨科",
+            "小丑"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 133
+        },
+        "display_index": 124,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "人物：塔姆": {
+        "path": "世界书/人物：塔姆.txt",
+        "keywords": [
+          "塔姆",
+          "贪婪",
+          "放贷"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "塔姆",
+            "贪婪",
+            "放贷"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 134
+        },
+        "display_index": 125
+      },
+      "德玛西亚王国": {
+        "path": "世界书/德玛西亚王国.txt",
+        "keywords": [
+          "德玛西亚"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "德玛西亚"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 110
+        },
+        "display_index": 126
+      },
+      "势力详情：王室与贵族议会": {
+        "path": "世界书/势力详情：王室与贵族议会.txt",
+        "keywords": [],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective"
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 111
+        },
+        "display_index": 127,
+        "recursion": {
+          "prevent_incoming": false,
+          "prevent_outgoing": false
+        }
+      },
+      "势力详情：搜魔人兵团": {
+        "path": "世界书/势力详情：搜魔人兵团.txt",
+        "keywords": [
+          "搜魔人",
+          "兵团"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "搜魔人",
+            "兵团"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 112
+        },
+        "display_index": 128
+      },
+      "势力详情：法师反抗军": {
+        "path": "世界书/势力详情：法师反抗军.txt",
+        "keywords": [
+          "反抗军"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "反抗军"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 113
+        },
+        "display_index": 129
+      },
+      "势力详情：光照者教团": {
+        "path": "世界书/势力详情：光照者教团.txt",
+        "keywords": [
+          "光照者",
+          "教会",
+          "教团"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "光照者",
+            "教会",
+            "教团"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 114
+        },
+        "display_index": 130
+      },
+      "势力详情：德玛西亚正规军": {
+        "path": "世界书/势力详情：德玛西亚正规军.txt",
+        "keywords": [
+          "无畏先锋",
+          "龙禽"
+        ],
+        "abstract": "",
+        "enabled": true,
+        "strategy": {
+          "type": "selective",
+          "keys": [
+            "无畏先锋",
+            "龙禽"
+          ]
+        },
+        "position": {
+          "type": "before_character_definition",
+          "order": 115
+        },
+        "display_index": 131
+      }
+    },
+    "MVU": {
+      "[mvu_update]变量输出格式": {
+        "path": "世界书/变量/变量输出格式.txt",
+        "part": "output_format",
+        "keywords": [],
+        "abstract": "MVU变量输出格式"
+      },
+      "变量列表": {
+        "path": "世界书/变量/变量列表.txt",
+        "part": "variable_list",
+        "keywords": [],
+        "abstract": "MVU变量列表"
+      },
+      "[mvu_update]变量更新规则": {
+        "path": "世界书/变量/变量更新规则.yaml",
+        "part": "update_rules",
+        "keywords": [],
+        "abstract": "MVU变量更新规则"
+      },
+      "[InitVar]请勿打开": {
+        "path": "世界书/变量/initvar.yaml",
+        "part": "initvar",
+        "keywords": [],
+        "abstract": "MVU初始变量",
+        "enabled": false
+      }
+    },
+    "界面": {
+      "状态栏输出格式": {
+        "path": "世界书/界面/状态栏输出.txt",
+        "abstract": "要求AI每轮输出<ztl>状态栏JSON",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9903
+        }
+      },
+      "选项输出格式": {
+        "path": "世界书/界面/选项输出.txt",
+        "abstract": "要求AI每轮输出<xuan>六个选项",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9904
+        }
+      },
+      "对话气泡格式": {
+        "path": "世界书/界面/对话气泡.txt",
+        "abstract": "要求AI用【说话者】标签包裹台词",
+        "keywords": [],
+        "enabled": true,
+        "strategy": {
+          "type": "constant"
+        },
+        "position": {
+          "type": "at_depth",
+          "role": "system",
+          "depth": 0,
+          "order": 9905
+        }
+      }
+    }
+  },
+  "typeLists": {
+    "before_char": [
+      "世界观",
+      "扮演准则",
+      "时间线",
+      "地理"
+    ],
+    "after_char": [
+      "角色",
+      "NPC"
+    ],
+    "depth": [
+      "事件",
+      "MVU"
+    ]
+  },
+  "strategyThresholds": {
+    "角色": {
+      "basic": {
+        "threshold": 5,
+        "required": true
+      },
+      "other": {
+        "threshold": 2,
+        "required": false
+      },
+      "personality": {
+        "threshold": 2,
+        "required": true
+      },
+      "tri_faceted": {
+        "threshold": 2,
+        "required": false
+      }
+    },
+    "事件": 0,
+    "地理": {
+      "faction": {
+        "threshold": 4,
+        "required": false
+      },
+      "region": {
+        "threshold": 4,
+        "required": false
+      },
+      "scene": {
+        "threshold": 4,
+        "required": false
+      }
+    },
+    "MVU": {
+      "initvar": {
+        "threshold": null,
+        "required": false
+      },
+      "output_format": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "update_rules": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "variable_list": {
+        "threshold": "Infinity",
+        "required": false
+      }
+    },
+    "NPC": 0,
+    "扮演准则": "Infinity",
+    "时间线": {
+      "history": {
+        "threshold": "Infinity",
+        "required": false
+      },
+      "plot": {
+        "threshold": "Infinity",
+        "required": false
+      }
+    },
+    "世界观": "Infinity"
+  },
+  "partOrder": {
+    "角色": [
+      "basic",
+      "personality",
+      "tri_faceted",
+      "other"
+    ],
+    "地理": [
+      "region",
+      "scene",
+      "faction"
+    ],
+    "MVU": [
+      "variable_list",
+      "update_rules",
+      "output_format",
+      "initvar"
+    ],
+    "时间线": [
+      "history",
+      "plot"
+    ]
+  },
+  "depth_defaults": {
+    "role": "system",
+    "depth": 0
+  },
+  "description": "<narrator>\n本卡是以《英雄联盟》符文之地为舞台的开放式冒险。你是这个世界的叙述者，负责扮演<user>以外的全部角色与环境。\n\n叙述原则:\n  - 世界、势力与人物以世界书为准；世界书中有「人物：X」条目的角色，严格按条目描写，未建档的官方角色按「动态人设生成」规则推导。\n  - 金克丝、莫甘娜、拉克丝等人都只是这个世界中的一员，各自有自己的立场与生活，不会无缘无故围着<user>转。\n  - 角色对<user>的态度由 <status_current_variable> 中的好感度与关系阶段决定，先尊重角色性格，再体现关系变化。\n  - 战斗、魔法与伤病遵循世界书中的战力、代价与生死判定规则，行动会带来真实的后果。\n  - 不替<user>说话、不替<user>做决定、不描写<user>的内心。\n</narrator>",
+  "first_messages": [
+    "开场白/0.md",
+    "开场白/1.md",
+    "开场白/2.md"
+  ],
+  "creator": "",
+  "creator_notes": "以《英雄联盟》符文之地为舞台的开放式冒险，金克丝、莫甘娜、拉克丝、卡特琳娜、迦娜、阿狸、阿卡丽、萨勒芬妮等角色按好感度分五个阶段（戒备/陌生/熟悉/恋慕/不渝）展开关系。需要酒馆助手（Tavern Helper）与 MVU 才能显示状态面板与选项。",
+  "version": "1.0",
+  "create_date": "2026-11-26T05:15:59.814Z",
+  "extensions": {
+    "tavern_helper": {
+      "scripts": {
+        "MVU": {
+          "type": "script",
+          "script_file": "脚本/MVU.txt",
+          "enabled": true,
+          "id": "d0311ca6-5e9a-498e-a777-f74dc4dc6b12",
+          "info": "",
+          "button": {
+            "enabled": true,
+            "buttons": [
+              {
+                "name": "重新处理变量",
+                "visible": true
+              },
+              {
+                "name": "重新读取初始变量",
+                "visible": true
+              },
+              {
+                "name": "快照楼层",
+                "visible": false
+              },
+              {
+                "name": "重演楼层",
+                "visible": false
+              },
+              {
+                "name": "重试额外模型解析",
+                "visible": false
+              },
+              {
+                "name": "清除旧楼层变量",
+                "visible": false
+              }
+            ]
+          },
+          "data": {}
+        }
+      },
+      "variables": {}
+    },
+    "talkativeness": "0.5",
+    "fav": false,
+    "depth_prompt": {
+      "prompt": "",
+      "depth": 4,
+      "role": "system"
+    }
+  },
+  "regex_scripts": {
+    "对AI隐藏状态栏": {
+      "id": "b5f2606f-69cc-4a6a-8ebb-bd8a3b7f671f",
+      "findRegex": "<StatusPlaceHolderImpl/>",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "状态栏界面": {
+      "id": "ce6da13c-4e35-4057-8964-3192b7903acc",
+      "findRegex": "<StatusPlaceHolderImpl/>",
+      "replace_file": "正则/状态栏界面.html",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0
+    },
+    "对AI隐藏变量更新": {
+      "id": "aa12731a-97c4-4450-ac2f-0bfe1d6a4f64",
+      "findRegex": "/<(update(?:variable)?)>(?:(?!.*<\\/\\1>)(?:(?!<\\1>).)*$|(?:(?!<\\1>).)*<\\/\\1?>)/gsi",
+      "replaceString": "",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "变量更新中美化": {
+      "id": "b9d5f25b-a9d0-41bf-8a69-602d64bbde22",
+      "findRegex": "/<(update(?:variable)?)>(?!.*<\\/\\1>)\\s*((?:(?!<\\1>).)*)\\s*$/gsi",
+      "replace_file": "正则/变量更新中美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "变量更新美化": {
+      "id": "92d49340-fe5e-4929-871f-43d110e5ec76",
+      "findRegex": "/<(update(?:variable)?)>\\s*((?:(?!<\\1>).)*)\\s*<\\/\\1>/gsi",
+      "replace_file": "正则/变量更新美化.html",
+      "trimStrings": [],
+      "placement": [
+        1,
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": false,
+      "substituteRegex": 0
+    },
+    "对AI隐藏状态栏ztl": {
+      "id": "ef9477a7-bccb-4297-a137-bb784ae7cf03",
+      "findRegex": "/<ztl>[\\s\\S]*?<\\/ztl>/gi",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": ""
+    },
+    "符文面板": {
+      "id": "b59e94c0-93e5-4f2f-a06a-20dce5402cb5",
+      "findRegex": "/<ztl>[\\s\\S]*?<\\/ztl>/i",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replace_file": "正则/状态栏界面.html"
+    },
+    "对AI隐藏选项": {
+      "id": "ae0f6d89-14ad-4578-a643-49d654f4183c",
+      "findRegex": "/<xuan>[\\s\\S]*?<\\/xuan>/gi",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": ""
+    },
+    "选项并入面板": {
+      "id": "f62ccf16-1b54-477c-b45b-57700e6b6839",
+      "findRegex": "/<xuan>[\\s\\S]*?<\\/xuan>/gi",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": ""
+    },
+    "对话气泡-用户": {
+      "id": "b9d0fb4f-1aaf-40e4-8039-6e74286d03cd",
+      "findRegex": "/【用户角色】([\\s\\S]*?)【\\/用户角色】/g",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": "<span style=\"display:inline;padding:1px 6px;border-radius:6px;background:rgba(63,193,201,0.12);border-left:2px solid #3fc1c9;\">“$1”</span>"
+    },
+    "对话气泡": {
+      "id": "69d0b005-b174-4b16-b470-d31f08ec018d",
+      "findRegex": "/【([^【】\\/\\n]{1,20})】([\\s\\S]*?)【\\/\\1】/g",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": "<span style=\"display:inline;padding:1px 6px;border-radius:6px;background:rgba(200,164,90,0.10);border-left:2px solid #c8a45a;\"><b style=\"color:#c8a45a;font-size:0.85em;margin-right:4px;\">$1</b>“$2”</span>"
+    },
+    "对AI简化对话气泡-用户": {
+      "id": "f4e397d2-ae4f-42fa-8c31-471334a22255",
+      "findRegex": "/【用户角色】([\\s\\S]*?)【\\/用户角色】/g",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": "“$1”"
+    },
+    "对AI简化对话气泡": {
+      "id": "85660b5d-4c07-41a1-96db-5662718c9b58",
+      "findRegex": "/【([^【】\\/\\n]{1,20})】([\\s\\S]*?)【\\/\\1】/g",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": "“$2”"
+    },
+    "对AI隐藏旧命运卡片": {
+      "id": "82d061ca-ded4-4a1a-acf9-79b92b7a47b9",
+      "findRegex": "/<fate_ui>[\\s\\S]*?<\\/fate_ui>/gi",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": false,
+      "promptOnly": true,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replaceString": "",
+      "minDepth": 5
+    },
+    "命运卡片": {
+      "id": "59771eb9-6c6b-48e2-9246-f84b17ac697e",
+      "findRegex": "/<fate_ui>([\\s\\S]*?)<\\/fate_ui>/gi",
+      "trimStrings": [],
+      "placement": [
+        2
+      ],
+      "disabled": false,
+      "markdownOnly": true,
+      "promptOnly": false,
+      "runOnEdit": true,
+      "substituteRegex": 0,
+      "replace_file": "正则/命运卡片.html"
+    }
+  },
+  "zod": {
+    "scriptName": "Zod",
+    "scriptId": "5b3b09af-35e3-4149-a0f7-2f08776ed6a1",
+    "schemaPath": "schema.ts",
+    "importUrl": "https://testingcf.jsdelivr.net/gh/StageDog/tavern_resource/dist/util/mvu_zod.js"
+  },
+  "tags": [
+    "英雄联盟",
+    "符文之地",
+    "开放世界",
+    "冒险",
+    "多角色",
+    "MVU"
+  ],
+  "initvar_overrides": {
+    "开场白/0.md": "开场白/initvar/0.yaml",
+    "开场白/1.md": "开场白/initvar/1.yaml",
+    "开场白/2.md": "开场白/initvar/2.yaml"
+  }
+}

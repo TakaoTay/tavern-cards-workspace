@@ -1,0 +1,337 @@
+```
+<body>
+<style>
+:root {
+  --c-surface: #12161f;
+  --c-surface-raised: #1b2130;
+  --c-surface-sunken: #0c0f16;
+  --c-border: #2c3447;
+  --c-border-accent: #8a6d3b;
+  --c-text: #e6e1d3;
+  --c-text-muted: #9aa3b5;
+  --c-accent: #c8a45a;
+  --c-accent-soft: rgba(200, 164, 90, 0.14);
+  --c-hextech: #3fc1c9;
+  --c-hextech-soft: rgba(63, 193, 201, 0.14);
+  --c-stage-hostile: #d0545b;
+  --c-stage-stranger: #8a93a6;
+  --c-stage-familiar: #3fc1c9;
+  --c-stage-love: #e0749c;
+  --c-stage-devoted: #f0c45a;
+  --c-danger: #d0545b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 4px 0; background: transparent; color: var(--c-text);
+  font-family: "Sarasa Gothic SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 13px; line-height: 1.55; }
+.rt { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 10px; overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(200,164,90,0.08) inset; }
+.rt-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; padding: 10px 12px;
+  background: linear-gradient(90deg, var(--c-accent-soft), transparent 70%); border-bottom: 1px solid var(--c-border-accent); }
+.rt-head .item { display: flex; gap: 5px; align-items: baseline; min-width: 0; }
+.rt-head .label { color: var(--c-accent); font-size: 11px; letter-spacing: 1px; white-space: nowrap; }
+.rt-head .value { color: var(--c-text); font-weight: 600; overflow-wrap: anywhere; }
+.rt-tabs { display: flex; border-bottom: 1px solid var(--c-border); background: var(--c-surface-sunken); overflow-x: auto; }
+.rt-tab { flex: 1 0 auto; padding: 7px 12px; text-align: center; cursor: pointer; color: var(--c-text-muted);
+  border: none; background: none; font: inherit; border-bottom: 2px solid transparent; white-space: nowrap; }
+.rt-tab.on { color: var(--c-accent); border-bottom-color: var(--c-accent); }
+.rt-tab .n { font-size: 10px; margin-left: 3px; color: var(--c-text-muted); }
+.rt-page { display: none; padding: 10px 12px; }
+.rt-page.on { display: block; }
+.rt-empty { color: var(--c-text-muted); text-align: center; padding: 10px 0; font-size: 12px; }
+
+.ch { display: flex; gap: 10px; padding: 10px; margin-bottom: 8px; background: var(--c-surface-raised);
+  border: 1px solid var(--c-border); border-radius: 8px; }
+.ch:last-child { margin-bottom: 0; }
+.ch-art { flex: 0 0 64px; height: 84px; border-radius: 6px; border: 1px solid var(--c-border-accent);
+  background: var(--c-surface-sunken) center / cover no-repeat; display: flex; align-items: center; justify-content: center;
+  color: var(--c-accent); font-size: 22px; font-weight: 700; cursor: default; }
+.ch-art.has-img { cursor: zoom-in; }
+.ch-body { flex: 1; min-width: 0; }
+.ch-name { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ch-name b { font-size: 14px; }
+.stage { font-size: 10px; padding: 1px 7px; border-radius: 10px; border: 1px solid currentColor; }
+.bar { height: 6px; border-radius: 3px; background: var(--c-surface-sunken); overflow: hidden; margin: 6px 0 2px; position: relative; }
+.bar i { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 3px; }
+.bar-num { font-size: 10px; color: var(--c-text-muted); }
+.outfit { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.chip { font-size: 11px; padding: 1px 6px; border-radius: 4px; background: var(--c-surface-sunken); color: var(--c-text-muted); }
+.chip em { font-style: normal; color: var(--c-accent); margin-right: 3px; }
+.overview { margin-top: 6px; font-size: 12px; color: var(--c-text-muted); }
+.thought { margin-top: 6px; padding: 6px 8px; border-left: 2px solid var(--c-stage-love); background: rgba(224,116,156,0.08);
+  font-size: 12px; font-style: italic; border-radius: 0 4px 4px 0; }
+
+.bond { display: grid; grid-template-columns: minmax(64px, auto) 1fr auto; gap: 4px 10px; align-items: center; padding: 6px 0;
+  border-bottom: 1px dashed var(--c-border); }
+.bond:last-child { border-bottom: none; }
+.bond .bar { margin: 0; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+.kv .k { color: var(--c-accent); white-space: nowrap; }
+.kv .v { overflow-wrap: anywhere; }
+.sec { margin-top: 10px; }
+.sec-title { color: var(--c-accent); font-size: 11px; letter-spacing: 1px; margin-bottom: 4px; border-bottom: 1px solid var(--c-border); padding-bottom: 2px; }
+.item-row { display: flex; justify-content: space-between; gap: 8px; padding: 3px 0; }
+.item-row small { color: var(--c-text-muted); display: block; }
+.rep { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 8px; border-radius: 4px; background: var(--c-surface-raised);
+  border: 1px solid var(--c-border); }
+
+.opts { border-top: 1px solid var(--c-border-accent); padding: 8px 12px 10px; background: var(--c-surface-sunken); }
+.opts-title { color: var(--c-accent); font-size: 11px; letter-spacing: 1px; margin-bottom: 6px; }
+.opt { display: flex; gap: 8px; width: 100%; text-align: left; padding: 7px 9px; margin-bottom: 5px; border-radius: 6px; cursor: pointer;
+  background: var(--c-surface-raised); color: var(--c-text); border: 1px solid var(--c-border); font: inherit; font-size: 12px; }
+.opt:hover { border-color: var(--c-hextech); background: var(--c-hextech-soft); }
+.opt:last-child { margin-bottom: 0; }
+.opt .tag { flex: 0 0 auto; color: var(--c-hextech); font-size: 11px; }
+.toast { text-align: center; font-size: 11px; color: var(--c-hextech); height: 0; overflow: hidden; transition: height .2s; }
+.toast.on { height: 16px; margin-top: 4px; }
+
+.cg-view { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 9; cursor: zoom-out; }
+.cg-view.on { display: flex; }
+.cg-view img { max-width: 96%; max-height: 96%; border-radius: 8px; border: 1px solid var(--c-border-accent); }
+</style>
+
+<div class="rt" id="rt">
+  <div class="rt-head" id="rt-head"></div>
+  <div class="rt-tabs" id="rt-tabs"></div>
+  <div id="rt-pages"></div>
+  <div class="opts" id="rt-opts" style="display:none">
+    <div class="opts-title">◆ 接下来</div>
+    <div id="rt-opt-list"></div>
+    <div class="toast" id="rt-toast">已填入输入框</div>
+  </div>
+</div>
+<div class="cg-view" id="cg-view"><img id="cg-img" alt=""></div>
+
+<script>
+/* ================= CG 图库（之后填入图片链接即可） =================
+ * 键为角色名（与世界书「人物：X」中的 X 一致）。
+ *   头像：状态栏卡片左侧的小图
+ *   阶段：按关系阶段切换的立绘，键为 戒备 / 陌生 / 熟悉 / 恋慕 / 不渝；没填的阶段回退到“头像”
+ * 示例：
+ *   '金克丝': { 头像: 'https://example.com/jinx.png', 阶段: { 恋慕: 'https://example.com/jinx_love.png' } },
+ */
+const CG_LIBRARY = {
+};
+
+const STAGES = ['戒备', '陌生', '熟悉', '恋慕', '不渝'];
+const STAGE_COLOR = { 戒备: '--c-stage-hostile', 陌生: '--c-stage-stranger', 熟悉: '--c-stage-familiar', 恋慕: '--c-stage-love', 不渝: '--c-stage-devoted' };
+const OPTION_TAGS = ['正常推进', '好感推进', '角色推进', '时间推进', '冒险推进', '超展开'];
+const OUTFIT_LABELS = [['head', '发型'], ['upper', '上身'], ['lower', '下身'], ['acc', '配饰']];
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+function stageOf(v) {
+  if (v < 0) return '戒备';
+  if (v < 350) return '陌生';
+  if (v < 700) return '熟悉';
+  if (v < 900) return '恋慕';
+  return '不渝';
+}
+function stageBadge(stage) {
+  const color = 'var(' + (STAGE_COLOR[stage] || '--c-stage-stranger') + ')';
+  return '<span class="stage" style="color:' + color + '">' + esc(stage) + '</span>';
+}
+function affectionBar(v) {
+  const n = Number(v);
+  if (!isFinite(n)) return '';
+  const stage = stageOf(n);
+  const pct = Math.max(0, Math.min(100, (n + 100) / 11));
+  const color = 'var(' + STAGE_COLOR[stage] + ')';
+  return '<div class="bar"><i style="width:' + pct.toFixed(1) + '%;background:' + color + '"></i></div>' +
+    '<div class="bar-num">好感度 ' + n + ' / 1000</div>';
+}
+function cgFor(name, stage) {
+  const entry = CG_LIBRARY[name];
+  if (!entry) return '';
+  return (entry.阶段 && entry.阶段[stage]) || entry.头像 || '';
+}
+
+/* ---------- 读取数据 ---------- */
+function inTavern() {
+  return typeof getCurrentMessageId === 'function' && typeof getChatMessages === 'function';
+}
+function readMessageText() {
+  if (!inTavern()) return window.__RT_DEMO_MESSAGE__ || '';
+  try {
+    const msg = getChatMessages(getCurrentMessageId())[0];
+    return (msg && msg.message) || '';
+  } catch (e) { return ''; }
+}
+function readStatData() {
+  if (!inTavern()) return window.__RT_DEMO_STAT__ || {};
+  try {
+    const vars = getVariables({ type: 'message', message_id: getCurrentMessageId() });
+    return (vars && vars.stat_data) || {};
+  } catch (e) { return {}; }
+}
+function parseZtl(text) {
+  const m = text.match(/<ztl>([\s\S]*?)<\/ztl>/i);
+  if (!m) return null;
+  const raw = m[1].trim().replace(/^```(?:json)?/i, '').replace(/```$/, '').trim();
+  try { return JSON.parse(raw); } catch (e) {}
+  try { return JSON.parse(raw.replace(/[“”]/g, '"')); } catch (e) {}
+  return null;
+}
+function parseOptions(text) {
+  const m = text.match(/<xuan>([\s\S]*?)<\/xuan>/i);
+  if (!m) return [];
+  return m[1].split('\n').map(l => l.trim()).filter(Boolean)
+    .map(l => l.replace(/^\d+\s*[.、．)]\s*/, '').replace(/^\[|\]$/g, '').trim()).filter(Boolean).slice(0, 6);
+}
+
+/* ---------- 渲染 ---------- */
+let currentTab = null;
+let lastKey = '';
+
+function renderHead(stat, ztl) {
+  const w = stat.世界状态 || {};
+  const items = [];
+  const time = (ztl && ztl.time) || w.纪元时间;
+  const where = (ztl && ztl.location) || [w.大地点, w.具体地点].filter(x => x && x !== '待定').join(' · ');
+  if (time && time !== '待定') items.push(['时间', time]);
+  if (where) items.push(['地点', where]);
+  if (w.当前任务 && w.当前任务 !== '无') items.push(['任务', w.当前任务]);
+  if (!items.length) items.push(['符文之地', '旅途尚未开始']);
+  document.getElementById('rt-head').innerHTML = items
+    .map(([k, v]) => '<div class="item"><span class="label">' + esc(k) + '</span><span class="value">' + esc(v) + '</span></div>').join('');
+}
+
+function renderCharacters(stat, ztl) {
+  const npcs = stat.近期NPC || {};
+  const chars = (ztl && Array.isArray(ztl.characters)) ? ztl.characters : [];
+  if (!chars.length) return '<div class="rt-empty">本轮没有在场角色的记录</div>';
+  return chars.map(c => {
+    const name = c.name || '身份不明者';
+    const npc = npcs[name];
+    const stage = npc ? (npc._关系阶段 || stageOf(Number(npc.好感度))) : '';
+    const img = cgFor(name, stage);
+    const art = img
+      ? '<div class="ch-art has-img" data-cg="' + esc(img) + '" style="background-image:url(&quot;' + esc(img) + '&quot;)"></div>'
+      : '<div class="ch-art">' + esc(name.slice(0, 1)) + '</div>';
+    const o = c.outfit || {};
+    const chips = OUTFIT_LABELS.filter(([k]) => o[k] && o[k] !== '无')
+      .map(([k, label]) => '<span class="chip"><em>' + label + '</em>' + esc(o[k]) + '</span>').join('');
+    return '<div class="ch">' + art + '<div class="ch-body">' +
+      '<div class="ch-name"><b>' + esc(name) + '</b>' + (stage ? stageBadge(stage) : '') + '</div>' +
+      (npc ? affectionBar(npc.好感度) : '') +
+      (chips ? '<div class="outfit">' + chips + '</div>' : '') +
+      (o.overview ? '<div class="overview">' + esc(o.overview) + '</div>' : '') +
+      (c.thought ? '<div class="thought">' + esc(c.thought) + '</div>' : '') +
+      '</div></div>';
+  }).join('');
+}
+
+function renderBonds(stat) {
+  const npcs = stat.近期NPC || {};
+  const names = Object.keys(npcs);
+  if (!names.length) return '<div class="rt-empty">还没有结识任何人</div>';
+  names.sort((a, b) => Number(npcs[b].好感度) - Number(npcs[a].好感度));
+  return names.map(name => {
+    const npc = npcs[name] || {};
+    const stage = npc._关系阶段 || stageOf(Number(npc.好感度));
+    const n = Number(npc.好感度);
+    const pct = Math.max(0, Math.min(100, (n + 100) / 11));
+    const color = 'var(' + STAGE_COLOR[stage] + ')';
+    return '<div class="bond"><b>' + esc(name) + '</b>' +
+      '<div class="bar"><i style="width:' + pct.toFixed(1) + '%;background:' + color + '"></i></div>' +
+      '<span>' + stageBadge(stage) + ' <span class="bar-num">' + (isFinite(n) ? n : '?') + '</span></span></div>';
+  }).join('');
+}
+
+function renderHero(stat) {
+  const h = stat.主角 || {};
+  const s = h.状态 || {};
+  let html = '<div class="kv">' +
+    '<span class="k">能级</span><span class="v">' + esc(h.基础能级 || '待定') + '</span>' +
+    '<span class="k">伤势</span><span class="v">' + esc(s.伤势等级 || '无伤') + '</span>' +
+    '<span class="k">魔力</span><span class="v">' + esc(s.魔法能量透支状态 || '正常') + '</span></div>';
+  const money = Object.entries(h.财富资产 || {});
+  html += '<div class="sec"><div class="sec-title">财富</div>' +
+    (money.length ? money.map(([k, v]) => '<div class="item-row"><span>' + esc(k) + '</span><b>' + esc(v) + '</b></div>').join('') : '<div class="rt-empty">身无分文</div>') + '</div>';
+  const items = Object.entries(h.物品栏 || {});
+  html += '<div class="sec"><div class="sec-title">物品栏</div>' +
+    (items.length ? items.map(([k, v]) => '<div class="item-row"><span>' + esc(k) + (v && v.描述 ? '<small>' + esc(v.描述) + '</small>' : '') + '</span><b>×' + esc(v && v.数量) + '</b></div>').join('') : '<div class="rt-empty">空空如也</div>') + '</div>';
+  return html;
+}
+
+function renderRep(stat) {
+  const rep = Object.entries((stat.世界状态 || {}).各方势力声望 || {});
+  if (!rep.length) return '<div class="rt-empty">尚未与任何势力产生交集</div>';
+  return rep.map(([k, v]) => '<span class="rep">' + esc(k) + ' · <b>' + esc(v) + '</b></span>').join('');
+}
+
+function renderOptions(options) {
+  const box = document.getElementById('rt-opts');
+  if (!options.length) { box.style.display = 'none'; return; }
+  box.style.display = '';
+  document.getElementById('rt-opt-list').innerHTML = options.map((o, i) =>
+    '<button class="opt" data-text="' + esc(o) + '"><span class="tag">' + (OPTION_TAGS[i] || ('选项' + (i + 1))) + '</span><span>' + esc(o) + '</span></button>').join('');
+}
+
+function render() {
+  const text = readMessageText();
+  const stat = readStatData();
+  const key = text.length + '|' + JSON.stringify(stat);
+  if (key === lastKey) return;
+  lastKey = key;
+
+  const ztl = parseZtl(text);
+  renderHead(stat, ztl);
+
+  const npcCount = Object.keys(stat.近期NPC || {}).length;
+  const pages = [];
+  if (ztl) pages.push(['scene', '在场', renderCharacters(stat, ztl), (ztl.characters || []).length]);
+  pages.push(['bond', '羁绊', renderBonds(stat), npcCount]);
+  pages.push(['hero', '主角', renderHero(stat), null]);
+  pages.push(['rep', '声望', renderRep(stat), null]);
+  if (!currentTab || !pages.some(p => p[0] === currentTab)) currentTab = pages[0][0];
+
+  document.getElementById('rt-tabs').innerHTML = pages.map(([id, label, , n]) =>
+    '<button class="rt-tab' + (id === currentTab ? ' on' : '') + '" data-tab="' + id + '">' + label +
+    (n ? '<span class="n">' + n + '</span>' : '') + '</button>').join('');
+  document.getElementById('rt-pages').innerHTML = pages.map(([id, , html]) =>
+    '<div class="rt-page' + (id === currentTab ? ' on' : '') + '" data-page="' + id + '">' + html + '</div>').join('');
+
+  renderOptions(parseOptions(text));
+}
+
+/* ---------- 交互 ---------- */
+document.addEventListener('click', ev => {
+  const tab = ev.target.closest('.rt-tab');
+  if (tab) {
+    currentTab = tab.dataset.tab;
+    document.querySelectorAll('.rt-tab').forEach(t => t.classList.toggle('on', t === tab));
+    document.querySelectorAll('.rt-page').forEach(p => p.classList.toggle('on', p.dataset.page === currentTab));
+    return;
+  }
+  const opt = ev.target.closest('.opt');
+  if (opt) {
+    const text = opt.dataset.text || '';
+    if (typeof triggerSlash === 'function') {
+      triggerSlash('/setinput ' + text.replace(/\|/g, '\\|'));
+    }
+    const toast = document.getElementById('rt-toast');
+    toast.classList.add('on');
+    setTimeout(() => toast.classList.remove('on'), 1500);
+    return;
+  }
+  const art = ev.target.closest('.ch-art.has-img');
+  if (art) {
+    document.getElementById('cg-img').src = art.dataset.cg;
+    document.getElementById('cg-view').classList.add('on');
+    return;
+  }
+  if (ev.target.closest('#cg-view')) document.getElementById('cg-view').classList.remove('on');
+});
+
+(async function start() {
+  render();
+  if (inTavern()) {
+    try { if (typeof waitGlobalInitialized === 'function') await waitGlobalInitialized('Mvu'); } catch (e) {}
+    render();
+    setInterval(render, 2000);
+  }
+})();
+</script>
+</body>
+```

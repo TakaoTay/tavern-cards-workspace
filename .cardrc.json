@@ -1,5 +1,10 @@
 {
-    "projects": {},
+    "projects": {
+        "符文之地": {
+            "state_file": "cards/符文之地/tavern-cards-state.json",
+            "artifact": "cards/符文之地/符文之地.json"
+        }
+    },
     "default_part_order": {
         "角色": [
             "basic",
