@@ -3,6 +3,51 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>
+/* ===== 官方立绘映射（League of Legends Data Dragon）=====
+ * 这些角色的图片暂时直接读取拳头官方的皮肤原画；之后换成自己的图片时，删掉对应角色即可回到 RT_IMG_BASE。
+ *   splash：横版原画 → 场景卡图片、插图
+ *   loading：竖版加载图 → 立绘、开局封面
+ *   tiles：方形头像 → Q版头像
+ */
+(function () {
+  var DD = 'https://ddragon.leagueoflegends.com/cdn/img/champion/';
+  var ART = {"akali": {"id": "Akali", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 32, 50, 60, 61, 68, 70, 71, 82, 92, 102, 103]}, "ahri": {"id": "Ahri", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 14, 15, 16, 17, 27, 28, 42, 65, 66, 76, 85, 86, 88, 89, 97]}, "katarina": {"id": "Katarina", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21, 29, 37, 47, 48, 59, 60, 70]}, "lux": {"id": "Lux", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 14, 15, 16, 17, 18, 19, 29, 38, 39, 40, 42, 61, 70, 72]}, "seraphine": {"id": "Seraphine", "skins": [0, 1, 2, 3, 4, 14, 15, 24, 34, 43, 50, 59, 68, 69]}, "janna": {"id": "Janna", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 20, 27, 36, 45, 46, 56, 66, 67]}, "syndra": {"id": "Syndra", "skins": [0, 1, 2, 3, 4, 5, 6, 7, 16, 25, 34, 44, 54, 65]}};
+  var EMOS = ['rc', 'kx', 'sq', 'wq', 'pd', 'ty', 'zq'];
+  var OUTFITS = { rc: 0, wc: 1, zf: 2 };
+  var SCENES = ['jg', 'jx', 'gb', 'sl', 'js', 'hg', 'hl', 'jz', 'sm', 'qd', 'zc', 'cg'];
+  function pick(list, i) { return list[((i % list.length) + list.length) % list.length]; }
+  function url(kind, a, num) { return DD + kind + '/' + a.id + '_' + num + '.jpg'; }
+  window.rtArt = function (src) {
+    if (!src || src.indexOf(DD) === 0 || /\/nsfw\//.test(src)) return src;
+    var m = String(src).match(/\/([a-z]+)_([a-z0-9_]+)\.(?:png|jpg)(?:\?.*)?$/);
+    if (!m || !ART[m[1]]) return src;
+    var a = ART[m[1]], rest = m[2], s = a.skins, k;
+    if (/^\d+$/.test(rest)) return url('splash', a, pick(s, Number(rest) - 1));
+    if ((k = rest.match(/^([a-z]+)_q$/)) && EMOS.indexOf(k[1]) !== -1) return url('tiles', a, pick(s, EMOS.indexOf(k[1])));
+    if ((k = rest.match(/^(rc|wc|zf)_(\d+)$/))) return url('loading', a, pick(s, OUTFITS[k[1]] * 5 + Number(k[2]) - 1));
+    if ((k = rest.match(/^([a-z]+)_(\d+)$/)) && SCENES.indexOf(k[1]) !== -1) return url('splash', a, pick(s, SCENES.indexOf(k[1]) * 3 + Number(k[2]) - 1));
+    return src;
+  };
+  function fix(img) {
+    ['src', 'data-backup', 'data-default', 'data-hover', 'data-drag', 'data-cg'].forEach(function (attr) {
+      var v = img.getAttribute && img.getAttribute(attr);
+      if (v) { var n = window.rtArt(v); if (n !== v) img.setAttribute(attr, n); }
+    });
+  }
+  function scan(root) {
+    if (!root || !root.querySelectorAll) return;
+    if (root.tagName === 'IMG' || root.hasAttribute && root.hasAttribute('data-default')) fix(root);
+    root.querySelectorAll('img,[data-default],[data-backup]').forEach(fix);
+  }
+  new MutationObserver(function (muts) {
+    muts.forEach(function (m) {
+      if (m.type === 'attributes') fix(m.target); else m.addedNodes.forEach(scan);
+    });
+  }).observe(document.documentElement, { subtree: true, childList: true, attributes: true, attributeFilter: ['src', 'data-backup', 'data-default', 'data-hover', 'data-drag'] });
+  document.addEventListener('DOMContentLoaded', function () { scan(document.body); });
+})();
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>约会场景插图 - 动态匹配+指定场景音乐+特写单图版</title>
@@ -420,7 +465,8 @@
             '卡特琳娜': { id: 'katarina', name: '卡特琳娜', en: 'Katarina', bg: '#fdfbfa', border: 'rgba(200, 50, 60, 0.3)', accent: '#c8323c', line: 'rgba(200, 50, 60, 0.08)', text: '#320c0f', tagBg: 'rgba(200, 50, 60, 0.08)', stampBg: 'rgba(200, 50, 60, 0.06)', tape: 'rgba(200, 50, 60, 0.25)', muted: '#c8323c', photoBg: '#fbf8f6' },
             '蔚': { id: 'vi', name: '蔚', en: 'Vi', bg: '#fdfbfa', border: 'rgba(224, 80, 122, 0.3)', accent: '#e0507a', line: 'rgba(224, 80, 122, 0.08)', text: '#38141e', tagBg: 'rgba(224, 80, 122, 0.08)', stampBg: 'rgba(224, 80, 122, 0.06)', tape: 'rgba(224, 80, 122, 0.25)', muted: '#e0507a', photoBg: '#fbf8f6' },
             '凯特琳': { id: 'caitlyn', name: '凯特琳', en: 'Caitlyn', bg: '#fdfbfa', border: 'rgba(79, 127, 214, 0.3)', accent: '#4f7fd6', line: 'rgba(79, 127, 214, 0.08)', text: '#131f35', tagBg: 'rgba(79, 127, 214, 0.08)', stampBg: 'rgba(79, 127, 214, 0.06)', tape: 'rgba(79, 127, 214, 0.25)', muted: '#4f7fd6', photoBg: '#fbf8f6' },
-            '泽丽': { id: 'zeri', name: '泽丽', en: 'Zeri', bg: '#fdfbfa', border: 'rgba(124, 194, 63, 0.3)', accent: '#7cc23f', line: 'rgba(124, 194, 63, 0.08)', text: '#1f300f', tagBg: 'rgba(124, 194, 63, 0.08)', stampBg: 'rgba(124, 194, 63, 0.06)', tape: 'rgba(124, 194, 63, 0.25)', muted: '#7cc23f', photoBg: '#fbf8f6' }
+            '泽丽': { id: 'zeri', name: '泽丽', en: 'Zeri', bg: '#fdfbfa', border: 'rgba(124, 194, 63, 0.3)', accent: '#7cc23f', line: 'rgba(124, 194, 63, 0.08)', text: '#1f300f', tagBg: 'rgba(124, 194, 63, 0.08)', stampBg: 'rgba(124, 194, 63, 0.06)', tape: 'rgba(124, 194, 63, 0.25)', muted: '#7cc23f', photoBg: '#fbf8f6' },
+            '辛德拉': { id: 'syndra', name: '辛德拉', en: 'Syndra', bg: '#fdfbfa', border: 'rgba(142, 79, 208, 0.3)', accent: '#8e4fd0', line: 'rgba(142, 79, 208, 0.08)', text: '#231334', tagBg: 'rgba(142, 79, 208, 0.08)', stampBg: 'rgba(142, 79, 208, 0.06)', tape: 'rgba(142, 79, 208, 0.25)', muted: '#8e4fd0', photoBg: '#fbf8f6' }
         };
 
         var CHAR_LIST = Object.keys(CHAR_THEMES);
